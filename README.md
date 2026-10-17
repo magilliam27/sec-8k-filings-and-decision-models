@@ -97,7 +97,7 @@ Jev (jev-1.13.0, from [TypeSafe](https://docs.typesafe.ai)) answers multiple-cho
 
 ## 3. Results
 
-![Rank correlation between Jev's rating and market-adjusted return, by window](docs/figures/correlation-by-window.png)
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/figures/correlation-by-window-dark.png"><img src="docs/figures/correlation-by-window.png" width="100%" alt="Rank correlation between Jev's rating and market-adjusted return, by window"></picture>
 
 The association is strongest on the filing day and fades by day 10. Measured from the first close after the filing, neither method predicts returns.
 
