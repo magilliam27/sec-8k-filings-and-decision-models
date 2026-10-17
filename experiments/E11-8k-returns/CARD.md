@@ -10,7 +10,7 @@
 
 | Item | Value |
 |---|---|
-| Events | Every event in the Data lane's member 8-K dataset (issue #311, `scripts/data/export_sec_member_8k.py`, E10's contract): original 8-Ks carrying items 1.01, 1.02, 1.03, 2.01, 2.05, 2.06, 3.01, 4.01, 4.02 or 5.02, accepted on a day the company was an S&P 500 member (member table v2, 753 companies), from 2013. Events the Data lane leaves out for a failed check are recorded with their reason, per year |
+| Events | Every event in the Data lane's member 8-K dataset (issue magilliam27/MCI-GRU#311, `scripts/data/export_sec_member_8k.py`, E10's contract): original 8-Ks carrying items 1.01, 1.02, 1.03, 2.01, 2.05, 2.06, 3.01, 4.01, 4.02 or 5.02, accepted on a day the company was an S&P 500 member (member table v2, 753 companies), from 2013. Events the Data lane leaves out for a failed check are recorded with their reason, per year |
 | Left out of the test | 8-Ks that also list item 2.02 (earnings), since the earnings news would swamp the event. Events whose 10-day window has not ended by the last price date. Events with no usable price at day −1 (recorded by company and year) |
 | Same company, same day 0 | Several qualifying 8-Ks from one company with the same day 0 share one return, so only one is kept: the one in the most negative-leaning item group, then the earliest acceptance. The rule does not look at any Jev score |
 | Jev's score | The rating question of `configs/filings/questions_v5.yaml` at 3a1be7f, unchanged, `jev-1.13.0`, the same state E10 used (text plus code-added company name, item codes, prior 10-K revenue, prior-90-day item codes). **Rating score** = probability-weighted −2 to +2. Bad score = P(bad) + P(very bad), reported. The size question is not asked |
@@ -42,11 +42,11 @@ The owner asked for good news and general patterns as well as bad news, and for 
 
 - **Event count:** the Data lane's pull holds 28,551 events before checks and left-outs. At E10's rate of about 2,000 input tokens per rating call, scoring all of them is about 57M tokens, roughly $2.40, over the $1.50 line, so the Lead asks the owner before any call.
 - **Jev's training cut-off is not published.** The Questions lane searched TypeSafe's full docs export, the Models page and the Jev 1.13 page: none gives a cut-off. The only bound is that `jev-latest` (which points at jev-1.13.0) was released on 10 Sep 2026, so the cut-off is on or before that date. By the card's rule the cut-off is "not found", so no downgrade applies. Events accepted after 10 Sep 2026 are still reported separately, but few will have a complete 10-day window, so the model-memory risk stays a known limit rather than a tested one.
-- **Earnings overlap field supplied:** each event carries `nearby_202_listed_utc` (Data lane, PR #300, 18e9bfb), so the earnings robustness check in "Also reported" will run.
+- **Earnings overlap field supplied:** each event carries `nearby_202_listed_utc` (Data lane, PR magilliam27/MCI-GRU#300, 18e9bfb), so the earnings robustness check in "Also reported" will run.
 
 ## Events as published and joined (16 Oct 14:26Z, counts only, no return computed)
 
-- **Data:** `member_8k_events` r1 (manifest `data/member_8k_events.r1.json` sha256 f4029460…3bb2; `member_8k_events.jsonl` 04172c9b…931f; code e502416, PR #300, issue #311). 28,253 events from 752 companies, accepted 1 Jan 2013 to 15 Oct 2026; 232 left out by checks (0.8%), listed in `member_8k_left_out.csv`. Every event's acceptance time comes from its index page. Apache 2013 to early 2021 is missing (it filed as a subsidiary).
+- **Data:** `member_8k_events` r1 (manifest `data/member_8k_events.r1.json` sha256 f4029460…3bb2; `member_8k_events.jsonl` 04172c9b…931f; code e502416, PR magilliam27/MCI-GRU#300, issue magilliam27/MCI-GRU#311). 28,253 events from 752 companies, accepted 1 Jan 2013 to 15 Oct 2026; 232 left out by checks (0.8%), listed in `member_8k_left_out.csv`. Every event's acceptance time comes from its index page. Apache 2013 to early 2021 is missing (it filed as a subsidiary).
 - **Joins (Lead's script, counts only):** 28,063 events join to a price series with a close on day −1 and a complete 10-day window. Left out: 93 with no price at day −1 (Fox 33, Howmet/Alcoa 31, Ingersoll-Rand/Trane 21, 8 others), 63 whose window has not ended, 34 with no price series (old DuPont 18, Covidien 15, Baker Hughes 1). These are the same companies E7 could not price.
 - **Rules applied:** 848 joined events also list 2.02 and are left out; 253 same-company, same-day-0 duplicates are dropped by the group rule.
 - **Test set: 26,962 events.** Officer changes 16,263, deals 8,953, negative-leaning 1,678, auditor changes 68. From 1,371 (2026, part year) to 2,153 (2015) a year. Ids only in `events.csv` (sha256 f885c806…0b3b), for the Questions lane; joins per event in `grading/joins.csv` (685fd126…b02).
@@ -61,7 +61,7 @@ The Questions lane scores Jev without seeing any price or return. The Data lane 
 
 ## Order of work
 
-1. Data lane: publish the member 8-K dataset (#311) with its manifest.
+1. Data lane: publish the member 8-K dataset (magilliam27/MCI-GRU#311) with its manifest.
 2. Lead: record the event counts and joins to prices (counts only), and note the hashes here.
 3. Questions lane: estimate cost, then score the rating question and compute the baseline on every event; send hashes.
 4. Lead: grade, recheck one return by hand, and report.

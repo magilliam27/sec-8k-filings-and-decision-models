@@ -4,12 +4,38 @@ Part 1 checks every shortened hash a CARD.md states (prefix...suffix) against th
 Part 2 checks every full hash recorded in the data manifests, the Questions lane's
 meta.json files and data/e7_prices/SHA256SUMS. Read only: writes nothing but stdout.
 Usage: python3 check_hashes.py [FILINGS_ROOT]      (default ./filings)
+
+A file missing from FILINGS_ROOT is looked up in this repository's results/<exp>/,
+which holds the published copies (for example experiments/E11-8k-returns/grading/joins.csv
+is results/E11-8k-returns/joins.csv). Run without the research tree, it checks those
+copies and lists everything else as not available instead of failing.
 """
-import hashlib, json, os, sys
+import hashlib, json, os, re, sys
 
 F = os.path.join(sys.argv[1] if len(sys.argv) > 1 else "filings", "")
 X = F + "experiments/"
+REPO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "")
 _cache = {}
+
+
+def find(path):
+    """The file itself, else its published copy under results/, else None."""
+    if os.path.exists(path):
+        return path
+    m = re.match(r"experiments/([^/]+)/(?:jev/|grading/)?([^/]+)$", os.path.relpath(path, F))
+    if m:
+        copy = os.path.join(REPO, "results", m[1], m[2])
+        if os.path.exists(copy):
+            return copy
+    return None
+
+
+def load(path):
+    found = find(path)
+    if found is None:
+        print(f"(not available: {os.path.relpath(path, F)})")
+        return None
+    return json.load(open(found))
 
 
 def sha(path):
@@ -50,11 +76,11 @@ CARD = [
 print("## Part 1: hashes stated on the cards")
 print("| exp | file | stated | computed | match |")
 print("|---|---|---|---|---|")
-bad1 = 0
+bad1 = missing1 = 0
 for exp, rel, pre, suf in CARD:
-    p = F + rel
-    if not os.path.exists(p):
-        print(f"| {exp} | {rel} | {pre}…{suf} | MISSING | no |"); bad1 += 1; continue
+    p = find(F + rel)
+    if p is None:
+        print(f"| {exp} | {rel} | {pre}…{suf} | not available | — |"); missing1 += 1; continue
     h = sha(p)
     ok = h.startswith(pre) and h.endswith(suf)
     note = "yes" if ok else "NO"
@@ -68,7 +94,9 @@ checks = []  # (source, path, expected)
 
 
 def manifest(mpath, root):
-    m = json.load(open(mpath))
+    m = load(mpath)
+    if m is None:
+        return
     for f in m["files"]:
         checks.append((os.path.relpath(mpath, F), root + f["path"], f["sha256"]))
 
@@ -80,7 +108,9 @@ manifest(F + "data/e7_member_10k_risk_factors.r2.json", F + "data/e7_sp500_10k/r
 
 
 def meta(mpath, resolve):
-    m = json.load(open(mpath))
+    m = load(mpath)
+    if m is None:
+        return
     for k, v in m.get("sha256", {}).items():
         p = resolve(k)
         if p is None:
@@ -113,31 +143,36 @@ def sig_resolver(k):
 
 
 meta(X + "E7-returns/signals/signals.meta.json", sig_resolver)
-for line in open(F + "data/e7_prices/SHA256SUMS"):
+sums = F + "data/e7_prices/SHA256SUMS"
+for line in open(sums) if os.path.exists(sums) else print("(not available: data/e7_prices/SHA256SUMS)") or []:
     h, p = line.split(None, 1)
     checks.append(("data/e7_prices/SHA256SUMS", F + "data/e7_prices/" + p.strip().lstrip("./").lstrip("*"), h))
 
 summary = {}
 fails = []
 for src, p, h in checks:
-    s = summary.setdefault(src, [0, 0, 0])
+    s = summary.setdefault(src, [0, 0, 0, 0])
     if p.startswith("("):
         s[2] += 1; continue
-    if not os.path.exists(p):
-        s[1] += 1; fails.append((src, p, h, "MISSING")); continue
-    got = sha(p)
+    found = find(p)
+    if found is None:
+        s[3] += 1; continue
+    got = sha(found)
     if got == h: s[0] += 1
     else: s[1] += 1; fails.append((src, p, h, got))
-print("| source | match | fail | not a file |")
-print("|---|---|---|---|")
-for src, (a, b, c) in summary.items():
-    print(f"| `{src}` | {a} | {b} | {c} |")
+print("| source | match | fail | not a file | not available |")
+print("|---|---|---|---|---|")
+for src, (a, b, c, d) in summary.items():
+    print(f"| `{src}` | {a} | {b} | {c} | {d} |")
 for src, p, h, got in fails:
     print(f"FAIL {src}: {os.path.relpath(p, F)} expected {h} got {got}")
-print(f"\nPart 1: {len(CARD) - bad1}/{len(CARD)} match. Part 2: {sum(v[0] for v in summary.values())} match, {len(fails)} fail.")
+print(f"\nPart 1: {len(CARD) - bad1 - missing1}/{len(CARD)} match, {bad1} fail, {missing1} not available."
+      f" Part 2: {sum(v[0] for v in summary.values())} match, {len(fails)} fail,"
+      f" {sum(v[3] for v in summary.values())} not available.")
 print("\n## Computed hashes of grading outputs (no stated hash on the cards)")
 for rel in ["E7-returns/grading/summary.json", "E7-returns/grading/graded_filings.csv",
             "E10-8k-events/grading/summary.json", "E10-8k-events/grading/graded_events.csv",
             "E11-8k-returns/grading/summary.json", "E11-8k-returns/grading/graded_events.csv",
             "E11-8k-returns/grading/summary_v1.json"]:
-    print(f"{sha(X + rel)}  experiments/{rel}")
+    found = find(X + rel)
+    print(f"{sha(found) if found else 'not available':64}  experiments/{rel}")

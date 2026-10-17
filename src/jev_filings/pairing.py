@@ -1,4 +1,4 @@
-"""Each risk factor paired with its most similar prior-year risks (#289).
+"""Each risk factor paired with its most similar prior-year risks (magilliam27/MCI-GRU#289).
 
 Asking a decision model to search last year's whole list in one question is the
 multi-step judgment its own limits page warns about. So code narrows it first:

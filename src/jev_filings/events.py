@@ -1,4 +1,4 @@
-"""8-K events for E10 (#305): what Jev sees, and the baseline it must beat.
+"""8-K events for E10 (magilliam27/MCI-GRU#305): what Jev sees, and the baseline it must beat.
 
 E10 asks how good or bad an 8-K event is for shareholders. This module decides:
 

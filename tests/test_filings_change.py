@@ -1,8 +1,8 @@
-"""Milestone 2 of #289: how each risk factor changed, the word baseline and the grade.
+"""Milestone 2 of magilliam27/MCI-GRU#289: how each risk factor changed, the word baseline and the grade.
 
-Also E4 (#295): changed or not, from the same answers and word shares; and E6
-(#298): the yes/no "did it materially change?" question, three draws per risk;
-and E5 (#299): the five-way question on many companies, each paired on its own.
+Also E4 (magilliam27/MCI-GRU#295): changed or not, from the same answers and word shares; and E6
+(magilliam27/MCI-GRU#298): the yes/no "did it materially change?" question, three draws per risk;
+and E5 (magilliam27/MCI-GRU#299): the five-way question on many companies, each paired on its own.
 
 Jev itself is never called: a fake client answers each Choice in the SDK's
 response shape (``choices[name].choice``, ``.confidence``, ``.probabilities``).
@@ -418,7 +418,7 @@ def test_an_existing_change_sheet_is_kept(tmp_path):
     assert (pd.read_csv(sheet, dtype=str)["change"] == "new").all()
 
 
-# --- E4: changed or not (#295) -------------------------------------------
+# --- E4: changed or not (magilliam27/MCI-GRU#295) -------------------------------------------
 
 
 def test_e4_cuts_are_the_values_frozen_before_its_labels():
@@ -510,7 +510,7 @@ def test_an_unfinished_answers_file_is_refused_and_left_alone(tmp_path):
     assert answers.read_bytes() == torn
 
 
-# --- E6: did it materially change? three draws (#298) ----------------------
+# --- E6: did it materially change? three draws (magilliam27/MCI-GRU#298) ----------------------
 
 
 class FakeNoulClient:
@@ -641,7 +641,7 @@ def test_e6_sends_jev_the_frozen_wording_and_both_criteria(tmp_path, monkeypatch
     assert client.calls[0]["questions"] == {"materially_changed": built[0]}
 
 
-# --- E5: many companies, each paired on its own (#299) ---------------------
+# --- E5: many companies, each paired on its own (magilliam27/MCI-GRU#299) ---------------------
 
 
 def _company_dir(tmp_path: Path) -> Path:

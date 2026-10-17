@@ -1,6 +1,6 @@
-"""The frozen question set, the answer cache and the blind label sheet (#289).
+"""The frozen question set, the answer cache and the blind label sheet (magilliam27/MCI-GRU#289).
 
-Also E6 (#298): a Noul with described outcomes, asked in independent draws.
+Also E6 (magilliam27/MCI-GRU#298): a Noul with described outcomes, asked in independent draws.
 
 Jev itself is never called here: a fake client stands in for the TypeSafe SDK
 and answers in the SDK's response shape (``nouls[name].noul``, ``model``,
@@ -254,7 +254,7 @@ def test_label_sample_is_reproducible_for_a_seed():
     assert first.equals(second)
 
 
-# --- E6 (#298): Noul criteria and independent draws ------------------------
+# --- E6 (magilliam27/MCI-GRU#298): Noul criteria and independent draws ------------------------
 
 TUNED_YES = (
     "Material scope was added or dropped, such as a driver, exposure, product, jurisdiction, "

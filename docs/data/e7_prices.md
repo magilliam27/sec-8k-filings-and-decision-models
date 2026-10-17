@@ -2,9 +2,8 @@
 
 Daily prices from 2012-12-01 to 2026-10-15 for SPY and every ticker run in
 `../e7_sp500_10k/membership/sp500_ticker_runs.csv` (818 runs, 802 tickers),
-delisted names included. The pull used read-only GET calls on the owner's EODHD plan
-(paid monthly, 100,000 calls a day), with about 1,420 price calls and 2 symbol-list
-calls. Nothing here is joined to a filing or a signal. Returns are computed only at
+delisted names included. The pull used read-only GET calls, about 1,420 for prices
+and 2 for symbol lists. Nothing here is joined to a filing or a signal. Returns are computed only at
 grading, per `../../experiments/E7-returns/CARD.md`.
 
 ## Files
@@ -17,7 +16,7 @@ grading, per `../../experiments/E7-returns/CARD.md`.
 | `symbol_list_US_active.json.gz`, `symbol_list_US_delisted.json.gz` | EODHD `/api/exchange-symbol-list/US`, with and without `delisted=1`, as returned. |
 | `vendor_body_sha256.csv` | SHA-256 of each vendor response before gzip. |
 | `SHA256SUMS` | SHA-256 of every file in this folder. |
-| `pull_prices.py` | The script that made it. The proxy adds the key, so it sends no `api_token`. |
+| `pull_prices.py` | The script that made it, published here as `scripts/data/pull_eodhd_prices.py` (key from `EODHD_API_KEY`). |
 
 ## How a symbol was chosen
 

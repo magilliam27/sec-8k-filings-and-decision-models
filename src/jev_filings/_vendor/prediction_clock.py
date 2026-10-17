@@ -18,7 +18,7 @@ _CLOCK_TIME = re.compile(r"^([01]\d|2[0-3]):[0-5]\d$")
 class PredictionClock:
     """The time of day, in one timezone, at which the forecast for date D is made.
 
-    Production is 20:00 America/New_York (#225 ruling 1); a fixture may declare its own.
+    Production is 20:00 America/New_York (magilliam27/MCI-GRU#225 ruling 1); a fixture may declare its own.
     """
 
     time: str = "20:00"

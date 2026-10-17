@@ -21,11 +21,11 @@ Recomputed from `CARD.md`'s frozen design and the raw files, with my own code (`
 
 Bootstrap: 10,000 draws of whole cells within item group, seed 311 (numpy default_rng). Spearman uses average-tie ranks. Every per-event 1-, 2- and 10-day return matches `graded_events.csv` exactly (largest difference 0).
 
-## Hand checks (raw adjusted closes; 2-day = day +1 / day −1 − 1, minus SPY's)
+## Hand checks (from adjusted closes; 2-day = day +1 / day −1 − 1, minus SPY's)
 
-1. **very_bad**, SRCL (Stericycle) 0001193125-16-662174, negative group, accepted 2016-07-28 16:01:55 ET (after the close). Day −1 2016-07-28: SRCL 105.93, SPY 184.1893. Day 0 2016-07-29: 90.27, 184.4867. Day +1 2016-08-01: 89.37, 184.3338. Stock −15.633%, SPY +0.078%, **excess −15.711%**. Rating score −1.99.
-2. **very_good**, ANDV (Andeavor) 0001193125-14-436515, deals group, accepted 2014-12-08 17:14:04 ET. Day −1 2014-12-08: 67.4627, SPY 169.3048. Day 0 2014-12-09: 70.6783, 169.19. Day +1 2014-12-10: 68.3171, 166.4777. Stock +1.266%, SPY −1.670%, **excess +2.936%**. Score +1.48.
-3. **neutral**, TPR (Tapestry) 0001157523-19-001415, officer group, accepted 2019-06-19 06:45:35 ET (before the open, so day 0 is the same day). Day −1 2019-06-18: 25.4055, SPY 262.075. Day 0 2019-06-19: 25.548, 262.6665. Day +1 2019-06-20: 25.8833, 265.1762. Stock +1.881%, SPY +1.183%, **excess +0.697%**. Score +0.08.
+1. **very_bad**, SRCL (Stericycle) 0001193125-16-662174, negative group, accepted 2016-07-28 16:01:55 ET (after the close). Day −1 2016-07-28, day 0 2016-07-29, day +1 2016-08-01. Stock −15.633%, SPY +0.078%, **excess −15.711%**. Rating score −1.99.
+2. **very_good**, ANDV (Andeavor) 0001193125-14-436515, deals group, accepted 2014-12-08 17:14:04 ET. Day −1 2014-12-08, day 0 2014-12-09, day +1 2014-12-10. Stock +1.266%, SPY −1.670%, **excess +2.936%**. Score +1.48.
+3. **neutral**, TPR (Tapestry) 0001157523-19-001415, officer group, accepted 2019-06-19 06:45:35 ET (before the open, so day 0 is the same day). Day −1 2019-06-18, day 0 2019-06-19, day +1 2019-06-20. Stock +1.881%, SPY +1.183%, **excess +0.697%**. Score +0.08.
 
 All three match my pipeline value and the Lead's per-event value.
 

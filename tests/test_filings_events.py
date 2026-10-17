@@ -1,4 +1,4 @@
-"""E10 (#305): what Jev reads for an 8-K event, the baseline, the scores and the run.
+"""E10 (magilliam27/MCI-GRU#305): what Jev reads for an 8-K event, the baseline, the scores and the run.
 
 Nothing here calls Jev: a fake client answers, and records every call so the
 tests can check what was asked and that cached answers are never asked again.

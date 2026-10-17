@@ -27,9 +27,8 @@ Verizon (`vz`) and NextEra Energy (`nee`): 127 filings, 3,164 risks.
   `<key>_risk_factors.meta.json`.
 - `risk_id` is `<accession number>#<position>`, unique across all companies and
   fixed for a given filing and parser.
-- Produced by `scripts/data/export_sec_risk_factors.py` on branch
-  `claude/project-thread-abwj2s` at commit 219d9c0 (issue #304, pull request
-  #300), User-Agent "Your Name you@example.com". The same code reproduces
+- Produced by `scripts/data/export_sec_risk_factors.py` in the MCI-GRU repository at commit 219d9c0 (issue magilliam27/MCI-GRU#304, pull request
+  magilliam27/MCI-GRU#300), User-Agent "Your Name you@example.com". The same code reproduces
   Alphabet's and E5's published risk files unchanged.
 
 ## What to know when reading it

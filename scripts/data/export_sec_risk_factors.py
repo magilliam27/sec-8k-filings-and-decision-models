@@ -1,4 +1,4 @@
-"""Pull companies' 10-K risk factors from SEC EDGAR (#289, #297).
+"""Pull companies' 10-K risk factors from SEC EDGAR (magilliam27/MCI-GRU#289, magilliam27/MCI-GRU#297).
 
 Run from the repository root wherever EDGAR is reachable (since 2026-10-13 that
 includes the project's cloud environment). SEC asks every automated client to
@@ -30,7 +30,7 @@ What it writes under ``--package-root/filings``, for each company's key (here
 - ``alphabet_extraction_report.csv``: per filing, the encoding read, how many
   risks and categories were found, and how many check findings it raised.
 - ``alphabet_extraction_checks.csv``: one row per finding of the checks in
-  ``jev_filings.checks`` (#292), run on every filing; empty when clean.
+  ``jev_filings.checks`` (magilliam27/MCI-GRU#292), run on every filing; empty when clean.
 - ``alphabet_risk_factors.meta.json``: provenance.
 
 A filing whose Item 1A cannot be read, or that fails a check, is reported and

@@ -1,4 +1,4 @@
-"""The EDGAR filing index and when each filing was knowable (#289).
+"""The EDGAR filing index and when each filing was knowable (magilliam27/MCI-GRU#289).
 
 What this module decides:
 
@@ -17,7 +17,7 @@ What this module decides:
   submissions file, and the Q4 2025 one 16:01:37 against
   ``2026-02-04T21:01:37.000Z``. A filing first counts for the forecast of the
   first session whose prediction-clock instant is at or after its acceptance
-  (#225: equality counts).
+  (magilliam27/MCI-GRU#225: equality counts).
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-"""E7's per-report change signals for the returns test (#310).
+"""E7's per-report change signals for the returns test (magilliam27/MCI-GRU#310).
 
 Each member 10-K is compared with its pair partner, the company's previous
 report by acceptance time, as the research lead's frozen design says:

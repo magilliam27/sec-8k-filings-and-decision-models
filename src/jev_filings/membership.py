@@ -1,4 +1,4 @@
-"""S&P 500 membership over time, and which 10-Ks a membership calls for (#309).
+"""S&P 500 membership over time, and which 10-Ks a membership calls for (magilliam27/MCI-GRU#309).
 
 Experiment E7 tests whether what Jev reads in 10-Ks predicts returns, on the
 companies that were in the S&P 500 when each report was filed. What this module

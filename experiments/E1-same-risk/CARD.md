@@ -2,7 +2,7 @@
 
 **Status: graded 13 October 2026. Verdict: stop rule triggered, rethink.** Jev got 92.5% of the owner's 200 labels right; the TF-IDF top match got 94.5%.
 
-Card written after the fact (15 October) from the frozen files and the grading output, so it records what was fixed in advance rather than being the advance record itself. Tracker: issue #289, merged in PR #290.
+Card written after the fact (15 October) from the frozen files and the grading output, so it records what was fixed in advance rather than being the advance record itself. Tracker: issue magilliam27/MCI-GRU#289, merged in PR magilliam27/MCI-GRU#290.
 
 ## Design (fixed before labels)
 
@@ -34,7 +34,7 @@ Card written after the fact (15 October) from the frozen files and the grading o
 
 ## Data defects in v1
 
-The first was caught before scoring; the other three were found after it. All are fixed with tests in PR #290. Leaving out the affected labelled pairs does not change the verdict (Jev 92.9%, TF-IDF 95.4% without the 2018 pairs).
+The first was caught before scoring; the other three were found after it. All are fixed with tests in PR magilliam27/MCI-GRU#290. Leaving out the affected labelled pairs does not change the verdict (Jev 92.9%, TF-IDF 95.4% without the 2018 pairs).
 
 | Defect | Years | Labelled pairs touched |
 |---|---|---|

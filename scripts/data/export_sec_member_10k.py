@@ -1,4 +1,4 @@
-"""Pull S&P 500 members' 10-K risk factors from SEC EDGAR (#309).
+"""Pull S&P 500 members' 10-K risk factors from SEC EDGAR (magilliam27/MCI-GRU#309).
 
 Experiment E7 asks whether what Jev reads in 10-Ks predicts returns. It needs
 every 10-K filed while its company was in the S&P 500, each with the report

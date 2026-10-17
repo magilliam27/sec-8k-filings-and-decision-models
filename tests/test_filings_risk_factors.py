@@ -1,4 +1,4 @@
-"""Item 1A of a 10-K, cut into individual risk factors (#289).
+"""Item 1A of a 10-K, cut into individual risk factors (magilliam27/MCI-GRU#289).
 
 The fixture is shaped like an inline-XBRL 10-K: a hidden XBRL header, a table of
 contents that also names Item 1A, bold category headings, bold-italic risk

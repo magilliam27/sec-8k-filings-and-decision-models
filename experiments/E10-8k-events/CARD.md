@@ -35,7 +35,7 @@ The Data lane's count from EDGAR's filing index: about 436 qualifying 8-Ks. Offi
 
 ## Events as published (16 Oct 04:20Z, before any label or Jev answer)
 
-- **Data:** `e10_8k_events` r1 (manifest `data/e10_8k_events.r1.json`; code bc04cc9, PR #300, issue #308; `8k_events.jsonl` sha256 4ef25543…0a581). 436 events, no check findings; 24 texts cut at 20,000 characters (3 inside the item text); 219 with a press release. Events filed in January or February can only use the previous year's 10-K for revenue (58 events).
+- **Data:** `e10_8k_events` r1 (manifest `data/e10_8k_events.r1.json`; code bc04cc9, PR magilliam27/MCI-GRU#300, issue magilliam27/MCI-GRU#308; `8k_events.jsonl` sha256 4ef25543…0a581). 436 events, no check findings; 24 texts cut at 20,000 characters (3 inside the item text); 219 with a press release. Events filed in January or February can only use the previous year's 10-K for revenue (58 events).
 - **Groups:** officer changes 333 (item 5.02 with no other listed item), deals 86 (1.01 or 2.01), negative-leaning 17. No auditor change, restatement or bankruptcy occurred, so those parts of the rubric and baseline are never used. Bootstrap cells are company by group; the negative cells hold 1 to 4 events.
 - **Ids:** K001 to K436 in random order (seed 310), so the order reveals no company or group. Files: `sample_sheet.csv` (blind: company, item codes with titles, prior revenue, prior-90-day items and text, exactly as Jev's state builds them; sha256 fe13b88b…e6a9), `events.csv` (event ids only, for Jev; 4660e48f…da80) and `grading/design.csv` (Lead only; c663706e…6fa).
 - **Reviewers' wording:** the option texts frozen in `configs/filings/questions_v5.yaml` (3a1be7f), word for word, so reviewers and Jev read the same rubric.

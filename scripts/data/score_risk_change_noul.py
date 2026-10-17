@@ -1,4 +1,4 @@
-"""Did this risk materially change? E6's yes/no question, three draws per risk (#298).
+"""Did this risk materially change? E6's yes/no question, three draws per risk (magilliam27/MCI-GRU#298).
 
 Two steps, the first free::
 

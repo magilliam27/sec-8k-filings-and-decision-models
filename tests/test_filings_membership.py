@@ -1,4 +1,4 @@
-"""S&P 500 membership spells, name checks and the 10-Ks a membership calls for (#309)."""
+"""S&P 500 membership spells, name checks and the 10-Ks a membership calls for (magilliam27/MCI-GRU#309)."""
 
 from __future__ import annotations
 
@@ -240,7 +240,7 @@ def test_no_other_company_follows(other):
     assert successors("anchor", [anchor, other]) == ["anchor"]
 
 
-# The company table and the members' pull, against a fake EDGAR (#309).
+# The company table and the members' pull, against a fake EDGAR (magilliam27/MCI-GRU#309).
 
 AGENT = "Your Name you@example.com"
 

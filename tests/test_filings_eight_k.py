@@ -1,4 +1,4 @@
-"""8-K events, their item sections and their filing-time context (#308, #311).
+"""8-K events, their item sections and their filing-time context (magilliam27/MCI-GRU#308, magilliam27/MCI-GRU#311).
 
 The module tests feed the functions 8-Ks shaped like the ones E10's ten companies
 filed; the export tests drive the whole pull against a fake EDGAR.
@@ -489,7 +489,7 @@ def test_a_listed_item_with_no_section_blocks_the_manifest(tmp_path, capsys):
     )
 
 
-# The acceptance time a filing's index page shows, and the members' pull (#311).
+# The acceptance time a filing's index page shows, and the members' pull (magilliam27/MCI-GRU#311).
 
 
 def _index_page(accepted: str, *exhibits: tuple[str, str]) -> str:

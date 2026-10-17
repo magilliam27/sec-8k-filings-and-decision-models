@@ -1,4 +1,4 @@
-"""Grade Jev's same-risk answers against the hand labels (#289).
+"""Grade Jev's same-risk answers against the hand labels (magilliam27/MCI-GRU#289).
 
 Run after ``score_risk_factor_pairs.py --score`` has scored every labelled pair::
 

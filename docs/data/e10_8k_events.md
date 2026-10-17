@@ -34,9 +34,8 @@ change) or 4.02 (restatement).
   file name, or null), `cik`, `document_url`, `document_sha256`.
 - `8k_events_checks.csv`: check findings (empty). `8k_events.meta.json`: pull
   provenance and the counts above.
-- Produced by `scripts/data/export_sec_8k_events.py` on branch
-  `claude/project-thread-abwj2s` at commit bc04cc9 (issue #308, pull request
-  #300), User-Agent "Your Name you@example.com".
+- Produced by `scripts/data/export_sec_8k_events.py` in the MCI-GRU repository at commit bc04cc9 (issue magilliam27/MCI-GRU#308, pull request
+  magilliam27/MCI-GRU#300), User-Agent "Your Name you@example.com".
 
 ## What the checks cover
 

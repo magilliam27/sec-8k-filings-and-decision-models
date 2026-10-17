@@ -34,8 +34,8 @@ Exploratory follow-ups to E1, not pre-registered: AI reviewers re-judged 44 pair
 
 | Version | Where | Built at | Known defects |
 |---|---|---|---|
-| ten r1 | `data/ten_companies_10k/` (Data lane) | 2ef33e5, 15 Oct, issue #297 | None known. 130 10-Ks (JPM, DAL, XOM, PFE, WMT, BA, MSFT, KO, UNH, CAT; FY2013 to FY2025), 3,455 risks, all six checks pass. Only 2.4% of risks have a closest prior match under 0.25 similarity, so these companies carry risks over almost as steadily as Alphabet. Used by E5 |
-| r1 | `data/alphabet_10k/` (Data lane) | c5934e1, 15 Oct, draft PR #294 | None known. Five automatic checks pass on all 13 years; 393 risks (the 2018 heading fix splits one); bullets kept in every year. Not used by any experiment yet |
+| ten r1 | `data/ten_companies_10k/` (Data lane) | 2ef33e5, 15 Oct, issue magilliam27/MCI-GRU#297 | None known. 130 10-Ks (JPM, DAL, XOM, PFE, WMT, BA, MSFT, KO, UNH, CAT; FY2013 to FY2025), 3,455 risks, all six checks pass. Only 2.4% of risks have a closest prior match under 0.25 similarity, so these companies carry risks over almost as steadily as Alphabet. Used by E5 |
+| r1 | `data/alphabet_10k/` (Data lane) | c5934e1, 15 Oct, draft PR magilliam27/MCI-GRU#294 | None known. Five automatic checks pass on all 13 years; 393 risks (the 2018 heading fix splits one); bullets kept in every year. Not used by any experiment yet |
 | v2 | `jev_pilot/sec_v2/filings/` | 3ec507c, 13 Oct | 2018 heading over the 600-character limit merges two risks (handled in E2 by excluding 4 rows) |
 | v1 | `jev_pilot/sec/` | 9502de7, 13 Oct | 2017 split heading, page numbers 2023 to 2025, the 2018 heading |
 
@@ -63,7 +63,7 @@ The Alphabet versions hold its 13 10-Ks, FY2013 to FY2025. The Data lane publish
 | 15 Oct | Grade E2 on the AI reviewers' labels despite the 11-of-20 spot check (an override of the 15 bar), decided before any Jev answer existed | Owner |
 | 15 Oct | Settle E2's 9 spot-check disagreements personally (replaced the same hour by the override above); the rulings define "material" for a new key (E3) | Owner |
 | 15 Oct | Trust bar for E2's AI answer key: the owner's 20 must match it on at least 15 (set by the Lead before the labels came back; the owner did not object) | Lead |
-| 15 Oct | Four lanes; the Data lane improves the parser only, no other companies yet; merge PR #290 | Owner |
+| 15 Oct | Four lanes; the Data lane improves the parser only, no other companies yet; merge PR magilliam27/MCI-GRU#290 | Owner |
 | 14 Oct | The owner's labels must be their own blind call: both texts in full, nothing highlighted, no AI answers | Owner |
 | 13 Oct | E2 answer key: AI labels on all 80 plus the owner's blind spot-check of 20 | Owner |
 | 13 Oct | After E1, test how a risk changed rather than stop | Owner |

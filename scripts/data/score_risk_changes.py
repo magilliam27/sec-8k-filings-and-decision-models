@@ -1,4 +1,4 @@
-"""Ask Jev how each 10-K risk factor changed from last year, and grade it (#289, milestone 2).
+"""Ask Jev how each 10-K risk factor changed from last year, and grade it (magilliam27/MCI-GRU#289, milestone 2).
 
 Three steps, run in this order so the hand labels stay blind::
 

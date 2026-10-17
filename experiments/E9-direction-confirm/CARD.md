@@ -22,7 +22,7 @@
 
 ## Sample as drawn (16 Oct 03:40Z, before any label or Jev answer)
 
-- **Data:** `e9_ten_companies_10k_risk_factors` r1 (PR #300, issue #304), 127 10-Ks and 3,164 risks, all six checks pass. Johnson & Johnson starts at fiscal 2016 (its 2013–2015 Item 1A points to an exhibit), so its pairs run from 2017. That makes 2,927 pairs, 1,352 of them candidates.
+- **Data:** `e9_ten_companies_10k_risk_factors` r1 (PR magilliam27/MCI-GRU#300, issue magilliam27/MCI-GRU#304), 127 10-Ks and 3,164 risks, all six checks pass. Johnson & Johnson starts at fiscal 2016 (its 2013–2015 Item 1A points to an exhibit), so its pairs run from 2017. That makes 2,927 pairs, 1,352 of them candidates.
 - **Draw** as carded: 25 candidates and 5 others per company, seed 309, ids J001 to J300 in random order. Every company had at least 25 candidates, so nothing was reallocated. Weights run from 2.5 (Chevron candidates) to 103 (NextEra others) and sum to 2,927. 24 items have identical texts; 15 have similarity under 0.25.
 - **Files:** `sample_sheet.csv` (blind, sha256 367e5d6a…), `pairs.csv` (pair ids only, for Jev, 3c64aa87…), `population_pairs.csv` (73bea54a…), and `grading/design.csv` (Lead only, d97f39e0…).
 

@@ -1,4 +1,4 @@
-"""Blind label sheets, yes/no and choice answers, AI reviewers and agreement (#291).
+"""Blind label sheets, yes/no and choice answers, AI reviewers and agreement (magilliam27/MCI-GRU#291).
 
 The Labelling desk builds answer keys for filings experiments. Two rules shape
 everything here:

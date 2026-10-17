@@ -1,4 +1,4 @@
-"""Each risk factor paired with its most similar prior-year risks (#289)."""
+"""Each risk factor paired with its most similar prior-year risks (magilliam27/MCI-GRU#289)."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""E7: each S&P 500 member 10-K's change signals for the returns test (#310).
+"""E7: each S&P 500 member 10-K's change signals for the returns test (magilliam27/MCI-GRU#310).
 
 The research lead's frozen design (``E7-returns/CARD.md``) asks for four signals
 per member report, keyed by accession, each against the company's previous

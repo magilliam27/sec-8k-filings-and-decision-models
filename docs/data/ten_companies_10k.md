@@ -13,8 +13,7 @@ Item 1A risk factors from every 10-K for fiscal 2013 to 2025 of JPMorgan Chase
   `<key>_extraction_checks.csv` (all empty) and `<key>_risk_factors.meta.json`.
 - `risk_id` is `<accession number>#<position>`, unique across all companies and
   fixed for a given filing and parser.
-- Produced by `scripts/data/export_sec_risk_factors.py` on branch
-  `claude/project-thread-abwj2s` at commit e7ea527 (issue #297), User-Agent
+- Produced by `scripts/data/export_sec_risk_factors.py` in the MCI-GRU repository at commit e7ea527 (issue magilliam27/MCI-GRU#297), User-Agent
   "Your Name you@example.com".
 
 ## What to know when reading it

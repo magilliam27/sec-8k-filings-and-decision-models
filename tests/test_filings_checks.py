@@ -1,7 +1,7 @@
-"""Automatic checks on one filing's Item 1A extraction (#292).
+"""Automatic checks on one filing's Item 1A extraction (magilliam27/MCI-GRU#292).
 
 Each test feeds the parser a filing shaped like one of the defects found by hand
-in Alphabet's 10-Ks during #289 (or the remaining way a risk can vanish) and
+in Alphabet's 10-Ks during magilliam27/MCI-GRU#289 (or the remaining way a risk can vanish) and
 asserts that the matching check, and only it, fires. The fixture is the same
 inline-XBRL-shaped 10-K the parser's own tests use.
 """

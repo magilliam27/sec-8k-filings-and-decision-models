@@ -59,7 +59,7 @@ baselines were frozen with their hashes on the card.
 negative-leaning 1,678, auditor changes 68. Jev cost 55.2M input tokens,
 about $2.32.
 
-| Average rank correlation, within item group and year | Jev's rating | Word count | Jev minus words |
+| Average rank correlation, within item group and year | Jev's rating | Word tone | Jev minus word tone |
 |---|---|---|---|
 | **Main: 2 days (day −1 close to day +1)** | **+0.025 (+0.015 to +0.034)** | −0.015 (−0.028 to −0.004) | **+0.040 (+0.026 to +0.055)** |
 | Day 0 alone | +0.039 (+0.028 to +0.049) | −0.012 | +0.051 (+0.036 to +0.068) |
@@ -113,7 +113,7 @@ correlation; here it is +0.004. 10-Ks change slowly and are heavily read;
   table, see the card)
 - Pulling members' 8-Ks: `scripts/data/build_sp500_members.py`, then
   `scripts/data/export_sec_member_8k.py`
-- Prices: `scripts/data/export_eodhd_pit_prices.py` (needs `EODHD_API_KEY`)
+- Prices: `scripts/data/pull_eodhd_prices.py` (needs `EODHD_API_KEY`)
 - E7 signals and Jev scoring: `scripts/data/score_e7_signals.py`,
   `src/jev_filings/report_signals.py`; grading `grading/scripts/e7/grade_e7.py`
 - An independent recheck of E11 with separately written code:

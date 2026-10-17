@@ -1,4 +1,4 @@
-"""The frozen question set, the answer cache and the blind label sheet (#289).
+"""The frozen question set, the answer cache and the blind label sheet (magilliam27/MCI-GRU#289).
 
 What this module decides:
 
@@ -36,7 +36,7 @@ if TYPE_CHECKING:
 
     from jev_filings.pairing import RiskPair
 
-#: Milestone 1 of #289 asks one Noul; milestone 2 asks one Choice.
+#: Milestone 1 of magilliam27/MCI-GRU#289 asks one Noul; milestone 2 asks one Choice.
 QUESTION_KINDS = frozenset({"noul", "choice"})
 _VERSIONED_MODEL = re.compile(r"^jev-\d+\.\d+\.\d+$")
 LABEL_COLUMNS = (

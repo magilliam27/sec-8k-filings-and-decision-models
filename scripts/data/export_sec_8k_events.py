@@ -1,4 +1,4 @@
-"""Pull companies' 8-K events from SEC EDGAR, with filing-time context (#308).
+"""Pull companies' 8-K events from SEC EDGAR, with filing-time context (magilliam27/MCI-GRU#308).
 
 Run from the repository root wherever EDGAR is reachable::
 

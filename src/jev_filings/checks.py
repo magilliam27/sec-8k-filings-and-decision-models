@@ -1,8 +1,8 @@
-"""Automatic checks on one filing's Item 1A extraction (#292).
+"""Automatic checks on one filing's Item 1A extraction (magilliam27/MCI-GRU#292).
 
 Each check is the general form of a defect first found by hand in Alphabet's
-10-Ks during #289, so that the next filing to show it is caught on the pull
-rather than after scoring. #297 widened them to ten more companies, whose
+10-Ks during magilliam27/MCI-GRU#289, so that the next filing to show it is caught on the pull
+rather than after scoring. magilliam27/MCI-GRU#297 widened them to ten more companies, whose
 layouts showed which parts were Alphabet's habits rather than rules:
 
 - ``title_read_as_risk``: a section, category or introduction title became a
@@ -40,7 +40,7 @@ layouts showed which parts were Alphabet's habits rather than rules:
   or under an Exxon Mobil category, is not text without a heading.
 - ``section_text_not_in_risks``: the risks hold less than ``MIN_RISK_SHARE`` of
   the section's words, and at least ``MIN_LOST_WORDS`` are missing. The checks above look at what was read; this one counts
-  what was not. In the S&P 500 pull (#309) about one report in fifty passed
+  what was not. In the S&P 500 pull (magilliam27/MCI-GRU#309) about one report in fifty passed
   every other check while most of its section was lost: Marriott's fiscal 2018
   risks run their headings into the text, the default reading found one
   category over them, and its one risk held 441 of 9,335 words. Introduction

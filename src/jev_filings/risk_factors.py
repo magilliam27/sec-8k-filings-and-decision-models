@@ -1,4 +1,4 @@
-"""Item 1A of a 10-K, cut into individual risk factors (#289).
+"""Item 1A of a 10-K, cut into individual risk factors (magilliam27/MCI-GRU#289).
 
 What this module decides:
 
@@ -55,7 +55,7 @@ emphasised paragraph too long to be a heading, read as body text; a heading
 after the first risk with no text under it; text after the first risk with no
 heading over it, outside introduction; and the page numbers it dropped.
 ``jev_filings.checks`` turns those, and the output itself, into per-filing
-checks (#292).
+checks (magilliam27/MCI-GRU#292).
 """
 
 from __future__ import annotations
@@ -519,7 +519,7 @@ class SectionReading:
 
     @property
     def unclosed_heading(self) -> str | None:
-        """The last lost heading, kept for readers of #292's field."""
+        """The last lost heading, kept for readers of magilliam27/MCI-GRU#292's field."""
         return self.lost_headings[-1] if self.lost_headings else None
 
     def risk_factors(self, *, accession_number: str, fiscal_year: int) -> list[RiskFactor]:

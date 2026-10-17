@@ -1,4 +1,4 @@
-"""The filings pull and the pair scoring, end to end with canned EDGAR and Jev (#289)."""
+"""The filings pull and the pair scoring, end to end with canned EDGAR and Jev (magilliam27/MCI-GRU#289)."""
 
 from __future__ import annotations
 
@@ -289,7 +289,7 @@ def test_every_filing_is_checked_and_a_clean_pull_lists_no_finding(tmp_path):
 
 
 def test_a_failed_check_is_reported_and_blocks_the_manifest(tmp_path, capsys):
-    # A page number left in a body, as Alphabet's "11." ones were before #289's fix.
+    # A page number left in a body, as Alphabet's "11." ones were before magilliam27/MCI-GRU#289's fix.
     responses = _edgar()
     url = "https://www.sec.gov/Archives/edgar/data/1288776/000128877615000008/g14.htm"
     responses[url] = responses[url].replace(

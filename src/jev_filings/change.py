@@ -1,4 +1,4 @@
-"""How each risk factor changed from last year, asked as one Choice (#289, milestone 2).
+"""How each risk factor changed from last year, asked as one Choice (magilliam27/MCI-GRU#289, milestone 2).
 
 Milestone 1 asked whether two risk factors are the same risk. Jev did not beat
 word overlap there, but the disputed pairs showed the more useful question is

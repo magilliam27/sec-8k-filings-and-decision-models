@@ -56,7 +56,7 @@ This replaces the proposed design above wherever they differ.
 - The owner's choice on the decision card.
 - An EODHD key or another daily-price source for about 500 tickers, 2014 to 2026.
 - ~~A point-in-time S&P 500 membership list~~: decided 16 Oct 03:50Z (see Membership); the Data lane is pulling.
-- ~~Whether EODHD carries delisted US tickers~~: yes (checked 16 Oct 04:16Z, `data/e7_prep/eodhd_check.md`). The key works from new sessions when `api_token` is left out of the URL (the proxy adds it); delisted CELG and TWX return prices, and the delisted symbol list has 60,432 symbols. The plan allows 100,000 calls a day. The repo's price puller always sends `api_token`, so it needs a small change before it runs in the cloud.
+- ~~Whether EODHD carries delisted US tickers~~: yes (checked 16 Oct 04:16Z, `data/e7_prep/eodhd_check.md`). Delisted CELG and TWX return prices, and the delisted symbol list has 60,432 symbols.
 
 ## Result
 

@@ -1,4 +1,4 @@
-"""Build the S&P 500 company table for the members' 10-K pull, every mapping checked by name (#309).
+"""Build the S&P 500 company table for the members' 10-K pull, every mapping checked by name (magilliam27/MCI-GRU#309).
 
 Experiment E7 reads the 10-Ks of companies while they were in the S&P 500. The
 membership comes from dated member lists of tickers; this script turns each

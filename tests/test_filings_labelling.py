@@ -1,4 +1,4 @@
-"""The Labelling desk (#291): label sets, blind sheets, AI reviewers, agreement.
+"""The Labelling desk (magilliam27/MCI-GRU#291): label sets, blind sheets, AI reviewers, agreement.
 
 No subagent and no labelling page runs here: reviewer answers and page label
 documents are written by hand in the shapes those produce.

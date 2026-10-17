@@ -1,4 +1,4 @@
-"""The companies whose 10-Ks the filings pull reads, and how each lays out Item 1A (#297).
+"""The companies whose 10-Ks the filings pull reads, and how each lays out Item 1A (magilliam27/MCI-GRU#297).
 
 A filer is one company, under every CIK it has filed as: Alphabet took over
 Google Inc.'s reports in 2015, and Exxon Mobil's reports moved to a new holding
@@ -12,7 +12,7 @@ added here is read with the default until its filings show otherwise.
 
 The ten companies after Alphabet are those experiment E5 asked for: one or two
 per sector, each a 10-K filer through the whole window. The ten after those are
-experiment E9's (#304), chosen the same way. American Airlines Group filed as
+experiment E9's (magilliam27/MCI-GRU#304), chosen the same way. American Airlines Group filed as
 AMR Corporation until the 2013 merger under the same CIK, so that one CIK covers
 every year.
 

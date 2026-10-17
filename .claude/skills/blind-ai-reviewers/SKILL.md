@@ -5,7 +5,7 @@ description: Run the three blind AI reviewers that label a filings sheet (10-K r
 
 # Three blind AI reviewers
 
-The Labelling desk's fixed step for an AI answer key (#291). The owner accepted
+The Labelling desk's fixed step for an AI answer key (magilliam27/MCI-GRU#291). The owner accepted
 three independent AI reviewers as a stand-in for hand labels when their time is
 short, provided the reviewers are blind and their answers are checked against a
 blind spot-check of the owner's own.

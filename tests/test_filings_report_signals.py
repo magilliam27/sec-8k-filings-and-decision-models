@@ -1,4 +1,4 @@
-"""E7 (#310): each member 10-K's change signals against its pair partner, and the run.
+"""E7 (magilliam27/MCI-GRU#310): each member 10-K's change signals against its pair partner, and the run.
 
 Nothing here calls Jev: a fake client answers, and records every call so the
 tests can check that only flagged risks are asked and cached answers never again.

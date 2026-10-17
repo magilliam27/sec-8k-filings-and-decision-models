@@ -1,4 +1,4 @@
-"""Jev's same-risk answers graded against the hand labels (#289).
+"""Jev's same-risk answers graded against the hand labels (magilliam27/MCI-GRU#289).
 
 What this module decides:
 

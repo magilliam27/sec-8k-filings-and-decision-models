@@ -1,4 +1,4 @@
-"""Changed or not: E4's two-way call for every risk, from Jev's E2 answers (#295).
+"""Changed or not: E4's two-way call for every risk, from Jev's E2 answers (magilliam27/MCI-GRU#295).
 
 E4 asks whether each Alphabet risk materially changed from its closest
 prior-year risk. It spends nothing on Jev: the five-way E2 question was already

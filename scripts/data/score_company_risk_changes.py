@@ -1,4 +1,4 @@
-"""E5: the frozen five-way change question on many companies' 10-K risks (#299).
+"""E5: the frozen five-way change question on many companies' 10-K risks (magilliam27/MCI-GRU#299).
 
 Each company's risk file is paired on its own, so a risk is only ever compared
 with its own company's prior-year risks (the pairing groups by fiscal year

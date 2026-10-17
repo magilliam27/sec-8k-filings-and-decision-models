@@ -1,4 +1,4 @@
-"""Pair each 10-K risk factor with last year's, then ask Jev whether each pair is the same risk (#289).
+"""Pair each 10-K risk factor with last year's, then ask Jev whether each pair is the same risk (magilliam27/MCI-GRU#289).
 
 Two steps, run in this order so the hand labels stay blind::
 

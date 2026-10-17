@@ -1,4 +1,4 @@
-"""The Labelling desk: blind sheets, the labelling page, three AI reviewers, agreement (#291).
+"""The Labelling desk: blind sheets, the labelling page, three AI reviewers, agreement (magilliam27/MCI-GRU#291).
 
 One labels folder per sheet, normally ``filings/experiments/<name>/labels/`` in
 the project's shared folder. Steps, in order::

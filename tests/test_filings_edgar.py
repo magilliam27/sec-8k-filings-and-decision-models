@@ -1,4 +1,4 @@
-"""The EDGAR filing index and when each filing was knowable (#289).
+"""The EDGAR filing index and when each filing was knowable (magilliam27/MCI-GRU#289).
 
 The pull needs EDGAR; these tests drive the same functions with submissions
 blocks shaped like EDGAR's, and with the two acceptance timestamps that were
@@ -63,7 +63,7 @@ def test_filing_accepted_after_the_clock_counts_the_next_session():
 
 
 def test_filing_accepted_exactly_at_the_clock_counts_that_session():
-    """#225: equality counts."""
+    """magilliam27/MCI-GRU#225: equality counts."""
     clock = PredictionClock()
     accepted = clock.at("2026-02-04")
     assert first_forecast_session(accepted, ["2026-02-04", "2026-02-05"], clock) == "2026-02-04"

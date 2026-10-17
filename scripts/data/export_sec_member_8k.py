@@ -1,4 +1,4 @@
-"""Pull S&P 500 members' 8-K events from SEC EDGAR, with filing-time context (#311).
+"""Pull S&P 500 members' 8-K events from SEC EDGAR, with filing-time context (magilliam27/MCI-GRU#311).
 
 An 8-K returns test needs every event a company reported while it was in the
 S&P 500. This pull applies E10's 8-K contract (``export_sec_8k_events``) to the

@@ -1,4 +1,4 @@
-"""Jev's answers graded against the hand labels (#289)."""
+"""Jev's answers graded against the hand labels (magilliam27/MCI-GRU#289)."""
 
 from __future__ import annotations
 

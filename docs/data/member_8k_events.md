@@ -56,9 +56,8 @@ split; `release` on each event).
 - `membership/`: the member table the pull read (v2, 753 companies), its
   ticker runs, the manual name rows and its build record. This is a corrected
   version of `../e7_sp500_10k/membership/`; see "Member table" below.
-- Produced by `scripts/data/export_sec_member_8k.py` on branch
-  `claude/project-thread-abwj2s` at commit e502416 (issue #311, pull request
-  #300), User-Agent "Your Name you@example.com". Documents were downloaded on
+- Produced by `scripts/data/export_sec_member_8k.py` in the MCI-GRU repository at commit e502416 (issue magilliam27/MCI-GRU#311, pull request
+  magilliam27/MCI-GRU#300), User-Agent "Your Name you@example.com". Documents were downloaded on
   16 October 12:36Z to 14:00Z (37,860 requests) and the final run re-read them
   from that cache at 14:10Z.
 

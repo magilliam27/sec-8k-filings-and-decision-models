@@ -1,4 +1,4 @@
-"""E8: is a risk's change bad, good or neutral for the company? (#303).
+"""E8: is a risk's change bad, good or neutral for the company? (magilliam27/MCI-GRU#303).
 
 Two frozen Choice questions (``configs/filings/questions_v4.yaml``), each asked
 on its own for every pair the research lead listed: ``direction`` (worse,

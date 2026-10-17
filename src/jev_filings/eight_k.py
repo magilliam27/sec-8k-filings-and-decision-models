@@ -1,4 +1,4 @@
-"""8-K events: which filings count, their item sections, and filing-time context (#308).
+"""8-K events: which filings count, their item sections, and filing-time context (magilliam27/MCI-GRU#308).
 
 Experiment E10 asks how good or bad an 8-K event is for shareholders. What this
 module decides:

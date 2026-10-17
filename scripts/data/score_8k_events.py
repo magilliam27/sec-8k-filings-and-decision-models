@@ -1,4 +1,4 @@
-"""E10: how good or bad is an 8-K event for shareholders? (#305).
+"""E10: how good or bad is an 8-K event for shareholders? (magilliam27/MCI-GRU#305).
 
 Two frozen Choice questions (``configs/filings/questions_v5.yaml``), each asked
 on its own for every published event (the lead dropped the sample on 16 Oct, so
