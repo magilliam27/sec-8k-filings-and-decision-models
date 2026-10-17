@@ -3,7 +3,7 @@
 Experiments E1 to E7. Every one was frozen in advance and graded against a free
 method. None of them is a win for Jev.
 
-## The problem we tried first: did a 10-K risk change?
+## The first problem: did a 10-K risk change?
 
 A 10-K's risk factors carry over from year to year with edits. The first idea
 was that Jev would spot new and changed risks better than counting words. It

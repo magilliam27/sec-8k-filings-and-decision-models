@@ -107,7 +107,7 @@ Graded by the Lead from the frozen files (`events.csv` f885c806…, `jev/scores.
 | Officer change (5.02), all | 16,860 | −0.07% (−0.13 to −0.01) | −0.16% |
 | Material agreement (1.01), all | 9,303 | +0.05% (−0.02 to +0.12) | −0.05% |
 
-**Correction (17 Oct 03:55Z, after an independent recheck):** the first version of this table's 10-day column ran from day −1 to day +10 (11 trading days) instead of day +9 like the 10-day headline; it now matches the headline. In the same pass, a stock with no price after day −1 now earns SPY for the whole drift window, as the design says (30 events; drift moves by under 0.0001). No correlation, interval or verdict changed. The first run's summary is kept as `grading/summary_v1.json`.
+**Correction (17 Oct 03:55Z, after an independent recheck):** the first version of this table's 10-day column ran from day −1 to day +10 (11 trading days) instead of day +9 like the 10-day headline; it now matches the headline. In the same pass, a stock with no price after day −1 now earns SPY for the whole drift window, as the design says (30 events; drift moves by under 0.0001). No correlation, interval or verdict changed. The first run's summary is kept as `grading/summary_v1.json` (in this repository `results/E11-8k-returns/summary_v1.json`).
 
 The full day-by-day paths for every item code, Jev answer and group-by-answer pair are in `grading/summary.json`.
 

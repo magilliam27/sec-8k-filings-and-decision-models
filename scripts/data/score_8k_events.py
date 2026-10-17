@@ -68,7 +68,7 @@ from scripts.data.score_risk_changes import CHARS_PER_TOKEN
 
 try:
     from typesafe_sdk import Choice, TypeSafeClient
-except ImportError:  # the [filings] extra is needed only for --score
+except ImportError:  # the [jev] extra is needed only for --score
     Choice = TypeSafeClient = None
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -224,7 +224,7 @@ def main(argv: list[str] | None = None, *, client: Any = None, sdk_question_for:
         client = NoJev()
     elif client is None:
         if TypeSafeClient is None:
-            print('Scoring needs the TypeSafe SDK: pip install -e ".[filings]"')
+            print('Scoring needs the TypeSafe SDK: pip install -e ".[jev]"')
             return 1
         if not os.environ.get("TYPESAFE_API_KEY"):
             print("Scoring needs TYPESAFE_API_KEY in the environment.")

@@ -9,7 +9,7 @@ Three steps, run in this order so the hand labels stay blind::
 
     # 2. Label change_sheet.csv by hand (change: same, broadened, narrowed,
     #    reworked or new; label_guide.md defines each), then score.
-    #    Needs `pip install -e ".[filings]"` and TYPESAFE_API_KEY.
+    #    Needs `pip install -e ".[jev]"` and TYPESAFE_API_KEY.
     python -m scripts.data.score_risk_changes \\
         --risk-factors /content/sec/filings/alphabet_risk_factors.jsonl \\
         --output-dir /content/change --score [--limit 1]
@@ -68,7 +68,7 @@ from jev_filings.risk_factors import RiskFactor
 
 try:
     from typesafe_sdk import Choice, TypeSafeClient
-except ImportError:  # the [filings] extra is needed only for --score
+except ImportError:  # the [jev] extra is needed only for --score
     Choice = TypeSafeClient = None
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -190,7 +190,7 @@ def main(argv: list[str] | None = None, *, client: Any = None, sdk_question_for:
 
     if client is None:
         if TypeSafeClient is None:
-            print('Scoring needs the TypeSafe SDK: pip install -e ".[filings]"')
+            print('Scoring needs the TypeSafe SDK: pip install -e ".[jev]"')
             return 1
         if not os.environ.get("TYPESAFE_API_KEY"):
             print("Scoring needs TYPESAFE_API_KEY in the environment.")

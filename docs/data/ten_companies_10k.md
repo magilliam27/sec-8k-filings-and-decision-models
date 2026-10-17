@@ -39,7 +39,7 @@ Item 1A risk factors from every 10-K for fiscal 2013 to 2025 of JPMorgan Chase
 - Risk summaries, cautionary statements and forward-looking-statement
   preambles are left out.
 
-Every filing passes the six extraction checks in `mci_gru/filings/checks.py`.
+Every filing passes the six extraction checks in `src/jev_filings/checks.py`.
 An independent reading with lxml matched each company's text word for word
 except page furniture (page numbers, running headers and footers, "Table of
 Contents", "Part I") and Exxon's category introductions.

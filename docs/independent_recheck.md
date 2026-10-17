@@ -1,6 +1,6 @@
 # E11 independent recheck (17 Oct 2026)
 
-Recomputed from `CARD.md`'s frozen design and the raw files, with my own code (`independent_recheck_code.py`, same folder). I did not read or import any grading script. Symbols: my own mapping (ticker runs + `handed_over` spans joined to `price_runs.csv`) gives one candidate for 26,796 events, all identical to `grading/joins.csv`. The other 166 have two candidates (FOX/FOXA, GOOG/GOOGL, NWS/NWSA, renamed tickers). For those I took the `joins.csv` symbol, which is always one of my two. Every return is computed from `daily_prices.csv.gz`. Only after my numbers were final did I open `grading/graded_events.csv`, to find the cause of the two differences below.
+Recomputed from `CARD.md`'s frozen design and the raw files, with my own code (`grading/independent_recheck/independent_recheck_code.py`). I did not read or import any grading script. Symbols: my own mapping (ticker runs + `handed_over` spans joined to `price_runs.csv`) gives one candidate for 26,796 events, all identical to `grading/joins.csv`. The other 166 have two candidates (FOX/FOXA, GOOG/GOOGL, NWS/NWSA, renamed tickers). For those I took the `joins.csv` symbol, which is always one of my two. Every return is computed from `daily_prices.csv.gz`. Only after my numbers were final did I open `grading/graded_events.csv`, to find the cause of the two differences below.
 
 ## Claimed vs recomputed
 

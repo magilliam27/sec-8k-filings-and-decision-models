@@ -6,7 +6,7 @@ OUT = os.path.join(os.environ.get("VERIFY_OUT", "verify_out/e11"), "")  # everyt
 assert "/filings/experiments/" not in os.path.abspath(OUT) + "/", "OUT must not point into filings/experiments"
 os.makedirs(OUT, exist_ok=True)
 # -------------------------------------------------------------------------------------
-import sys, numpy as np, pandas as pd
+import pandas as pd
 ev=pd.read_pickle(OUT+"events.pkl")
 runs=pd.read_csv(F+"data/member_8k_events/membership/sp500_ticker_runs.csv",dtype={"ciks":str})
 pr=pd.read_csv(F+"data/e7_prices/price_runs.csv")

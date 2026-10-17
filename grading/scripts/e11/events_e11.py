@@ -6,7 +6,7 @@ OUT = os.path.join(os.environ.get("VERIFY_OUT", "verify_out/e11"), "")  # everyt
 assert "/filings/experiments/" not in os.path.abspath(OUT) + "/", "OUT must not point into filings/experiments"
 os.makedirs(OUT, exist_ok=True)
 # -------------------------------------------------------------------------------------
-import json, sys, pandas as pd
+import json, pandas as pd
 from zoneinfo import ZoneInfo
 NEG={"1.02","1.03","2.05","2.06","3.01","4.02"}
 def group(items):

@@ -30,7 +30,7 @@ Jev (jev-1.13.0, from [TypeSafe](https://docs.typesafe.ai)) answers multiple-cho
 | --- | --- |
 | Filings | Every 8-K from January 2013 to October 2026 by an S&P 500 member reporting one of ten event items (officer change, agreement, deal completed, restructuring, impairment, delisting notice, auditor change, restatement, agreement ended, bankruptcy): 28,253. |
 | Exclusions | Set before any score existed: 848 filings that also reported earnings, 253 same-day duplicates, and 190 without prices or a full 10-day window. 26,962 remain. |
-| Model input | The filing text plus facts known on the filing date: item codes, prior-year revenue and the company's 8-Ks from the previous 90 days. One question with a fixed rubric. |
+| Model input | The filing text plus facts known on the filing date: the company name, item codes, prior-year revenue and the company's 8-Ks from the previous 90 days. One question with a fixed rubric. |
 | Return | From the last close before the SEC accepted the filing, minus the SPY return, so no price move before publication is counted. |
 | Comparison | Within the same item group (officer change, deal, negative-leaning, auditor change) and year, 44 groups in all, so the item type alone cannot explain the result. |
 | Intervals | 10,000 bootstrap resamples of those groups. |
@@ -77,7 +77,7 @@ The result is consistent across filings and years, but it is small and short-liv
 
 | Limitation | Detail |
 | --- | --- |
-| Model memory (principal risk) | Jev may have been trained on later reporting about these events. TypeSafe does not publish a training cut-off, so the planned out-of-sample check could not be run. The 107 filings dated after Jev's release on 10 September 2026 show the same direction (+0.034) but are too few to be conclusive. |
+| Model memory (principal risk) | Jev may have been trained on later reporting about these events. TypeSafe does not publish a training cut-off, so the planned out-of-sample check could not be run. Jev also sees the company name, the most likely route for it to recall how a story ended. The 107 filings dated after Jev's release on 10 September 2026 show the same direction (+0.034) but are too few to be conclusive. |
 | Small per filing | The rating explains well under 1% of the variation in 2-day returns. It is a tilt across many filings, not a forecast for any one. |
 | Timing | The move occurs on the first trading day, and nothing follows the first close. Entry at the next open after an evening filing was not tested, and trading costs were not measured. |
 | Prior announcements | Many companies issue a press release before the 8-K, so the window can miss the first reaction. Filings with a press release attached, more likely to be the first announcement, show a stronger association: +0.042 against +0.027. |
@@ -201,7 +201,7 @@ Of the ten experiments run, four passed (three on reading, one on returns) and s
 | E4 | Did this risk change? | 100 Alphabet risks | 0.906 | 0.887 | Stopped: −0.06 to +0.10 |
 | E3 | E2 with a new answer key | — | — | — | Withdrawn |
 | E2 | How did this risk change? (5 options) | 76 Alphabet risks | 81% | 67% (word rule) | Inconclusive: −7 to +25 points |
-| E1 | Is last year's risk the same risk? | 200 Alphabet pairs, hand-labelled | 92.5% | 94.5% (best word match) | Not better |
+| E1 | Is last year's risk the same risk? | 200 Alphabet pairs, hand-labelled | 92.5% | 94.5% (best word match) | Worse: −5.1 points (−9.5 to −1.3) |
 
 Scores are AUC except accuracy for E1 and E2 and correlations for E7 and E11. Verdict intervals refer to Jev's margin over the baseline. Answer keys for the reading tests came from three blind AI reviewers rather than people. On E2 a manual spot check agreed with them on 11 of 20 items, short of the 15 set in advance; the AI key was retained, a decision made before any Jev answer existed. E7 and E11 need no key, since the stock price is the outcome.
 
