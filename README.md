@@ -1,12 +1,74 @@
-# Language-model ratings of 8-K filings and short-term stock returns
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/banner-dark.png">
+  <img alt="Language-model ratings of 8-K filings and short-term stock returns" src="docs/figures/banner-light.png" width="100%">
+</picture>
 
-October 2026 · [magilliam27](https://github.com/magilliam27)
+![License: MIT](https://img.shields.io/badge/license-MIT-1F6FEB) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-1F6FEB) &nbsp;26,962 filings rated for $2.32 · 402 tests · October 2026 · [magilliam27](https://github.com/magilliam27)
 
-## Summary
+A multiple-choice language model (Jev, from TypeSafe) rated 26,962 8-K filings by S&P 500 companies, filed between January 2013 and October 2026, on a five-point scale from very bad to very good for shareholders. Within filings of the same type and year, lower ratings were followed by lower market-adjusted returns over the next two trading days.
 
-A multiple-choice language model (Jev, from TypeSafe) rated 26,962 8-K filings by S&P 500 companies, filed between January 2013 and October 2026, on a five-point scale from very bad to very good for shareholders. Within filings of the same type and year, lower ratings were followed by lower market-adjusted returns over the next two trading days. The rank correlation is +0.025 (95% interval +0.015 to +0.034) and is positive in 13 of 14 years. A word-tone score (negative minus positive words from the Loughran-McDonald finance word list) scores −0.015 on the same test, a difference of +0.040 (+0.026 to +0.055).
+The effect is small and concentrated on the first trading day. No further return is predicted after the first close following the filing. The main unresolved risk is that the model may have seen later reporting on these events.
 
-The effect is small and concentrated on the first trading day. No further return is predicted after the first close following the filing. The main unresolved risk is that the model may have seen later reporting on these events. Rating all filings cost $2.32.
+[Method](#2-method) · [Results](#3-results) · [Limitations](#4-limitations) · [Reproduce](#appendix-b-reproduction)
+
+## Headline result
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/return-by-rating-dark.png">
+  <img alt="Average 2-day market-adjusted return by Jev's rating, with 95% intervals" src="docs/figures/return-by-rating-light.png" width="100%">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/stats-dark.png">
+  <img alt="Rank correlation +0.025 (+0.015 to +0.034); positive in 13 of 14 years; +0.040 above word tone (+0.026 to +0.055)" src="docs/figures/stats-light.png" width="100%">
+</picture>
+
+Word tone (negative minus positive words from the Loughran-McDonald finance word list) scores −0.015 on the same test.
+
+## How a rating works
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/rating-example-dark.png">
+  <img alt="Example: Alexion Pharmaceuticals' 8-K of 12 December 2016, rated very bad, followed by a 17.3% fall against the market" src="docs/figures/rating-example-light.png" width="100%">
+</picture>
+
+One example, picked as an illustration, not a typical one. The average effect is far smaller.
+
+## What the ratings pick up
+
+| Events | Average market-adjusted return |
+| --- | --- |
+| Officer changes rated bad (774) | −0.68% over 2 days, −0.89% by day 10 |
+| Officer changes rated very bad (25) | −2.16% over 2 days |
+| Deals rated very good (1,941) | +0.32% over 2 days |
+
+Intervals and every other group are in [section 3](#3-results).
+
+## Quick start
+
+```bash
+git clone https://github.com/magilliam27/Jev-8Ks
+cd Jev-8Ks
+pip install -e ".[dev]"
+pytest                                   # 402 tests, no network or keys needed
+python grading/scripts/check_hashes.py   # checks the published result files against their hashes
+```
+
+Rating new filings needs a TypeSafe API key (`pip install -e ".[jev]"`), and rebuilding the prices needs an EODHD subscription. See [Appendix B](#appendix-b-reproduction).
+
+## What is in this repository
+
+```text
+src/jev_filings/   SEC download, 8-K parsing, Jev question runner, baselines
+scripts/data/      member list, 8-K and price pulls, Jev scoring
+configs/filings/   frozen question files and AI reviewer instructions
+experiments/       one card per experiment, E1 to E11, and the ledger
+results/           E10 and E11 test sets, baselines, joins and summaries
+grading/           grading scripts, hash check, verification guide, recheck
+recipes/           method write-ups
+docs/              figures and data notes
+tests/             unit tests
+```
 
 Earlier work on 10-K risk factors, which found no return signal, is summarised in Appendix C.
 
@@ -35,15 +97,11 @@ Jev (jev-1.13.0, from [TypeSafe](https://docs.typesafe.ai)) answers multiple-cho
 
 ## 3. Results
 
-**Example.** On 12 December 2016, before the open, Alexion Pharmaceuticals reported the immediate resignation of its CEO "for personal reasons" and the departure of its CFO. Jev rated the filing very bad (98% probability of bad or very bad). Alexion closed the next day 17.3% below the market. Planned retirements with a named successor share the same item code, are usually rated neutral, and show little price movement.
-
 ![Rank correlation between Jev's rating and market-adjusted return, by window](docs/figures/correlation-by-window.png)
 
 The association is strongest on the filing day and fades by day 10. Measured from the first close after the filing, neither method predicts returns.
 
-![Average 2-day market-adjusted return by Jev's rating](docs/figures/return-by-rating.png)
-
-Positive ratings show a smaller effect: only "very good" is clearly above zero. 83% of filings are rated neutral, and their returns are close to zero.
+Positive ratings show a smaller effect (see the headline chart): only "very good" is clearly above zero. 83% of filings are rated neutral, and their returns are close to zero.
 
 **Returns by item group and rating.** Every cell with at least 20 filings, including cells that run against the overall result. Average market-adjusted return with 95% intervals from 2,000 resamples of whole calendar months.
 
@@ -204,19 +262,6 @@ Of the ten experiments run, four passed (three on reading, one on returns) and s
 Scores are AUC except accuracy for E1 and E2 and correlations for E7 and E11. Verdict intervals refer to Jev's margin over the baseline. Answer keys for the reading tests came from three blind AI reviewers rather than people. On E2 a manual spot check agreed with them on 11 of 20 items, short of the 15 set in advance; the AI key was retained, a decision made before any Jev answer existed. E7 and E11 need no key, since the stock price is the outcome.
 
 The design and result of every experiment are in [`experiments/`](experiments/), with a running log in [`experiments/LEDGER.md`](experiments/LEDGER.md). Practical write-ups of each method are in [`recipes/`](recipes/).
-
-## Repository layout
-
-| Path | Contents |
-|---|---|
-| `src/jev_filings/` | SEC download, 8-K parsing, event records, Jev question runner and baselines |
-| `scripts/data/` | Command-line steps: build the S&P 500 member list, pull 8-Ks, pull prices, score with Jev |
-| `configs/filings/` | Frozen question files (`questions_v5.yaml` is the 8-K rating) and AI reviewer instructions |
-| `experiments/` | One card per experiment with its frozen design, result and fingerprints |
-| `results/` | E10 and E11 test sets, word-tone baselines, ticker joins and summary outputs |
-| `grading/` | Grading scripts, verification guide and the independent replication code |
-| `recipes/` | Method write-ups: rating an 8-K, testing a signal on returns, blind AI answer keys, freezing designs |
-| `tests/` | Unit tests (`pip install -e ".[dev]"`, then `pytest`) |
 
 ## License
 
