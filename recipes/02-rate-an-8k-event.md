@@ -132,7 +132,7 @@ python -m scripts.data.score_8k_events ... --collect
 - 8-K parsing (item sections, press release, revenue context):
   `src/jev_filings/eight_k.py`; companies in `filers.py`
 - E10's frozen baselines: [results/E10-8k-events/](../results/E10-8k-events/)
-  (Jev's per-filing ratings are withheld, see the README)
+  (Jev's per-filing ratings are not published)
 - E10's grading script: `grading/scripts/e10/grade_e10.py` (needs the sealed
   answer key, which is not published here)
 - Tests: `tests/test_filings_events.py`, `tests/test_filings_eight_k.py`

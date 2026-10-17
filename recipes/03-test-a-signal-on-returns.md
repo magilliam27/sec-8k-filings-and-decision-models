@@ -108,7 +108,7 @@ correlation; here it is +0.004. 10-Ks change slowly and are heavily read;
   [grading/VERIFY.md](../grading/VERIFY.md).
 - E11's frozen inputs and outputs: [results/E11-8k-returns/](../results/E11-8k-returns/)
   (`events.csv`, `baselines.csv`, `joins.csv`, `summary.json`; Jev's
-  per-filing `scores.csv` is withheld, see the README;
+  per-filing `scores.csv` is not published;
   `summary_v1.json` is the first run before a correction to a descriptive
   table, see the card)
 - Pulling members' 8-Ks: `scripts/data/build_sp500_members.py`, then

@@ -155,7 +155,7 @@ This repository publishes the code, the frozen questions, the experiment records
 |---|---|---|
 | SEC filings | Large, and free to download | `scripts/data/build_sp500_members.py` and `scripts/data/export_sec_member_8k.py` rebuild the 28,253-filing set from EDGAR |
 | Daily prices | Paid EODHD data | An EODHD subscription and `scripts/data/pull_eodhd_prices.py` |
-| Jev's per-filing ratings | Withheld pending a check of the model provider's terms | Re-ask Jev with `scripts/data/score_8k_events.py` (about $2.32 for all filings) |
+| Jev's per-filing ratings | Not published | Re-ask Jev with `scripts/data/score_8k_events.py` (about $2.32 for all filings) |
 | Loughran-McDonald word list | Free for academic use only | Download from the Software Repository for Accounting and Finance at the University of Notre Dame |
 
 Repeated Jev calls give slightly different probabilities, so re-asked ratings will be close to the originals but not identical. With those inputs in place, `grading/VERIFY.md` documents every grading script and command. The replication code is `grading/independent_recheck/independent_recheck_code.py`. Software used: Python 3.13, pandas 3.0, numpy 2.5.
