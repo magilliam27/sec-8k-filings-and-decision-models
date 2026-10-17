@@ -47,8 +47,8 @@ Intervals and every other group are in [section 3](#3-results).
 ## Quick start
 
 ```bash
-git clone https://github.com/magilliam27/Jev-8Ks
-cd Jev-8Ks
+git clone https://github.com/magilliam27/sec-8k-filings-and-decision-models
+cd sec-8k-filings-and-decision-models
 pip install -e ".[dev]"
 pytest                                   # 402 tests, no network or keys needed
 python grading/scripts/check_hashes.py   # checks the published result files against their hashes
