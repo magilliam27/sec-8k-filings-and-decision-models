@@ -1,0 +1,27 @@
+# Bulk data, caches and run outputs stay out of git
+/data/
+/runs/
+/labels/
+/verify_out/
+*.jsonl.gz
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments and secrets
+.venv/
+venv/
+.env
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,61 @@
+{
+ "risks": 100,
+ "key_changed": 35,
+ "key_unchanged": 65,
+ "by_stratum": {
+  "rule_changed": {
+   "n": 7,
+   "changed": 7
+  },
+  "rule_same": {
+   "n": 93,
+   "changed": 28
+  }
+ },
+ "auc": {
+  "jev": 0.9059324134512104,
+  "word": 0.8869922057891984,
+  "unweighted_jev": 0.9083516483516484,
+  "unweighted_word": 0.901978021978022
+ },
+ "auc_gap": {
+  "point": 0.0189402076620121,
+  "interval_95": [
+   -0.0626955438045663,
+   0.10065178083623015
+  ],
+  "jev_wins": false
+ },
+ "balanced_accuracy_at_cuts": {
+  "jev": 0.787884546531163,
+  "word": 0.7879671706739375,
+  "gap": -8.262414277449004e-05,
+  "interval_95": [
+   -0.12149534188440354,
+   0.1242471870884769
+  ]
+ },
+ "recall_changed": {
+  "jev": 0.6373075546007877,
+  "word": 0.8682420336555674
+ },
+ "precision_changed": {
+  "jev": 0.8286778398510244,
+  "word": 0.5811167026120296
+ },
+ "specificity": {
+  "jev": 0.9384615384615385,
+  "word": 0.7076923076923076
+ },
+ "counts": {
+  "jev_flags": 26,
+  "word_flags": 50,
+  "jev_right": 83,
+  "word_right": 77
+ },
+ "bootstrap": {
+  "draws": 10000,
+  "seed": 295,
+  "resample": "within strata"
+ }
+}

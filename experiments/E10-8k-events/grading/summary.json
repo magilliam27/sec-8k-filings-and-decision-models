@@ -1,0 +1,267 @@
+{
+ "key_rating": {
+  "neutral": 373,
+  "bad": 36,
+  "good": 19,
+  "very_good": 7,
+  "very_bad": 1
+ },
+ "key_by_group": {
+  "bad": {
+   "deals": 4,
+   "negative": 12,
+   "officer": 20
+  },
+  "good": {
+   "deals": 17,
+   "negative": 1,
+   "officer": 1
+  },
+  "neutral": {
+   "deals": 58,
+   "negative": 4,
+   "officer": 311
+  },
+  "very_bad": {
+   "deals": 0,
+   "negative": 0,
+   "officer": 1
+  },
+  "very_good": {
+   "deals": 7,
+   "negative": 0,
+   "officer": 0
+  }
+ },
+ "jev_rating": {
+  "neutral": 375,
+  "bad": 29,
+  "very_good": 21,
+  "good": 11
+ },
+ "main_bad": {
+  "n": 436,
+  "positives": 37,
+  "auc_jev": 0.9861478019372756,
+  "auc_base": 0.7586533902323376,
+  "gap": 0.227494411704938,
+  "interval_95": [
+   0.1276687988746175,
+   0.3226966270675153
+  ],
+  "clear_of_zero": true,
+  "draws_used": 10000
+ },
+ "good": {
+  "n": 436,
+  "positives": 26,
+  "auc_jev": 0.9962476547842402,
+  "auc_base": 0.43358348968105065,
+  "gap": 0.5626641651031895,
+  "interval_95": [
+   0.4804877752062192,
+   0.6425510817307691
+  ],
+  "clear_of_zero": true,
+  "draws_used": 10000
+ },
+ "officer_bad_vs_net_tone": {
+  "n": 333,
+  "positives": 21,
+  "auc_jev": 0.9860347985347986,
+  "auc_base": 0.6303418803418803,
+  "gap": 0.35569291819291826,
+  "interval_95": [
+   0.21361903533343155,
+   0.5016196897801414
+  ],
+  "clear_of_zero": true,
+  "draws_used": 10000
+ },
+ "main_bad_rating_score": {
+  "n": 436,
+  "positives": 37,
+  "auc_jev": 0.05554426607058186,
+  "auc_base": 0.2413466097676624,
+  "gap": -0.18580234369708054,
+  "interval_95": [
+   -0.29237551706566245,
+   -0.07427591734948347
+  ],
+  "clear_of_zero": false,
+  "draws_used": 10000,
+  "note": "Jev ranked by low rating_score; auc_jev here is for high score so 1-auc is the bad ranking"
+ },
+ "bad_excl_negative_group": {
+  "n": 419,
+  "positives": 25,
+  "auc_jev": 0.9806091370558375,
+  "auc_base": 0.651979695431472,
+  "gap": 0.32862944162436547,
+  "interval_95": [
+   0.19152751465277368,
+   0.4695443095946874
+  ],
+  "clear_of_zero": true,
+  "draws_used": 10000
+ },
+ "item_lean_only_auc": 0.6558964980017612,
+ "five_way": {
+  "jev_acc": 0.9059633027522935,
+  "majority": "neutral",
+  "majority_acc": 0.8555045871559633,
+  "jev_bal": 0.5734388473417682
+ },
+ "three_way_acc": 0.9357798165137615,
+ "confusion": {
+  "bad": {
+   "bad": 23,
+   "good": 0,
+   "neutral": 5,
+   "very_bad": 1,
+   "very_good": 0
+  },
+  "good": {
+   "bad": 0,
+   "good": 5,
+   "neutral": 6,
+   "very_bad": 0,
+   "very_good": 0
+  },
+  "neutral": {
+   "bad": 13,
+   "good": 2,
+   "neutral": 360,
+   "very_bad": 0,
+   "very_good": 0
+  },
+  "very_good": {
+   "bad": 0,
+   "good": 12,
+   "neutral": 2,
+   "very_bad": 0,
+   "very_good": 7
+  }
+ },
+ "jev_says_bad": {
+  "n": 29,
+  "right": 24,
+  "key_bad": 37
+ },
+ "size": {
+  "agree": 0.9564220183486238,
+  "majority": "no_amount_stated",
+  "majority_acc": 0.5848623853211009,
+  "confusion": {
+   "between_1_and_5_percent": {
+    "between_1_and_5_percent": 21,
+    "no_amount_stated": 1,
+    "over_5_percent": 5,
+    "under_1_percent": 4
+   },
+   "no_amount_stated": {
+    "between_1_and_5_percent": 0,
+    "no_amount_stated": 251,
+    "over_5_percent": 2,
+    "under_1_percent": 2
+   },
+   "over_5_percent": {
+    "between_1_and_5_percent": 1,
+    "no_amount_stated": 0,
+    "over_5_percent": 48,
+    "under_1_percent": 0
+   },
+   "under_1_percent": {
+    "between_1_and_5_percent": 1,
+    "no_amount_stated": 3,
+    "over_5_percent": 0,
+    "under_1_percent": 97
+   }
+  }
+ },
+ "per_company": {
+  "ba": {
+   "n": 72,
+   "bad": 7,
+   "jev": 0.9560439560439561,
+   "base": 0.7120879120879121
+  },
+  "cat": {
+   "n": 51,
+   "bad": 4,
+   "jev": 0.9946808510638298,
+   "base": 0.9680851063829787
+  },
+  "dal": {
+   "n": 54,
+   "bad": 7,
+   "jev": 0.9908814589665653,
+   "base": 0.7036474164133738
+  },
+  "jpm": {
+   "n": 40,
+   "bad": 3,
+   "jev": 1.0,
+   "base": 0.8063063063063063
+  },
+  "ko": {
+   "n": 47,
+   "bad": 2,
+   "jev": 0.9888888888888889,
+   "base": 0.7333333333333333
+  },
+  "msft": {
+   "n": 31,
+   "bad": 7,
+   "jev": 0.9880952380952381,
+   "base": 0.8154761904761905
+  },
+  "pfe": {
+   "n": 43,
+   "bad": 5,
+   "jev": 0.9578947368421052,
+   "base": 0.7263157894736842
+  },
+  "unh": {
+   "n": 40,
+   "bad": 1,
+   "jev": 1.0,
+   "base": 0.5128205128205128
+  },
+  "wmt": {
+   "n": 25,
+   "bad": 0
+  },
+  "xom": {
+   "n": 33,
+   "bad": 1,
+   "jev": 1.0,
+   "base": 1.0
+  }
+ },
+ "per_group": {
+  "deals": {
+   "n": 86,
+   "bad": 4,
+   "jev": 0.9375,
+   "base": 0.9115853658536586
+  },
+  "negative": {
+   "n": 17,
+   "bad": 12,
+   "jev": 1.0,
+   "base": 0.8333333333333334
+  },
+  "officer": {
+   "n": 333,
+   "bad": 21,
+   "jev": 0.9860347985347986,
+   "base": 0.6303418803418803
+  }
+ },
+ "bootstrap": {
+  "draws": 10000,
+  "seed": 310,
+  "resample": "within company x item group"
+ }
+}
