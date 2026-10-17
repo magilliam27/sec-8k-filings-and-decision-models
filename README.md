@@ -10,8 +10,6 @@ The effect is small and concentrated on the first trading day. No further return
 
 Earlier work on 10-K risk factors, which found no return signal, is summarised in Appendix C.
 
-> Research only, not investment advice. The result has not been tested out of sample (see Limitations).
-
 ## 1. Question and approach
 
 The aim is a filing-based signal that can be used on its own or as an input to [MCI-GRU](https://github.com/magilliam27/MCI-GRU), a stock-ranking model.
