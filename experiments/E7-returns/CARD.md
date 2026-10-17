@@ -18,7 +18,7 @@
 | Membership (decided 16 Oct 03:50Z) | Dated member lists from github.com/fja05680/sp500 (free; 1996-2019 from Andreas Clenow's Norgate-based data, since then from Wikipedia with dates checked by its maintainer), topped up from Wikipedia after its last row (2026-08-18) and spot-checked on about 20 change dates against S&P press releases. About 790 companies were members at some point since 2013. A 10-K counts only if it was filed while its company was a member; the 10-K just before entry is pulled as its pair partner. Rejected: Wikipedia alone (incomplete), EODHD index lists (need a plan we don't have), CRSP/Compustat (paid). Working files: `data/e7_prep/` |
 | Pairing | Each 10-K pairs with its company's previous 10-K by filing date, keyed by accession number and period of report, so a change of year-end (GE, ServiceNow and four others) keeps both reports |
 | Survivors | Companies later acquired, delisted or renamed (about 180 tickers) are pulled too, matched to EDGAR by name. Every ticker-to-company mapping is checked by name, because tickers get reused (Pepco's POM, Spectra's SE). Grading waits until they are in, since leaving them out would bias returns upward. Every company left out is recorded with its reason |
-| Prices | EODHD daily prices, the repo's planned source. Still open: whether a key is available in the cloud environment |
+| Prices | EODHD daily prices, the repo's planned source |
 | Cost | No Jev spend. EDGAR pulls are free; prices depend on the EODHD plan |
 
 ## Frozen design (16 Oct 10:10Z, before any price is pulled or any return is looked at)

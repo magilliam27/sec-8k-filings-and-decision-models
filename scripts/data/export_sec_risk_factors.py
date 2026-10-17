@@ -1,7 +1,6 @@
 """Pull companies' 10-K risk factors from SEC EDGAR (magilliam27/MCI-GRU#289, magilliam27/MCI-GRU#297).
 
-Run from the repository root wherever EDGAR is reachable (since 2026-10-13 that
-includes the project's cloud environment). SEC asks every automated client to
+Run from the repository root wherever EDGAR is reachable. SEC asks every automated client to
 name itself with a contact email and to stay under 10 requests a second::
 
     python -m scripts.data.export_sec_risk_factors \\
