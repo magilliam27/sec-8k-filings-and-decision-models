@@ -12,7 +12,7 @@ member table ``build_sp500_members`` writes::
 
 For each company (of ``--release``, or all) it reads the submissions files of
 every CIK the company filed under. An event is an original 8-K carrying an event
-item (``jev_filings.eight_k``) accepted from ``--accepted-from`` to
+item (``sec8k.eight_k``) accepted from ``--accepted-from`` to
 ``--accepted-to`` on a day the company was a member: the Eastern day of its
 acceptance, by the time its index page shows (SEC's submissions files list some
 filers' acceptance times hours late; ``listed_accepted_utc`` keeps theirs). Each event gets E10's text and context: revenue
@@ -52,21 +52,6 @@ from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
-from jev_filings._vendor.input_manifest import InputFileSpec, write_input_manifest
-from jev_filings.edgar import SUBMISSIONS_URL
-from jev_filings.eight_k import (
-    EDGAR_TIMEZONE,
-    EVENT_ITEMS,
-    LEFT_OUT_ITEMS,
-    MAX_TEXT_CHARS,
-    PRIOR_DAYS,
-    REVENUE_CONCEPTS,
-    index_exhibits,
-    is_event,
-    press_release,
-    tagged_revenue,
-)
-from jev_filings.filers import Filer
 from scripts.data.export_sec_8k_events import (
     COMPANY_FACTS_URL,
     _archive_url,
@@ -84,9 +69,24 @@ from scripts.data.export_sec_risk_factors import (
     _urllib_transport,
     decode_document,
 )
+from sec8k._vendor.input_manifest import InputFileSpec, write_input_manifest
+from sec8k.edgar import SUBMISSIONS_URL
+from sec8k.eight_k import (
+    EDGAR_TIMEZONE,
+    EVENT_ITEMS,
+    LEFT_OUT_ITEMS,
+    MAX_TEXT_CHARS,
+    PRIOR_DAYS,
+    REVENUE_CONCEPTS,
+    index_exhibits,
+    is_event,
+    press_release,
+    tagged_revenue,
+)
+from sec8k.filers import Filer
 
 if TYPE_CHECKING:
-    from jev_filings.membership import Spell
+    from sec8k.membership import Spell
 
 PROGRESS_EVERY = 1000
 #: How many calendar days either side of an event an earnings 8-K is "nearby".

@@ -31,8 +31,8 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path, PureWindowsPath
 from typing import TYPE_CHECKING, Any
 
-from jev_filings._vendor.artifacts import canonical_json_bytes
-from jev_filings._vendor.hashing import sha256_file
+from sec8k._vendor.artifacts import canonical_json_bytes
+from sec8k._vendor.hashing import sha256_file
 
 if TYPE_CHECKING:
     from collections.abc import Collection

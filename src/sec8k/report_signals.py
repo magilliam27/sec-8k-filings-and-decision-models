@@ -9,7 +9,7 @@ report by acceptance time, as the research lead's frozen design says:
   stop words removed.
 - **Signals 2 and 3** (:func:`risk_pair_table`, :func:`risk_shares`): each risk
   is paired with its closest partner risk by TF-IDF, the same top-one pairing
-  :func:`jev_filings.change.closest_prior_pairs` makes within a fiscal year,
+  :func:`sec8k.change.closest_prior_pairs` makes within a fiscal year,
   here applied report to report so a changed year end keeps both reports. A risk
   is new when that similarity is under ``NEW_SIMILARITY`` and changed when its
   word score reaches ``WORD_SCORE_CUT`` or it is new. The signals are the shares
@@ -26,16 +26,16 @@ import re
 from collections import Counter
 from typing import TYPE_CHECKING
 
-from jev_filings.change import NEW_SIMILARITY, WORD_SCORE_CUT, pair_table, word_score
-from jev_filings.pairing import shortlist_prior_risks
+from sec8k.change import NEW_SIMILARITY, WORD_SCORE_CUT, pair_table, word_score
+from sec8k.pairing import shortlist_prior_risks
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
     import pandas as pd
 
-    from jev_filings.pairing import RiskPair
-    from jev_filings.risk_factors import RiskFactor
+    from sec8k.pairing import RiskPair
+    from sec8k.risk_factors import RiskFactor
 
 RISK_PAIR_COLUMNS = (
     "accession_number",

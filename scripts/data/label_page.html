@@ -224,7 +224,7 @@ main {
   }
 
   // Which questions apply, given the answers so far. Mirrors LabelSet.asked in
-  // src/jev_filings/labelling.py; the category itself is derived only in code.
+  // src/sec8k/labelling.py; the category itself is derived only in code.
   function asked(answers) {
     return S.sheet.questions.filter((q) =>
       Object.entries(q.ask_if || {}).every(([dep, want]) => answers[dep] === want));

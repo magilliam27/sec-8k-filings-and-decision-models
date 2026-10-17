@@ -15,7 +15,7 @@ The free baselines were:
 - **TF-IDF top match**: pair each risk with the most similar prior-year risk.
 - **Word rule**: a risk is new if its closest prior risk has similarity under
   0.25; changed if the share of distinct words added or removed is 0.04 or more
-  (`jev_filings.change.baseline_change`, `word_score`).
+  (`sec8k.change.baseline_change`, `word_score`).
 
 ## The results
 
@@ -92,9 +92,9 @@ the days just after. That is where Jev's reading finally showed up in prices
 - 10-K pulls: `scripts/data/export_sec_risk_factors.py`,
   `scripts/data/export_sec_member_10k.py`, `scripts/data/build_sp500_members.py`
 - E1: `scripts/data/score_risk_factor_pairs.py`, graded by
-  `scripts/data/grade_risk_factor_pairs.py` (`src/jev_filings/grading.py`)
+  `scripts/data/grade_risk_factor_pairs.py` (`src/sec8k/grading.py`)
 - E2: `scripts/data/score_risk_changes.py`; E4: `score_risk_change_flags.py`;
   E5: `score_company_risk_changes.py`; E6: `score_risk_change_noul.py`
-- E7: `scripts/data/score_e7_signals.py` (`src/jev_filings/report_signals.py`),
+- E7: `scripts/data/score_e7_signals.py` (`src/sec8k/report_signals.py`),
   graded by `grading/scripts/e7/grade_e7.py`
 - Cards: `experiments/E1-same-risk/` to `experiments/E7-returns/`

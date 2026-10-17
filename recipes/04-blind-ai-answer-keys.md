@@ -123,7 +123,7 @@ python -m scripts.data.label_desk agree --labels-dir labels/my-sheet-1
 ```
 
 - Script: [scripts/data/label_desk.py](../scripts/data/label_desk.py)
-- Library: `src/jev_filings/labelling.py`
+- Library: `src/sec8k/labelling.py`
 - Labelling page: `scripts/data/label_page.html` (it was built to run as a
   claude.ai artifact with a label store; elsewhere it needs a small storage
   shim)

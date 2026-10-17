@@ -15,14 +15,14 @@ import pandas as pd
 import pytest
 
 import scripts.data.score_e7_signals as script
-from jev_filings.report_signals import (
+from sec8k.report_signals import (
     SignalError,
     risk_pair_table,
     risk_shares,
     section_change,
     worse_share,
 )
-from jev_filings.risk_factors import RiskFactor
+from sec8k.risk_factors import RiskFactor
 
 if TYPE_CHECKING:
     from pathlib import Path

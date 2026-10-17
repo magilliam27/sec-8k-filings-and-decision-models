@@ -19,7 +19,7 @@ worse, better, or neither?
 
 Frozen in [configs/filings/questions_v4.yaml](../configs/filings/questions_v4.yaml)
 before any E8 label existed. Jev sees a state built in code
-(`jev_filings.jev.pair_state`): the current-year risk factor and its closest
+(`sec8k.jev.pair_state`): the current-year risk factor and its closest
 prior-year risk factor by TF-IDF, each as heading and text. The options are
 shuffled per pair, so their order cannot steer the answer.
 
@@ -120,11 +120,11 @@ python -m scripts.data.score_change_direction ... --collect
 ```
 
 - Script: [scripts/data/score_change_direction.py](../scripts/data/score_change_direction.py)
-- Pairing and baselines: `src/jev_filings/change.py` (`closest_prior_pairs`,
+- Pairing and baselines: `src/sec8k/change.py` (`closest_prior_pairs`,
   `word_change`, `negative_share`, `option_order`, `score_states`)
-- Jev state and answer cache: `src/jev_filings/jev.py` (`pair_state`,
+- Jev state and answer cache: `src/sec8k/jev.py` (`pair_state`,
   `AnswerCache`, `load_question_set`)
-- 10-K parsing: `src/jev_filings/risk_factors.py`, checks in `checks.py`
+- 10-K parsing: `src/sec8k/risk_factors.py`, checks in `checks.py`
 - Pulling the 10-Ks: `scripts/data/export_sec_risk_factors.py`
 - E9's grading script: `grading/scripts/e9/grade_e9.py`
 - Tests: `tests/test_filings_change.py`

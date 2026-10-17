@@ -4,7 +4,7 @@ Two frozen Choice questions (``configs/filings/questions_v5.yaml``), each asked
 on its own for every published event (the lead dropped the sample on 16 Oct, so
 every qualifying event is scored), or for a listed subset: ``rating`` (very bad, bad,
 neutral, good, very good) and ``size`` (the amount involved against prior
-annual revenue). Jev reads :func:`jev_filings.events.event_state`. Options
+annual revenue). Jev reads :func:`sec8k.events.event_state`. Options
 are shuffled per event. Three steps::
 
     # 1. Freeze the baseline for every event (or a listed subset with --sample).
@@ -47,8 +47,12 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.change import ChangeGradingError, lm_words, score_states
-from jev_filings.events import (
+from scripts.data.score_change_direction import LM_SHA256
+from scripts.data.score_company_risk_changes import NoJev, _commit, _sha256
+from scripts.data.score_e7_signals import USD_PER_INPUT_TOKEN
+from scripts.data.score_risk_changes import CHARS_PER_TOKEN
+from sec8k.change import ChangeGradingError, lm_words, score_states
+from sec8k.events import (
     RATING_LABELS,
     SIZE_LABELS,
     EventDataError,
@@ -60,11 +64,7 @@ from jev_filings.events import (
     rating_score,
     tone_shares,
 )
-from jev_filings.jev import AnswerCache, load_question_set
-from scripts.data.score_change_direction import LM_SHA256
-from scripts.data.score_company_risk_changes import NoJev, _commit, _sha256
-from scripts.data.score_e7_signals import USD_PER_INPUT_TOKEN
-from scripts.data.score_risk_changes import CHARS_PER_TOKEN
+from sec8k.jev import AnswerCache, load_question_set
 
 try:
     from typesafe_sdk import Choice, TypeSafeClient

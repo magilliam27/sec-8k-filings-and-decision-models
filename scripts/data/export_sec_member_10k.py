@@ -14,7 +14,7 @@ before it::
 company with its confirmed CIKs, its membership spells and its release. For each
 company of ``--release`` it reads the submissions files of every CIK, keeps one
 copy of every 10-K and 10-KT, and picks what the membership calls for (see
-``jev_filings.membership.member_filings``): every report accepted from
+``sec8k.membership.member_filings``): every report accepted from
 ``--accepted-from`` to ``--accepted-to`` while the company was a member, and the
 report before each one filed while it was not. Each report's pair partner is the
 company's previous report by acceptance time, so a company that changed its
@@ -66,12 +66,6 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings._vendor.input_manifest import InputFileSpec, write_input_manifest
-from jev_filings.checks import check_extraction
-from jev_filings.edgar import SUBMISSIONS_URL, build_filing_index
-from jev_filings.filers import FILERS
-from jev_filings.membership import Spell, member_filings
-from jev_filings.risk_factors import LAYOUTS, RiskFactorExtractionError, read_item_1a
 from scripts.data.export_sec_risk_factors import (
     EdgarClient,
     Transport,
@@ -80,6 +74,12 @@ from scripts.data.export_sec_risk_factors import (
     decode_document,
     read_filer,
 )
+from sec8k._vendor.input_manifest import InputFileSpec, write_input_manifest
+from sec8k.checks import check_extraction
+from sec8k.edgar import SUBMISSIONS_URL, build_filing_index
+from sec8k.filers import FILERS
+from sec8k.membership import Spell, member_filings
+from sec8k.risk_factors import LAYOUTS, RiskFactorExtractionError, read_item_1a
 
 FORMS = ("10-K", "10-KT")
 PROGRESS_EVERY = 250

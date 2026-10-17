@@ -37,7 +37,7 @@ from typing import TYPE_CHECKING, Any
 import numpy as np
 import pandas as pd
 
-from jev_filings.jev import (
+from sec8k.jev import (
     AnswerCache,
     ModelDriftError,
     Question,
@@ -46,14 +46,14 @@ from jev_filings.jev import (
     cache_key,
     pair_state,
 )
-from jev_filings.pairing import pair_consecutive_years
+from sec8k.pairing import pair_consecutive_years
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Sequence
     from pathlib import Path
 
-    from jev_filings.pairing import RiskPair
-    from jev_filings.risk_factors import RiskFactor
+    from sec8k.pairing import RiskPair
+    from sec8k.risk_factors import RiskFactor
 
 CHANGE_LABELS = ("same", "broadened", "narrowed", "reworked", "new")
 #: Frozen 2026-10-13, before any milestone-2 label existed.

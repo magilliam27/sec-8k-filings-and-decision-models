@@ -2,7 +2,7 @@
 
 The research lead's frozen design (``E7-returns/CARD.md``) asks for four signals
 per member report, keyed by accession, each against the company's previous
-report (its pair partner). :mod:`jev_filings.report_signals` defines them.
+report (its pair partner). :mod:`sec8k.report_signals` defines them.
 No price or return is read here. Three steps::
 
     # 1. Signals 1 to 3, the per-risk pair table and coverage per year. No Jev
@@ -49,13 +49,13 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.change import DIRECTION_LABELS, ChangeGradingError, score_states
-from jev_filings.jev import AnswerCache, load_question_set, pair_state
-from jev_filings.pairing import RiskPair
-from jev_filings.report_signals import risk_pair_table, risk_shares, section_change
-from jev_filings.risk_factors import RiskFactor
 from scripts.data.score_company_risk_changes import NoJev, _commit
 from scripts.data.score_risk_changes import CHARS_PER_TOKEN
+from sec8k.change import DIRECTION_LABELS, ChangeGradingError, score_states
+from sec8k.jev import AnswerCache, load_question_set, pair_state
+from sec8k.pairing import RiskPair
+from sec8k.report_signals import risk_pair_table, risk_shares, section_change
+from sec8k.risk_factors import RiskFactor
 
 try:
     from typesafe_sdk import Choice, TypeSafeClient

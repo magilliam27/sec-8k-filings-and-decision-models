@@ -12,7 +12,7 @@ import pytest
 import scripts.data.build_sp500_members as build_members
 import scripts.data.export_sec_member_10k as member_export
 import scripts.data.export_sec_risk_factors as edgar_export
-from jev_filings.membership import (
+from sec8k.membership import (
     Spell,
     apply_changes,
     member_filings,

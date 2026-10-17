@@ -43,7 +43,7 @@ experiment and every decision with its date and who made it.
 
 - **Question files are never edited.** `questions_v1.yaml` to
   `questions_v5.yaml` each say so in their header. A new wording is a new file.
-  `jev_filings.jev.load_question_set` refuses a moving model alias, and every
+  `sec8k.jev.load_question_set` refuses a moving model alias, and every
   answer whose model differs from the pinned one stops the run
   (`ModelDriftError`).
 - **Every answer is cached** in an append-only JSONL file, keyed by a hash of
@@ -51,9 +51,9 @@ experiment and every decision with its date and who made it.
   A rerun never re-asks and never pays twice. A torn last line is set aside; a
   damaged earlier line stops the run.
 - **Options are shuffled per item** by a fixed rule
-  (`jev_filings.change.option_order`), so option order cannot steer answers and
+  (`sec8k.change.option_order`), so option order cannot steer answers and
   is reproducible.
-- **Datasets are published with a manifest** (`jev_filings._vendor.input_manifest`)
+- **Datasets are published with a manifest** (`sec8k._vendor.input_manifest`)
   listing every file's sha256 and size, plus the producing command. Scoring
   scripts refuse data that differs from its manifest.
 - **Baselines are frozen before any Jev call**, and the scores before any label
@@ -104,10 +104,10 @@ days), the card was corrected in public and the first summary kept as
 
 ## Code entry point
 
-- Question sets and answer cache: `src/jev_filings/jev.py`
+- Question sets and answer cache: `src/sec8k/jev.py`
   (`load_question_set`, `AnswerCache`, `cache_key`, `ModelDriftError`)
-- Option shuffling: `src/jev_filings/change.py` (`option_order`)
-- Manifests: `src/jev_filings/_vendor/input_manifest.py`,
+- Option shuffling: `src/sec8k/change.py` (`option_order`)
+- Manifests: `src/sec8k/_vendor/input_manifest.py`,
   `scripts/data/write_input_manifest.py`
 - Hash check of every card and manifest: `grading/scripts/check_hashes.py`
 - Rerun comparison: `grading/scripts/compare_json.py`

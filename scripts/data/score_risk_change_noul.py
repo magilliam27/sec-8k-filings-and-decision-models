@@ -40,15 +40,15 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.change import (
+from scripts.data.score_risk_changes import CHARS_PER_TOKEN, load_risks
+from sec8k.change import (
     JEV_CHANGED_CUT,
     WORD_SCORE_CUT,
     closest_prior_pairs,
     pair_table,
     word_score,
 )
-from jev_filings.jev import AnswerCache, load_question_set, pair_state, score_pairs
-from scripts.data.score_risk_changes import CHARS_PER_TOKEN, load_risks
+from sec8k.jev import AnswerCache, load_question_set, pair_state, score_pairs
 
 try:
     from typesafe_sdk import Noul, TypeSafeClient

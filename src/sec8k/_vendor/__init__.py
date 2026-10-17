@@ -1,4 +1,4 @@
-"""Files vendored from the MCI-GRU repository so ``jev_filings`` stands alone.
+"""Files vendored from the MCI-GRU repository so ``sec8k`` stands alone.
 
 Each module is a verbatim copy of an MCI-GRU file with only its ``mci_gru.*``
 imports rewritten to point here (and issue references written as

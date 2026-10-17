@@ -18,7 +18,7 @@ rubric for each point, and turns its probabilities into a score.
 
 Frozen in [configs/filings/questions_v5.yaml](../configs/filings/questions_v5.yaml)
 (commit 3a1be7f in the source repository) before any E10 label existed. Jev
-reads a state built in code (`jev_filings.events.event_state`) from facts known
+reads a state built in code (`sec8k.events.event_state`) from facts known
 at filing time only: the company name, the item codes with their titles, the
 company's revenue from its latest 10-K filed before the 8-K, the item codes of
 its other 8-Ks in the previous 90 days, and the event text (item sections plus
@@ -59,7 +59,7 @@ questions:
 The file also holds a `size` question (the amount against prior revenue). E10
 asked it and reported it only. E11 did not ask it.
 
-Two scores come from the probabilities (`jev_filings.events`):
+Two scores come from the probabilities (`sec8k.events`):
 
 - **Rating score** = sum of each option's probability times its weight, −2
   (very bad) to +2 (very good).
@@ -128,9 +128,9 @@ python -m scripts.data.score_8k_events ... --collect
 
 - Scoring script: [scripts/data/score_8k_events.py](../scripts/data/score_8k_events.py)
   (`--workers` for calls in flight, `--sample` for a listed subset)
-- Event state, scores and baseline: `src/jev_filings/events.py`
+- Event state, scores and baseline: `src/sec8k/events.py`
 - 8-K parsing (item sections, press release, revenue context):
-  `src/jev_filings/eight_k.py`; companies in `filers.py`
+  `src/sec8k/eight_k.py`; companies in `filers.py`
 - E10's frozen baselines: [results/E10-8k-events/](../results/E10-8k-events/)
   (Jev's per-filing ratings are not published)
 - E10's grading script: `grading/scripts/e10/grade_e10.py` (needs the sealed

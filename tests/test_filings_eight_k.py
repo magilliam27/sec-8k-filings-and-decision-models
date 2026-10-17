@@ -15,8 +15,8 @@ import pytest
 import scripts.data.export_sec_8k_events as export
 import scripts.data.export_sec_member_8k as member_export
 import scripts.data.export_sec_risk_factors as export_10k
-from jev_filings._vendor.input_manifest import read_input_manifest
-from jev_filings.eight_k import (
+from sec8k._vendor.input_manifest import read_input_manifest
+from sec8k.eight_k import (
     MAX_TEXT_CHARS,
     ItemSection,
     document_text,
@@ -30,7 +30,7 @@ from jev_filings.eight_k import (
     prior_items,
     tagged_revenue,
 )
-from jev_filings.filers import FILERS, Filer
+from sec8k.filers import FILERS, Filer
 
 if TYPE_CHECKING:
     from pathlib import Path

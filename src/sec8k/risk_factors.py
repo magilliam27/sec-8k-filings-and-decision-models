@@ -54,7 +54,7 @@ What this module decides:
 emphasised paragraph too long to be a heading, read as body text; a heading
 after the first risk with no text under it; text after the first risk with no
 heading over it, outside introduction; and the page numbers it dropped.
-``jev_filings.checks`` turns those, and the output itself, into per-filing
+``sec8k.checks`` turns those, and the output itself, into per-filing
 checks (magilliam27/MCI-GRU#292).
 """
 

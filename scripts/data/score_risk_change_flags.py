@@ -4,7 +4,7 @@ E4 asks whether each Alphabet risk materially changed from its closest
 prior-year risk. It spends nothing on Jev: the five-way E2 question was already
 asked of every pair, and its probability for ``same`` is the score. The word
 score is the larger of E2's shares of words added and removed. Each is cut at
-the value frozen in ``jev_filings.change`` before any E4 label existed::
+the value frozen in ``sec8k.change`` before any E4 label existed::
 
     python -m scripts.data.score_risk_change_flags \\
         --risk-factors jev_pilot/sec_v2/filings/alphabet_risk_factors.jsonl \\
@@ -37,7 +37,8 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.change import (
+from scripts.data.score_risk_changes import DEFAULT_QUESTIONS, QUESTION_ID, load_risks
+from sec8k.change import (
     CHANGE_LABELS,
     JEV_SAME_CUT,
     WORD_SCORE_CUT,
@@ -47,8 +48,7 @@ from jev_filings.change import (
     pair_table,
     score_choices,
 )
-from jev_filings.jev import AnswerCache, load_question_set
-from scripts.data.score_risk_changes import DEFAULT_QUESTIONS, QUESTION_ID, load_risks
+from sec8k.jev import AnswerCache, load_question_set
 
 
 class NoJev:

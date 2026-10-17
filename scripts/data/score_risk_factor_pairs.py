@@ -52,15 +52,15 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.jev import (
+from sec8k.jev import (
     AnswerCache,
     blind_label_sheet,
     load_question_set,
     pair_state,
     score_pairs,
 )
-from jev_filings.pairing import DEFAULT_SHORTLIST, pair_consecutive_years
-from jev_filings.risk_factors import RiskFactor
+from sec8k.pairing import DEFAULT_SHORTLIST, pair_consecutive_years
+from sec8k.risk_factors import RiskFactor
 
 try:
     from typesafe_sdk import Noul, TypeSafeClient

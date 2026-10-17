@@ -15,8 +15,8 @@ import pandas as pd
 import pytest
 
 import scripts.data.score_8k_events as script
-from jev_filings.change import lm_words
-from jev_filings.events import (
+from sec8k.change import lm_words
+from sec8k.events import (
     RATING_LABELS,
     SIZE_LABELS,
     Event,
@@ -30,7 +30,7 @@ from jev_filings.events import (
     revenue_words,
     tone_shares,
 )
-from jev_filings.jev import load_question_set
+from sec8k.jev import load_question_set
 
 CONFIGS = Path(__file__).resolve().parents[1] / "configs" / "filings"
 MODEL = "jev-1.13.0"

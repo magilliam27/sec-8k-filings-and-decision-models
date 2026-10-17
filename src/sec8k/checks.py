@@ -58,7 +58,7 @@ from dataclasses import asdict, dataclass
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from jev_filings.risk_factors import RiskFactor, SectionReading
+    from sec8k.risk_factors import RiskFactor, SectionReading
 
 CHECKS = (
     "title_read_as_risk",

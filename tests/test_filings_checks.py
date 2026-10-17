@@ -12,8 +12,8 @@ from pathlib import Path
 
 import pytest
 
-from jev_filings.checks import CHECKS, check_extraction
-from jev_filings.risk_factors import read_item_1a
+from sec8k.checks import CHECKS, check_extraction
+from sec8k.risk_factors import read_item_1a
 
 FIXTURE = Path(__file__).parent / "fixtures" / "filings" / "tenk_item1a_sample.htm"
 COMPETITION = '<div><span style="font-style:italic;font-weight:700">We face intense competition.'

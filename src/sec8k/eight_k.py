@@ -25,7 +25,7 @@ from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
-from jev_filings.risk_factors import html_blocks
+from sec8k.risk_factors import html_blocks
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Mapping

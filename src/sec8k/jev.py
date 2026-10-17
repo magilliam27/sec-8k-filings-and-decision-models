@@ -34,7 +34,7 @@ import yaml
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
-    from jev_filings.pairing import RiskPair
+    from sec8k.pairing import RiskPair
 
 #: Milestone 1 of magilliam27/MCI-GRU#289 asks one Noul; milestone 2 asks one Choice.
 QUESTION_KINDS = frozenset({"noul", "choice"})

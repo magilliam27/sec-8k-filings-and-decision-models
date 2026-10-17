@@ -13,7 +13,7 @@ import pandas as pd
 import pytest
 
 import scripts.data.label_desk as desk
-from jev_filings.labelling import (
+from sec8k.labelling import (
     EVENT_COLUMNS,
     SHEET_COLUMNS,
     LabelError,

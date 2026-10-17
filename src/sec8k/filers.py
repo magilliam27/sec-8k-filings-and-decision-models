@@ -3,11 +3,11 @@
 A filer is one company, under every CIK it has filed as: Alphabet took over
 Google Inc.'s reports in 2015, and Exxon Mobil's reports moved to a new holding
 company in 2025. Of two copies of one report, the copy under the last CIK
-listed is preferred (see ``jev_filings.edgar.build_filing_index``).
+listed is preferred (see ``sec8k.edgar.build_filing_index``).
 
 ``layout`` is the ``read_item_1a`` layout that reads the company's risk
-headings (see ``jev_filings.risk_factors``). It was chosen by reading every
-fiscal 2013 to 2025 filing and checked by ``jev_filings.checks``; a company
+headings (see ``sec8k.risk_factors``). It was chosen by reading every
+fiscal 2013 to 2025 filing and checked by ``sec8k.checks``; a company
 added here is read with the default until its filings show otherwise.
 
 The ten companies after Alphabet are those experiment E5 asked for: one or two
@@ -24,7 +24,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from jev_filings.edgar import ALPHABET_CIK, GOOGLE_INC_CIK
+from sec8k.edgar import ALPHABET_CIK, GOOGLE_INC_CIK
 
 
 @dataclass(frozen=True)

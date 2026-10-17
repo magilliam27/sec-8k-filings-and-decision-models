@@ -33,7 +33,7 @@ For each run that overlaps ``--window-start`` onwards, the candidate CIKs are,
 in order: the manual row's, Wikipedia's, SEC's for the ticker, then each CIK
 EDGAR lists under one of the run's names, then names starting with them. A CIK
 is confirmed when it filed a 10-K during the run while going by a name that
-matches one of the run's names (``jev_filings.membership.names_match``).
+matches one of the run's names (``sec8k.membership.names_match``).
 The first confirmed CIK is the company; another confirmed CIK joins it only as
 its successor (``successors``), and the manual row's CIKs always do. A confirmed
 CIK whose own reports all come before or after the company's held that part of
@@ -65,8 +65,14 @@ from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
-from jev_filings.edgar import SUBMISSIONS_FILE_URL, SUBMISSIONS_URL
-from jev_filings.membership import (
+from scripts.data.export_sec_risk_factors import (
+    EdgarClient,
+    Transport,
+    _git_commit,
+    _urllib_transport,
+)
+from sec8k.edgar import SUBMISSIONS_FILE_URL, SUBMISSIONS_URL
+from sec8k.membership import (
     Spell,
     apply_changes,
     name_key,
@@ -75,12 +81,6 @@ from jev_filings.membership import (
     renamed_into,
     spells,
     successors,
-)
-from scripts.data.export_sec_risk_factors import (
-    EdgarClient,
-    Transport,
-    _git_commit,
-    _urllib_transport,
 )
 
 if TYPE_CHECKING:

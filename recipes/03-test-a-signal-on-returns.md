@@ -115,6 +115,6 @@ correlation; here it is +0.004. 10-Ks change slowly and are heavily read;
   `scripts/data/export_sec_member_8k.py`
 - Prices: `scripts/data/pull_eodhd_prices.py` (needs `EODHD_API_KEY`)
 - E7 signals and Jev scoring: `scripts/data/score_e7_signals.py`,
-  `src/jev_filings/report_signals.py`; grading `grading/scripts/e7/grade_e7.py`
+  `src/sec8k/report_signals.py`; grading `grading/scripts/e7/grade_e7.py`
 - An independent recheck of E11 with separately written code:
   [docs/independent_recheck.md](../docs/independent_recheck.md)

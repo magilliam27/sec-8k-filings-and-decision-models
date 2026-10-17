@@ -23,7 +23,7 @@ import scripts.data.score_company_risk_changes as company_script
 import scripts.data.score_risk_change_flags as flags_script
 import scripts.data.score_risk_change_noul as noul_script
 import scripts.data.score_risk_changes as script
-from jev_filings.change import (
+from sec8k.change import (
     CHANGE_LABELS,
     DIRECTION_LABELS,
     JEV_CHANGED_CUT,
@@ -45,15 +45,15 @@ from jev_filings.change import (
     score_choices,
     word_change,
 )
-from jev_filings.jev import (
+from sec8k.jev import (
     AnswerCache,
     ModelDriftError,
     Question,
     QuestionSetError,
     load_question_set,
 )
-from jev_filings.pairing import RiskPair
-from jev_filings.risk_factors import RiskFactor
+from sec8k.pairing import RiskPair
+from sec8k.risk_factors import RiskFactor
 
 CONFIGS = Path(__file__).resolve().parents[1] / "configs" / "filings"
 MODEL = "jev-1.13.0"

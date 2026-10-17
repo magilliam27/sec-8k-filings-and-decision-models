@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "jev-filings"
+name = "sec-8k-filings-and-decision-models"
 version = "0.1.0"
 description = "Rating SEC 8-K filings with Jev, TypeSafe's multiple-choice model, and testing the ratings against short-term stock returns."
 readme = "README.md"
@@ -23,14 +23,14 @@ dev = ["pytest>=7.4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["jev_filings*"]
+include = ["sec8k*"]
 
 [tool.ruff]
 target-version = "py310"
 line-length = 100
 
 [tool.ruff.lint.isort]
-known-first-party = ["jev_filings", "scripts"]
+known-first-party = ["sec8k", "scripts"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

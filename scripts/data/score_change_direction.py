@@ -48,17 +48,6 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.change import (
-    DIRECTION_LABELS,
-    KIND_LABELS,
-    ChangeGradingError,
-    lm_negative_words,
-    negative_count,
-    negative_share,
-    pair_table,
-    score_choices,
-)
-from jev_filings.jev import AnswerCache, load_question_set, pair_state
 from scripts.data.score_company_risk_changes import (
     NoJev,
     _commit,
@@ -68,6 +57,17 @@ from scripts.data.score_company_risk_changes import (
     population_mismatch,
 )
 from scripts.data.score_risk_changes import CHARS_PER_TOKEN
+from sec8k.change import (
+    DIRECTION_LABELS,
+    KIND_LABELS,
+    ChangeGradingError,
+    lm_negative_words,
+    negative_count,
+    negative_share,
+    pair_table,
+    score_choices,
+)
+from sec8k.jev import AnswerCache, load_question_set, pair_state
 
 try:
     from typesafe_sdk import Choice, TypeSafeClient

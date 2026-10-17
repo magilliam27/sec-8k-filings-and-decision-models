@@ -30,7 +30,7 @@ import pandas as pd
 if TYPE_CHECKING:
     from collections.abc import Iterable, Mapping, Sequence
 
-    from jev_filings._vendor.prediction_clock import PredictionClock
+    from sec8k._vendor.prediction_clock import PredictionClock
 
 GOOGLE_INC_CIK = "0001288776"
 ALPHABET_CIK = "0001652044"

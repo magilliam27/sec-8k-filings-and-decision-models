@@ -15,9 +15,9 @@ import pytest
 
 import scripts.data.export_sec_risk_factors as export
 import scripts.data.score_risk_factor_pairs as score
-from jev_filings._vendor.input_manifest import read_input_manifest
-from jev_filings.edgar import ALPHABET_CIK, GOOGLE_INC_CIK
-from jev_filings.filers import FILERS, Filer
+from sec8k._vendor.input_manifest import read_input_manifest
+from sec8k.edgar import ALPHABET_CIK, GOOGLE_INC_CIK
+from sec8k.filers import FILERS, Filer
 
 FIXTURE = Path(__file__).parent / "fixtures" / "filings" / "tenk_item1a_sample.htm"
 AGENT = "Your Name you@example.com"

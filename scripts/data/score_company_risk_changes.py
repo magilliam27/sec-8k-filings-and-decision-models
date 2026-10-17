@@ -46,7 +46,13 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings.change import (
+from scripts.data.score_risk_changes import (
+    CHARS_PER_TOKEN,
+    DEFAULT_QUESTIONS,
+    QUESTION_ID,
+    load_risks,
+)
+from sec8k.change import (
     CHANGE_LABELS,
     ChangeGradingError,
     closest_prior_pairs,
@@ -54,13 +60,7 @@ from jev_filings.change import (
     score_choices,
     word_score,
 )
-from jev_filings.jev import AnswerCache, load_question_set, pair_state
-from scripts.data.score_risk_changes import (
-    CHARS_PER_TOKEN,
-    DEFAULT_QUESTIONS,
-    QUESTION_ID,
-    load_risks,
-)
+from sec8k.jev import AnswerCache, load_question_set, pair_state
 
 try:
     from typesafe_sdk import Choice, TypeSafeClient

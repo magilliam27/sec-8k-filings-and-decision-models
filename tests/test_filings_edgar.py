@@ -10,8 +10,8 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from jev_filings._vendor.prediction_clock import PredictionClock
-from jev_filings.edgar import (
+from sec8k._vendor.prediction_clock import PredictionClock
+from sec8k.edgar import (
     ALPHABET_CIK,
     GOOGLE_INC_CIK,
     FilingIndexError,

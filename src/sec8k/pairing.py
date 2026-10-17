@@ -22,7 +22,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
-    from jev_filings.risk_factors import RiskFactor
+    from sec8k.risk_factors import RiskFactor
 
 DEFAULT_SHORTLIST = 5
 

@@ -31,7 +31,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from jev_filings.grading import BASELINES, GradingError, calibration, grade, graded_table
+from sec8k.grading import BASELINES, GradingError, calibration, grade, graded_table
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

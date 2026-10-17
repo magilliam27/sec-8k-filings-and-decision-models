@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from jev_filings._vendor.input_manifest import InputFileRecord, InputFileSpec, write_input_manifest
+from sec8k._vendor.input_manifest import InputFileRecord, InputFileSpec, write_input_manifest
 
 
 def _unique_fields(pairs: list[tuple[str, Any]]) -> dict[str, Any]:

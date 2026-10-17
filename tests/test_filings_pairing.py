@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from jev_filings.pairing import PairingError, pair_consecutive_years, shortlist_prior_risks
-from jev_filings.risk_factors import RiskFactor
+from sec8k.pairing import PairingError, pair_consecutive_years, shortlist_prior_risks
+from sec8k.risk_factors import RiskFactor
 
 
 def _risk(year: int, index: int, heading: str, body: str) -> RiskFactor:

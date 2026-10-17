@@ -66,7 +66,7 @@ Verizon (`vz`) and NextEra Energy (`nee`): 127 filings, 3,164 risks.
 - Risk summaries, cautionary statements and forward-looking-statement
   preambles are left out.
 
-Every filing passes the six extraction checks in `src/jev_filings/checks.py`.
+Every filing passes the six extraction checks in `src/sec8k/checks.py`.
 An independent reading with lxml matched each company's text word for word
 except page furniture (page numbers, running headers and footers, "Table of
 Contents") and the category text noted above. That reading caught three

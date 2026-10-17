@@ -59,7 +59,7 @@ Rating new filings needs a TypeSafe API key (`pip install -e ".[jev]"`), and reb
 ## What is in this repository
 
 ```text
-src/jev_filings/   SEC download, 8-K parsing, Jev question runner, baselines
+src/sec8k/         SEC download, 8-K parsing, Jev question runner, baselines
 scripts/data/      member list, 8-K and price pulls, Jev scoring
 configs/filings/   frozen question files and AI reviewer instructions
 experiments/       one card per experiment, E1 to E11, and the ledger

@@ -8,7 +8,7 @@ import pandas as pd
 import pytest
 
 import scripts.data.grade_risk_factor_pairs as grade_script
-from jev_filings.grading import (
+from sec8k.grading import (
     GradingError,
     accuracy_gap,
     calibration,

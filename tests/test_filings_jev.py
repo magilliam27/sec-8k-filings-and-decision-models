@@ -14,7 +14,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from jev_filings.jev import (
+from sec8k.jev import (
     AnswerCache,
     ModelDriftError,
     QuestionSetError,
@@ -24,8 +24,8 @@ from jev_filings.jev import (
     pair_state,
     score_pairs,
 )
-from jev_filings.pairing import RiskPair
-from jev_filings.risk_factors import RiskFactor
+from sec8k.pairing import RiskPair
+from sec8k.risk_factors import RiskFactor
 
 REPO_QUESTIONS = Path(__file__).resolve().parents[1] / "configs" / "filings" / "questions_v1.yaml"
 V3_QUESTIONS = REPO_QUESTIONS.with_name("questions_v3.yaml")

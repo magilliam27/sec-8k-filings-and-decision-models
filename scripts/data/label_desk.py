@@ -52,7 +52,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from jev_filings.labelling import (
+from sec8k.labelling import (
     LabelError,
     LabelSet,
     agreement,

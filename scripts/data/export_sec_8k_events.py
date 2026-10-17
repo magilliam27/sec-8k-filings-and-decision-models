@@ -9,10 +9,10 @@ Run from the repository root wherever EDGAR is reachable::
         --filer jpm --filer dal \\
         --manifest-output /content/8k_events.r1.json
 
-For each ``--filer`` (a company in ``jev_filings.filers``) it reads the
+For each ``--filer`` (a company in ``sec8k.filers``) it reads the
 submissions files of every CIK the company filed under. Every original 8-K filed
 from ``--first-date`` to ``--last-date`` that carries an event item (see
-``jev_filings.eight_k``) is an event. For each event it downloads the primary
+``sec8k.eight_k``) is an event. For each event it downloads the primary
 document, the filing's index page and its press-release exhibit, and adds two
 pieces of context that were public when the 8-K was accepted: revenue as tagged
 in the company's latest earlier 10-K (from SEC's XBRL company facts), and the
@@ -44,8 +44,15 @@ from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
-from jev_filings._vendor.input_manifest import InputFileSpec, write_input_manifest
-from jev_filings.edgar import (
+from scripts.data.export_sec_risk_factors import (
+    EdgarClient,
+    Transport,
+    _git_commit,
+    _urllib_transport,
+    decode_document,
+)
+from sec8k._vendor.input_manifest import InputFileSpec, write_input_manifest
+from sec8k.edgar import (
     SUBMISSIONS_FILE_URL,
     SUBMISSIONS_URL,
     FilingRecord,
@@ -53,7 +60,7 @@ from jev_filings.edgar import (
     parse_acceptance,
     submissions_blocks,
 )
-from jev_filings.eight_k import (
+from sec8k.eight_k import (
     EVENT_ITEMS,
     LEFT_OUT_ITEMS,
     MAX_TEXT_CHARS,
@@ -70,14 +77,7 @@ from jev_filings.eight_k import (
     prior_items,
     tagged_revenue,
 )
-from jev_filings.filers import FILERS, Filer
-from scripts.data.export_sec_risk_factors import (
-    EdgarClient,
-    Transport,
-    _git_commit,
-    _urllib_transport,
-    decode_document,
-)
+from sec8k.filers import FILERS, Filer
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Mapping, Sequence

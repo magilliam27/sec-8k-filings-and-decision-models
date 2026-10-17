@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-from jev_filings.risk_factors import (
+from sec8k.risk_factors import (
     RiskFactorExtractionError,
     extract_risk_factors,
     html_blocks,

@@ -10,7 +10,7 @@ name itself with a contact email and to stay under 10 requests a second::
         --manifest-output /content/alphabet_risk_factors.r1.json \\
         --package-revision r1
 
-``--filer`` names a company in ``jev_filings.filers`` (repeat it for
+``--filer`` names a company in ``sec8k.filers`` (repeat it for
 several; the default is Alphabet). For each, it reads the submissions files of
 every CIK the company filed under (with their older history files), keeps one
 copy of every 10-K accepted from ``--accepted-from`` (default 2014-01-01, so
@@ -29,7 +29,7 @@ What it writes under ``--package-root/filings``, for each company's key (here
 - ``alphabet_extraction_report.csv``: per filing, the encoding read, how many
   risks and categories were found, and how many check findings it raised.
 - ``alphabet_extraction_checks.csv``: one row per finding of the checks in
-  ``jev_filings.checks`` (magilliam27/MCI-GRU#292), run on every filing; empty when clean.
+  ``sec8k.checks`` (magilliam27/MCI-GRU#292), run on every filing; empty when clean.
 - ``alphabet_risk_factors.meta.json``: provenance.
 
 A filing whose Item 1A cannot be read, or that fails a check, is reported and
@@ -57,17 +57,17 @@ from typing import Any
 
 import pandas as pd
 
-from jev_filings._vendor.input_manifest import InputFileSpec, write_input_manifest
-from jev_filings.checks import CheckFinding, check_extraction
-from jev_filings.edgar import (
+from sec8k._vendor.input_manifest import InputFileSpec, write_input_manifest
+from sec8k.checks import CheckFinding, check_extraction
+from sec8k.edgar import (
     SUBMISSIONS_FILE_URL,
     SUBMISSIONS_URL,
     build_filing_index,
     filings_from_block,
     submissions_blocks,
 )
-from jev_filings.filers import FILERS, Filer
-from jev_filings.risk_factors import RiskFactorExtractionError, read_item_1a
+from sec8k.filers import FILERS, Filer
+from sec8k.risk_factors import RiskFactorExtractionError, read_item_1a
 
 #: Seconds between requests: SEC's stated ceiling is 10 a second.
 MIN_INTERVAL_SECONDS = 0.11
