@@ -61,7 +61,7 @@ Jev's share of risks that got worse.
   days, minus SPY.
 - Rank correlation within calendar-quarter groups (43 groups), averaged, 95%
   interval from 10,000 draws of whole groups, seed 307.
-- Jev scored 80,596 flagged risks (116.2M input tokens, about $4.88).
+- Jev scored 80,596 flagged risks.
 
 | Signal, 63 trading days | Rank correlation (95% interval) | Filings |
 |---|---|---|

@@ -95,7 +95,6 @@ Rating the 26,962 filings took 55.2 million input tokens of model time. At TypeS
 | Returns test (E11) | $2.32 for 26,962 filings (55.2 million input tokens) |
 | Reading check (E10) | About $0.07 for 436 filings (1.7 million input tokens) |
 | Next-open test (E12) | None; it reuses the E11 ratings |
-| Whole programme, including the 10-K work in Appendix C | About $10.40 (about 248 million input tokens: about $8.10 before E11, plus E11) |
 | Ongoing rating | About 1,950 qualifying 8-Ks a year, or about 18 cents a year |
 
 These figures cover model time only. They exclude the price data (a paid EODHD subscription) and the AI coding and review sessions used to build and check the work, neither of which was metered per task. SEC filings are free to download.
