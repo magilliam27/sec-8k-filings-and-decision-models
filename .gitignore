@@ -25,3 +25,5 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+docs/figures/src/build/
+node_modules/

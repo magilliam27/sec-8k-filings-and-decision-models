@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Decision-model ratings of 8-K filings and short-term stock returns"
+abstract: >-
+  A decision model (Jev, from TypeSafe) rated 26,962 8-K filings by S&P 500
+  companies, 2013 to 2026, from very bad to very good for shareholders. Within
+  item group and year, the rating's rank correlation with the 2-day
+  market-adjusted return is +0.025 (95% interval +0.015 to +0.034). Code,
+  frozen designs, summary results and grading scripts.
+type: software
+authors:
+  - alias: magilliam27
+repository-code: "https://github.com/magilliam27/sec-8k-filings-and-decision-models"
+license: MIT
+date-released: "2026-10-18"
+keywords:
+  - sec-edgar
+  - 8-k
+  - financial-nlp
+  - event-study
+  - decision-model

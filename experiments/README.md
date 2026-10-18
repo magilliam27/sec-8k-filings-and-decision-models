@@ -1,6 +1,6 @@
 # Experiments
 
-One folder per experiment, E1 to E11, plus the research ledger.
+One folder per experiment, E1 to E12, plus the research ledger.
 
 - `LEDGER.md`: one line per experiment with its verdict, the dataset versions,
   and every decision with its date and who made it.
@@ -8,7 +8,7 @@ One folder per experiment, E1 to E11, plus the research ledger.
   label, Jev answer or return existed; later additions are dated. The Result
   section was added at grading.
 - `<id>/grading/summary.json`: the graded numbers, where the experiment
-  produced one (E4 to E11; E1 to E3 have none here).
+  produced one (E4 to E12; E1 to E3 have none here).
 
 The cards were copied from the original research folder. Two kinds of edits
 were made for publication, and nothing else changed:

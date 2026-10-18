@@ -1,8 +1,10 @@
 # 10-K research ledger
 
-Every experiment, its verdict and the decisions behind it, newest first. Kept by the Lead ("10-K research lead" thread). One line per experiment; the card holds the detail. Last updated 16 October 2026, 11:08Z.
+Every experiment, its verdict and the decisions behind it, newest first. Kept by the grading role (the Lead). One line per experiment; the card holds the detail. Last updated 18 October 2026. "Words" and "word counts" below mean the free word baselines; for E11 and E12 that is the word-tone score, positive minus negative Loughran-McDonald words.
 
 ## Where things stand
+
+**Next open (E12, 17 Oct): nothing usable is left from the first open a trader can reach.** On the 23,585 E11 filings accepted while the market was closed, the rating's correlation with the return from the next open is +0.006 (−0.005 to +0.017) over 2 sessions and +0.008 (−0.006 to +0.022) over 5. The move E11 measured happens mostly overnight, before the open.
 
 **8-K returns (E11, 17 Oct): Jev's rating of an 8-K lines up with the next 2 days' return, beyond the item code and better than word counts.** Across 26,962 S&P 500 8-Ks from 2013 to 2026, rank correlation +0.025 (+0.015 to +0.034) within item group and year; Jev minus words +0.040. Small, mostly on day 0, gone by 10 days, and nothing after the first close following the filing, so not a trade at the close. Officer changes Jev calls bad fall 0.7% over 2 days.
 
@@ -14,6 +16,7 @@ Every experiment, its verdict and the decisions behind it, newest first. Kept by
 
 | Id | Question | Data | Answer key | Jev | Baseline | Verdict | Card |
 |---|---|---|---|---|---|---|---|
+| E12 | From the first open a trader can reach, does Jev's 8-K rating rank the next 2 and 5 sessions? | E11's 26,962 events; EODHD opens | stock returns, entry open to close of session +1 and +4 | E11's ratings, no new spend | word-tone score | **Fail** (17 Oct): 2 sessions +0.006 (−0.005 to +0.017), 5 sessions +0.008 (−0.006 to +0.022); most of E11's move is overnight, before the open | [card](E12-next-open/CARD.md) |
 | E11 | Does Jev's 8-K rating predict returns over 1 to 10 days, beyond the item code? | member_8k_events r1: 26,962 S&P 500 8-Ks, 2013–2026 | stock returns (EODHD), day −1 close to day +1 | questions_v5 rating on 26,962 events (55.2M tokens, $2.32) | item code, then dictionary net tone | **Pass** (17 Oct): 2-day corr +0.025 (+0.015 to +0.034); Jev minus words +0.040 (+0.026 to +0.055); gone by 10 days, no drift after day 0 | [card](E11-8k-returns/CARD.md) |
 | E10 | How good or bad is an 8-K event for shareholders? Five-way rating | e10_8k_events r1: all 436 8-Ks of E5's 10 companies, 2013–2025 | AI ×3 on all 436 | questions_v5 (1.71M tokens) | item code, then dictionary net tone | **Pass** (16 Oct): bad events 0.986 vs 0.759, +0.128 to +0.323; key and Jev share a rubric | [card](E10-8k-events/CARD.md) |
 | E9 | E8 repeated on 10 fresh companies: is the change worse? | 10 new companies (e9 r1) | AI ×3 on 300 | questions_v4 (0.81M tokens) | text-grew score | **Pass** (16 Oct): 0.947 vs 0.838, +0.024 to +0.199 | [card](E9-direction-confirm/CARD.md) |

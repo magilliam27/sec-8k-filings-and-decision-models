@@ -27,8 +27,10 @@ risks that got worse.
 ## The free baseline it must beat
 
 - **E11:** E10's baseline. For returns, its "good" score is minus the
-  Loughran-McDonald net tone. Because every comparison is made inside one item
-  group, the item code itself is already controlled for.
+  Loughran-McDonald net tone, that is the word-tone score: positive minus
+  negative words as a share of all words, higher for more upbeat wording. A
+  negative correlation means upbeat filings did worse. Because every comparison
+  is made inside one item group, the item code itself is already controlled for.
 - **E7:** the Lazy Prices signal (1 minus the cosine similarity of the whole
   risk section to last year's) as the main test, and the share of risks a word
   rule flags as changed as Jev's comparison.
@@ -59,7 +61,7 @@ baselines were frozen with their hashes on the card.
 negative-leaning 1,678, auditor changes 68. Jev cost 55.2M input tokens,
 about $2.32.
 
-| Average rank correlation, within item group and year | Jev's rating | Word tone | Jev minus word tone |
+| Average rank correlation, within item group and year | Jev's rating | Word-tone score (positive minus negative) | Jev minus word-tone score |
 |---|---|---|---|
 | **Main: 2 days (day −1 close to day +1)** | **+0.025 (+0.015 to +0.034)** | −0.015 (−0.028 to −0.004) | **+0.040 (+0.026 to +0.055)** |
 | Day 0 alone | +0.039 (+0.028 to +0.049) | −0.012 | +0.051 (+0.036 to +0.068) |

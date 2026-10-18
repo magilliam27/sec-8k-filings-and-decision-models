@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sec-8k-filings-and-decision-models"
 version = "0.1.0"
-description = "Rating SEC 8-K filings with Jev, TypeSafe's multiple-choice model, and testing the ratings against short-term stock returns."
+description = "Rating SEC 8-K filings with a decision model (Jev, from TypeSafe) and testing the ratings against short-term stock returns."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
