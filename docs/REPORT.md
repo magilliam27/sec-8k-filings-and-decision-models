@@ -55,13 +55,15 @@ Masking changed the model's answer on about 2% of filings, against 0.5% when the
 
 A reading added after the result, at the owner's suggestion: if the signal came from the model recalling each company's story, it should have fallen roughly in proportion to the filers the model could no longer identify. It did not.
 
-| Mask | Filers no longer identified | Expected change if memory drove the signal (share lost × +0.025) | Observed change (95% interval) |
+| Mask | Filers no longer identified | Expected change if memory drove the signal | Observed change (95% interval) |
 | --- | --- | --- | --- |
-| Name mask | 28% | about −0.007 | +0.001 (−0.003 to +0.005) |
-| Deep mask | 36% | about −0.009 | −0.001 (−0.006 to +0.005) |
-| Deep mask, filings without a press release (17,101) | 51% | about −0.013 | −0.001 (−0.009 to +0.008) |
+| Name mask | 35% | about −0.009 | +0.001 (−0.003 to +0.005) |
+| Deep mask | 45% | about −0.011 | −0.001 (−0.006 to +0.005) |
+| Deep mask, filings without a press release (17,101) | 63% | about −0.017 | −0.001 (−0.009 to +0.008) |
 
-A proportional drop lies outside the observed interval in all three rows, only just in the last. The argument has a weakness: memory need not be spread evenly. It may sit mostly in famous events, which the model still recognises under both masks. So this is not a perfect result, but it adds support to the main finding that the model reads the event rather than the name. The forward hold-out (section 4) remains the clean test. Detail, including results by period and company size, is on the [E13 card](../experiments/E13-name-masking/CARD.md).
+The leak check is a pick among five, so 20% would be right by guessing; the share still identified is therefore (accuracy − 20%) ÷ 80%, and the rest counts as lost. The expected change is the share lost times the same filings' correlation with the name shown: +0.025 overall and +0.027 for the filings without a press release. These figures were computed after grading and are in [`posthoc.json`](../experiments/E13-name-masking/grading/posthoc.json).
+
+A proportional drop lies outside the observed interval in all three rows. The argument has a weakness: memory need not be spread evenly. It may sit mostly in famous events, which the model still recognises under both masks. So this is not a perfect result, but it adds support to the main finding that the model reads the event rather than the name. The forward hold-out (section 4) remains the clean test. Detail, including results by period and company size, is on the [E13 card](../experiments/E13-name-masking/CARD.md).
 
 **By year.** The correlation is positive in 13 of 14 years. It is weaker in recent years: the average of the yearly values is +0.036 for 2013 to 2017 and +0.010 for 2022 to 2026 (`by_year` in [`summary.json`](../results/E11-8k-returns/summary.json)). This decline is what look-ahead would produce, since older events have had more coverage. It is also what a market that prices 8-Ks faster would produce. The data cannot separate the two.
 

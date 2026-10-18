@@ -109,12 +109,12 @@ Frozen before any masked score, leak-check answer or redraw existed: this card a
 
 The owner's point: the masks did make Jev lose track of many filers, yet the signal did not fall with them. If the 2-day signal came from Jev recalling each company's story, it should have dropped roughly in proportion to the filers Jev could no longer identify. It did not:
 
-| Mask | Filers Jev no longer identifies (leak check) | Expected change if name memory drove the signal (share lost × +0.025) | Observed change against E11 (95% interval) |
+| Mask | Filers Jev no longer identifies (leak check, corrected for guessing) | Expected change if name memory drove the signal | Observed change against E11 (95% interval) |
 |---|---|---|---|
-| Name mask | 28% | about −0.007 | +0.001 (−0.003 to +0.005) |
-| Deep mask | 36% | about −0.009 | −0.001 (−0.006 to +0.005) |
-| Deep mask, filings without a press release | 51% | about −0.013 | −0.001 (−0.009 to +0.008) |
+| Name mask | 35% | about −0.009 | +0.001 (−0.003 to +0.005) |
+| Deep mask | 45% | about −0.011 | −0.001 (−0.006 to +0.005) |
+| Deep mask, filings without a press release | 63% | about −0.017 | −0.001 (−0.009 to +0.008) |
 
-A proportional drop lies outside the observed interval in all three rows, only just in the last. This is not a perfect result, but it adds support to E11's finding that Jev reads the event rather than the name.
+Revised 18 Oct 04:00Z at the launch review's suggestion (first version: 28%, 36% and 51% lost, from 1 − accuracy, with every row against +0.025). A five-way pick is right 20% of the time by guessing, so the share still identified is (accuracy − 0.2) ÷ 0.8 and the rest is lost. The expected change is the share lost times the same filings' E11 correlation: +0.025 overall, +0.027 without a press release. Figures in `grading/posthoc.json` (aggregates only, post-hoc). A proportional drop lies outside the observed interval in all three rows. This is not a perfect result, but it adds support to E11's finding that Jev reads the event rather than the name.
 
 The weakness of the argument: memory need not be spread evenly. It may sit mostly in famous events (Boeing's CEO exit, say), which Jev still identifies under both masks. The filings that became unrecognisable are mostly ones without a press release, where memory would matter least anyway. So this counts against name memory being the main driver, without ruling it out. The frozen verdict stays **unclear**, and the forward hold-out is still the clean test.

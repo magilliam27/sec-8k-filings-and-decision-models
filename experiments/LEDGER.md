@@ -4,7 +4,7 @@ Every experiment, its verdict and the decisions behind it, newest first. Kept by
 
 ## Where things stand
 
-**Name masking (E13, 18 Oct): hiding the company changes 2% of Jev's 8-K answers and none of the returns link, but Jev can still recognise most filers from the masked text, so the memory caveat stands; the forward hold-out is the remaining clean test.** A reading added after the result: the signal did not fall in proportion to the filers Jev could no longer identify (28% under the name mask, 36% under the deep mask), which adds support to E11 without settling it.
+**Name masking (E13, 18 Oct): hiding the company changes 2% of Jev's 8-K answers and none of the returns link, but Jev can still recognise most filers from the masked text, so the memory caveat stands; the forward hold-out is the remaining clean test.** A reading added after the result: the signal did not fall in proportion to the filers Jev could no longer identify (35% under the name mask and 45% under the deep mask, after correcting for guessing), which adds support to E11 without settling it.
 
 **Next open (E12, 17 Oct): nothing reliable is left from the next regular-session open.** On the 23,585 E11 filings accepted while the market was closed, the rating's correlation with the return from the next open is +0.006 (−0.005 to +0.017) over 2 sessions and +0.008 (−0.006 to +0.022) over 5. The move E11 measured happens mostly overnight, before the open. Faster entries (after-hours, pre-market, minutes after an intraday filing) were not tested.
 
