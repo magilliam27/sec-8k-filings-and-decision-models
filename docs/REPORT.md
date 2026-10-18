@@ -19,7 +19,7 @@ The ratings come from Jev (jev-1.13.0, from [TypeSafe](https://docs.typesafe.ai)
 - **Item code.** The 8-K item number that states the kind of event, such as 5.02 for an officer change. The item codes are combined into four item groups (section 2).
 - **Word-tone score.** Positive minus negative words from the Loughran-McDonald finance word list, as a share of all words in the filing. Higher means more upbeat wording. The code stores the opposite sign, negative minus positive, as `net_tone`, and the grading uses minus `net_tone`.
 
-**Related work.** Lopez-Lira and Tang ([2023](https://arxiv.org/abs/2304.07619)) find that GPT-4 ratings of news headlines published after the model's knowledge cut-off capture the initial, non-tradable market reaction, and predict some later drift, mostly in small stocks and on negative news. This study finds the same initial reaction for 8-Ks of large companies, with no tradable drift (section 3). Glasserman and Lin ([2023](https://arxiv.org/abs/2309.17322)) separate two biases that arise when a model's training overlaps the test period: look-ahead, where the model knows what followed, and distraction, where general knowledge of the named company interferes with the reading. Their remedy is to remove company identifiers from the text. Both apply here (section 4).
+**Related work.** Lopez-Lira and Tang ([2023](https://arxiv.org/abs/2304.07619)) find that GPT-4 ratings of news headlines published after the model's knowledge cut-off capture the initial, non-tradable market reaction, and predict some later drift, mostly in small stocks and on negative news. This study finds the same initial reaction for 8-Ks of large companies, with no drift left from the next open (section 3). Glasserman and Lin ([2023](https://arxiv.org/abs/2309.17322)) separate two biases that arise when a model's training overlaps the test period: look-ahead, where the model knows what followed, and distraction, where general knowledge of the named company interferes with the reading. Their remedy is to remove company identifiers from the text. Both apply here (section 4).
 
 ## 2. Method
 
@@ -41,7 +41,7 @@ The ratings come from Jev (jev-1.13.0, from [TypeSafe](https://docs.typesafe.ai)
 
 The association is strongest on the filing day and fades by day 10. Measured from the first close after the filing, neither method predicts returns.
 
-**From the next open (E12).** Most 8-Ks (88%) arrive while the market is closed. A follow-up test measured returns from the first open a trader could reach. From there the correlation is +0.006 (−0.005 to +0.017) over 2 trading sessions and +0.008 (−0.006 to +0.022) over 5, so nothing usable remains. Most of the measured move happens overnight, between the close before the filing and the next open (+0.054 for that stretch alone). The design was frozen before any opening price was read; see the [E12 card](../experiments/E12-next-open/CARD.md).
+**From the next open (E12).** Most 8-Ks (88%) arrive while the market is closed. A follow-up test measured returns from the first regular-session open after each filing. From there the correlation is +0.006 (−0.005 to +0.017) over 2 trading sessions and +0.008 (−0.006 to +0.022) over 5, so nothing reliable remains from the open. For filings made while the market is closed, most of the move happens between the close before the filing and the next open (+0.054 for that stretch alone), the hours when only after-hours and pre-market trading is possible. One pattern, found by looking rather than tested on its own: officer changes rated bad kept sliding after the open, −0.33% (−0.60 to −0.08) over 2 sessions (706 filings). The design was frozen before any opening price was read; see the [E12 card](../experiments/E12-next-open/CARD.md).
 
 **By year.** The correlation is positive in 13 of 14 years. It is weaker in recent years: the average of the yearly values is +0.036 for 2013 to 2017 and +0.010 for 2022 to 2026 (`by_year` in [`summary.json`](../results/E11-8k-returns/summary.json)). This decline is what look-ahead would produce, since older events have had more coverage. It is also what a market that prices 8-Ks faster would produce. The data cannot separate the two.
 
@@ -69,7 +69,7 @@ Positive ratings show a smaller effect (see the [headline chart](../README.md#he
 
 Separation is clearest for officer changes. For deals and negative-leaning items, the bad and very good cells are mixed. The item code alone has no predictive value (−0.005, interval −0.017 to +0.006). Per-item results and day-by-day paths are in [`summary.json`](../results/E11-8k-returns/summary.json).
 
-**Economic size.** Within each item group, the top fifth of filings by rating outperformed the bottom fifth by 0.29 percentage points over two days (+0.16 to +0.42), before trading costs. Because the move is complete by the first close, this measures explanatory power rather than an achievable trading return.
+**Economic size.** Within each item group, the top fifth of filings by rating outperformed the bottom fifth by 0.29 percentage points over two days (+0.16 to +0.42), before trading costs. Most of this move comes before the next open, so it is not a return available from that open. Whether a faster entry captures part of it was not tested.
 
 ## 4. Limitations
 
@@ -80,7 +80,7 @@ The result is consistent across filings and years, but it is small and short-liv
 | Model memory (principal risk) | The model may have been trained on later reporting about these events. TypeSafe does not publish a training cut-off, so the planned check on filings after the cut-off could not be run. The model also sees the company name, the most likely route for it to recall how a story ended. The 107 filings dated after the model's release on 10 September 2026 show the same direction (+0.034), but are too few to be conclusive. The weaker recent years (section 3) are consistent with memorisation but do not prove it. |
 | Next tests for memory | Two tests would address it. The first re-rates the filings with the company name masked, as Glasserman and Lin do. The second is a forward hold-out: filings arriving after the model's cut-off are rated, and their ratings are hashed and published before their returns exist. |
 | Small per filing | The rating explains well under 1% of the variation in 2-day returns. It is a tilt across many filings, not a forecast for any one. |
-| Timing | The move occurs before the first close. From the next open nothing usable remains (E12, section 3). Intraday entry within minutes of a filing was not tested, since only daily prices were used. |
+| Timing | Most of the move comes before the next open. From that open onward nothing reliable remains (E12, section 3). Two faster entries were not tested, since only daily prices were used: before the open, in after-hours or pre-market trading, where volume is thinner and spreads wider; and within minutes of a filing made during the session. They are the natural next test for a trading use. |
 | Earlier announcements | Many companies issue a press release before the 8-K, so the window can miss the first reaction. Filings with a press release attached, more likely to be the first announcement, show a stronger association: +0.042 against +0.027. |
 | Baseline not combined | The model was compared with the word-tone score directly. Its value in addition to word tone was not tested. |
 | AI answer key (E10) | The reading check was graded against three blind AI reviewers who used the same rubric as the model, so it shows consistent reading rather than value. The returns test needs no key. |
@@ -104,11 +104,11 @@ These figures cover model time only. They exclude the price data (a paid EODHD s
 | Control | Detail |
 | --- | --- |
 | Pre-registration | Each experiment's design (data, question, baseline, measure and pass rule) was fixed before any labels, model answers or prices existed. Any change to the question, data or key required a new experiment id. For E11 the design was frozen on 16 October at 12:45 UTC, the filings published at 14:24, the ratings produced at 03:17 the next day, and returns computed only after that. |
-| Separation of roles | Four separate AI sessions handled data, model questions, blind reviewing and grading. The session querying the model never saw keys or returns, the reviewers never saw the model's answers, and keys and prices were opened only at grading. |
 | File fingerprints | The SHA-256 hash of every frozen file is recorded at the time of freezing, so graded files can be matched to frozen ones (Appendix B). |
 | Baseline comparison | Every test compares the model with a free method, and a pass requires the 95% interval of the difference to exclude zero. |
+| Bootstrap intervals | Correlations are resampled by item-group-and-year cell (10,000 draws) and average returns by calendar month (2,000 draws), so one busy group or month cannot drive the result. A test passes only if its 95% interval excludes zero. |
+| Shuffle test | In the replication, shuffling the ratings within groups 200 times gave correlations centred near zero; the observed +0.025 exceeded every shuffle. |
 | Recomputation | Every verdict number was recomputed by script, at least one case was traced by hand, and E11 was replicated independently. |
-| Null results reported | Stopped and failed experiments remain in the record with their numbers (Appendix C). Each experiment's frozen design and result is in [`experiments/`](../experiments/). |
 
 ## 7. Independent replication
 

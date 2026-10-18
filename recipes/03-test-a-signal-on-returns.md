@@ -80,8 +80,10 @@ about $2.32.
 **What it means:** Jev's rating carries real, small information about the
 immediate price reaction that item codes and word counts miss. A correlation
 of 0.025 explains well under 1% of 2-day returns. It is over by the first
-close after the filing, so it is not a trade at the close. Its natural use is
-as a fast event feature.
+close after the filing, so it is not a trade at the close. Most of the move
+comes before the next open; entries faster than that open (after-hours,
+pre-market, or minutes after an intraday filing) were not tested. Its natural
+use is as a fast event feature.
 
 ## The failed version (E7)
 

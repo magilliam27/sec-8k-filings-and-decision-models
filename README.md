@@ -9,7 +9,7 @@ Jev, a decision model from TypeSafe, rated 26,962 8-K filings by S&P 500 compani
 
 Filings were compared only with others of the same item group and year. Within those groups, the rating's rank correlation with the next two days' market-adjusted return is +0.025 (95% interval +0.015 to +0.034). Zero would mean no relation, and the correlation is positive in 13 of 14 years. A market-adjusted return is the stock's return minus that of SPY, an S&P 500 index fund, over the same days.
 
-The effect is small, and almost all of it happens before a trader could act. It is over by the first close after the filing, and a follow-up test found nothing left from the next morning's open. The main unresolved risk is that the model may have read later news about these events.
+The effect is small and fast. Most 8-Ks (88%) arrive while the market is closed, and most of the move comes before the next morning's open. From that open onward, a follow-up test found nothing reliable left (E12). A faster entry might catch part of the move, such as after-hours or pre-market trading, or trading within minutes of a filing made during the session. Daily prices cannot test that. The main unresolved risk is that the model may have read later news about these events.
 
 **[Full report](docs/REPORT.md)** · [Method](docs/REPORT.md#2-method) · [Results](docs/REPORT.md#3-results) · [Limitations](docs/REPORT.md#4-limitations) · [Costs](docs/REPORT.md#5-costs) · [Reproduce](docs/REPORT.md#appendix-b-reproduction)
 
@@ -52,7 +52,7 @@ The separation is clearest for officer changes. Every item group and rating with
 | Limitation | In short |
 | --- | --- |
 | Model memory | The model may have been trained on later news about these events, and it sees the company name. TypeSafe publishes no training cut-off. The 107 filings after the model's release point the same way (+0.034), but are too few to settle it. |
-| Not tradeable as measured | The move is complete by the first close. Measured from the next open, the correlation is +0.006 over 2 days and +0.008 over 5, both indistinguishable from zero ([E12](experiments/E12-next-open/CARD.md)). |
+| Speed of the move | For filings made while the market is closed, most of the move comes between the filing and the next open (rank correlation +0.054 for that stretch). From the next open it is +0.006 over 2 days and +0.008 over 5, indistinguishable from zero ([E12](experiments/E12-next-open/CARD.md)). Faster entries were not tested, since only daily prices were used: after-hours, pre-market, or intraday for the 12% of filings made during the session. |
 | Small | The rating explains well under 1% of the variation in 2-day returns. It is a tilt across many filings, not a forecast for one. |
 | Earlier announcements | Companies often announce the news before the 8-K, so part of the reaction can come before the measured window. |
 | AI answer key | The reading check (E10) was graded against three AI reviewers who used the same rubric. |
@@ -65,11 +65,10 @@ Full detail, related work and the planned follow-up tests are in [section 4 of t
 | Control | In short |
 | --- | --- |
 | Design frozen first | Data, question, baseline, measure and pass rule were written down before any rating or return existed. |
-| Separate roles | Separate AI sessions handled the data, the model questions, the blind reviewing and the grading. |
 | File fingerprints | Every frozen input has a recorded SHA-256 hash. |
 | Free baseline | Every test is compared with a free method. |
+| Bootstrap intervals | Every headline number carries a 95% interval from resampling (10,000 draws), and a test passes only if its interval excludes zero. |
 | Independent replication | A separate session rebuilt E11 from the design and raw data and matched every headline number. |
-| Null results kept | Failed and stopped experiments stay in the record with their numbers. |
 
 Detail is in [section 6](docs/REPORT.md#6-controls-against-bias) and [section 7](docs/REPORT.md#7-independent-replication) of the report.
 

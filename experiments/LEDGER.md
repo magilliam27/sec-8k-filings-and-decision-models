@@ -4,7 +4,7 @@ Every experiment, its verdict and the decisions behind it, newest first. Kept by
 
 ## Where things stand
 
-**Next open (E12, 17 Oct): nothing usable is left from the first open a trader can reach.** On the 23,585 E11 filings accepted while the market was closed, the rating's correlation with the return from the next open is +0.006 (−0.005 to +0.017) over 2 sessions and +0.008 (−0.006 to +0.022) over 5. The move E11 measured happens mostly overnight, before the open.
+**Next open (E12, 17 Oct): nothing reliable is left from the next regular-session open.** On the 23,585 E11 filings accepted while the market was closed, the rating's correlation with the return from the next open is +0.006 (−0.005 to +0.017) over 2 sessions and +0.008 (−0.006 to +0.022) over 5. The move E11 measured happens mostly overnight, before the open. Faster entries (after-hours, pre-market, minutes after an intraday filing) were not tested.
 
 **8-K returns (E11, 17 Oct): Jev's rating of an 8-K lines up with the next 2 days' return, beyond the item code and better than word counts.** Across 26,962 S&P 500 8-Ks from 2013 to 2026, rank correlation +0.025 (+0.015 to +0.034) within item group and year; Jev minus words +0.040. Small, mostly on day 0, gone by 10 days, and nothing after the first close following the filing, so not a trade at the close. Officer changes Jev calls bad fall 0.7% over 2 days.
 
