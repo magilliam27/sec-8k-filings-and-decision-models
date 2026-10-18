@@ -37,7 +37,7 @@ The ratings come from Jev (jev-1.13.0, from [TypeSafe](https://docs.typesafe.ai)
 
 **Main result.** Within item group and year, the rating's rank correlation with the 2-day market-adjusted return is **+0.025 (95% interval +0.015 to +0.034)**. The design's pass rule was an interval clear of zero. The word-tone score gives −0.015 (−0.028 to −0.004): filings with more upbeat wording did slightly worse. The model's margin over it is +0.040 (+0.026 to +0.055). The 44 group-level correlations are in [`results/E11-8k-returns/cells.csv`](../results/E11-8k-returns/cells.csv).
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="figures/correlation-by-window-dark.png"><img src="figures/correlation-by-window-light.png" width="100%" alt="Rank correlation with the market-adjusted return, within item group and year. Model rating from the last close before the filing: day 0 +0.039, 2 days +0.025, 5 days +0.022, 10 days +0.010; from the first close after it: to day 5 −0.002, to day 10 −0.007. Word-tone score: −0.012, −0.015, −0.010, +0.001, then −0.002 and +0.004."></picture>
+<img src="figures/correlation-by-window-dark.png" width="100%" alt="Rank correlation with the market-adjusted return, within item group and year. Model rating from the last close before the filing: day 0 +0.039, 2 days +0.025, 5 days +0.022, 10 days +0.010; from the first close after it: to day 5 −0.002, to day 10 −0.007. Word-tone score: −0.012, −0.015, −0.010, +0.001, then −0.002 and +0.004.">
 
 The association is strongest on the filing day and fades by day 10. Measured from the first close after the filing, neither method predicts returns.
 

@@ -1,7 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/banner-dark.png">
-  <img alt="Decision-model ratings of 8-K filings and short-term stock returns. A five-point scale from very bad to very good." src="docs/figures/banner-light.png" width="100%">
-</picture>
+<img alt="Decision-model ratings of 8-K filings and short-term stock returns. A five-point scale from very bad to very good." src="docs/figures/banner-dark.png" width="100%">
 
 ![Code: MIT](https://img.shields.io/badge/code-MIT-1F6FEB) ![Docs, figures and results: CC BY 4.0](https://img.shields.io/badge/docs%20%26%20results-CC%20BY%204.0-1F6FEB) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-1F6FEB) &nbsp;26,962 filings rated for $2.32 of model time · 402 tests · October 2026 · [magilliam27](https://github.com/magilliam27)
 
@@ -15,24 +12,15 @@ The effect is small and fast. Most 8-Ks (88%) arrive while the market is closed,
 
 ## Headline result
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/return-by-rating-dark.png">
-  <img alt="Bar chart, lower ratings, lower 2-day returns. Average 2-day market-adjusted return by rating: very bad −1.19% (79 filings, interval −3.12% to +0.62%), bad −0.34% (1,456 filings, −0.55% to −0.13%), neutral −0.05% (22,463 filings), good +0.16% (823 filings, −0.05% to +0.38%), very good +0.27% (2,141 filings, +0.08% to +0.46%)." src="docs/figures/return-by-rating-light.png" width="100%">
-</picture>
+<img alt="Bar chart, lower ratings, lower 2-day returns. Average 2-day market-adjusted return by rating: very bad −1.19% (79 filings, interval −3.12% to +0.62%), bad −0.34% (1,456 filings, −0.55% to −0.13%), neutral −0.05% (22,463 filings), good +0.16% (823 filings, −0.05% to +0.38%), very good +0.27% (2,141 filings, +0.08% to +0.46%)." src="docs/figures/return-by-rating-dark.png" width="100%">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/stats-dark.png">
-  <img alt="Rank correlation with the 2-day return +0.025 (95% interval +0.015 to +0.034); positive in 13 of 14 years; $2.32 of model time for 26,962 filings." src="docs/figures/stats-light.png" width="100%">
-</picture>
+<img alt="Rank correlation with the 2-day return +0.025 (95% interval +0.015 to +0.034); positive in 13 of 14 years; $2.32 of model time for 26,962 filings." src="docs/figures/stats-dark.png" width="100%">
 
 For comparison, a free word-tone score scores −0.015 on the same test. It counts positive minus negative words from the Loughran-McDonald finance word list, as a share of all words. Filings with more upbeat wording were followed by slightly worse returns. The model's margin over it is +0.040 (+0.026 to +0.055).
 
 ## Two examples
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/rating-example-dark.png">
-  <img alt="Two officer-change 8-Ks. Alexion Pharmaceuticals, 12 December 2016: CEO and CFO leave, rated very bad (98% bad or very bad), −17.3% against the market over 2 days and −3.9% by day 10. Boeing, 23 December 2019: CEO resigns, rated bad (95% bad or very bad), −2.80% over 2 days and −2.84% by day 10." src="docs/figures/rating-example-light.png" width="100%">
-</picture>
+<img alt="Two officer-change 8-Ks. Alexion Pharmaceuticals, 12 December 2016: CEO and CFO leave, rated very bad (98% bad or very bad), −17.3% against the market over 2 days and −3.9% by day 10. Boeing, 23 December 2019: CEO resigns, rated bad (95% bad or very bad), −2.80% over 2 days and −2.84% by day 10." src="docs/figures/rating-example-dark.png" width="100%">
 
 Boeing was named as the example when the test was designed, before any return existed. Alexion was picked afterwards as an illustration. Both are far larger than the average effect.
 
