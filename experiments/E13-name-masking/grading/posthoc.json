@@ -1,0 +1,94 @@
+{
+ "note": "post-hoc, computed after grading; not part of the frozen design",
+ "leak_check_by_press_release": {
+  "deep_without_press_release": {
+   "events": 629,
+   "accuracy": 0.4928
+  },
+  "deep_with_press_release": {
+   "events": 371,
+   "accuracy": 0.8814
+  },
+  "name_without_press_release": {
+   "events": 629,
+   "accuracy": 0.601
+  },
+  "name_with_press_release": {
+   "events": 371,
+   "accuracy": 0.9245
+  },
+  "original_without_press_release": {
+   "events": 629,
+   "accuracy": 1.0
+  },
+  "original_with_press_release": {
+   "events": 371,
+   "accuracy": 1.0
+  }
+ },
+ "no_press_release_2day": {
+  "cells": 44,
+  "events": 17101,
+  "name_score": [
+   0.0303,
+   0.0183,
+   0.0428
+  ],
+  "deep_score": [
+   0.026,
+   0.0146,
+   0.0379
+  ],
+  "rating_score": [
+   0.0266,
+   0.0146,
+   0.0396
+  ],
+  "name_score_minus_rating_score": [
+   0.0036,
+   -0.0027,
+   0.01
+  ],
+  "deep_score_minus_rating_score": [
+   -0.0007,
+   -0.0086,
+   0.0077
+  ]
+ },
+ "proportional_reading": {
+  "method": "share lost = 1 - (accuracy - 0.2) / 0.8, correcting for guessing among five; expected change = -(share lost) x the same filings' E11 correlation",
+  "name_mask": {
+   "identification_accuracy": 0.721,
+   "share_lost": 0.3488,
+   "e11_base": 0.0247,
+   "expected_change": -0.0086,
+   "observed_change": [
+    0.0007,
+    -0.0032,
+    0.0049
+   ]
+  },
+  "deep_mask": {
+   "identification_accuracy": 0.637,
+   "share_lost": 0.4537,
+   "e11_base": 0.0247,
+   "expected_change": -0.0112,
+   "observed_change": [
+    -0.0007,
+    -0.006,
+    0.0048
+   ]
+  },
+  "deep_mask_no_press_release": {
+   "identification_accuracy": 0.4928,
+   "share_lost": 0.6339,
+   "e11_base": 0.0266,
+   "expected_change": -0.0169,
+   "observed_change": [
+    -0.0007,
+    -0.0086,
+    0.0077
+   ]
+  }
+ }
+}

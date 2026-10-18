@@ -1,0 +1,679 @@
+{
+ "n_events": 26962,
+ "inputs": {
+  "E11 graded_events.csv": "2c446e6d6e06ac9754402cf53db2974679b569acffc80f8f4be5edb5586f028b",
+  "jev/name/scores.csv": "a1dd3cf2a33867f455e3aac0cc0edda88570f5e5cfc3ec547ed649717cd44ae5",
+  "jev/deep/scores.csv": "ae4b0e30f70d4f136fdc6bad3b201f788d0fe45f782c8ae6995a5decaa10f906"
+ },
+ "answers": {
+  "rating_choice": {
+   "neutral": 22463,
+   "very_good": 2141,
+   "bad": 1456,
+   "good": 823,
+   "very_bad": 79
+  },
+  "name_choice": {
+   "neutral": 22337,
+   "very_good": 2189,
+   "bad": 1566,
+   "good": 773,
+   "very_bad": 97
+  },
+  "deep_choice": {
+   "neutral": 22305,
+   "very_good": 2185,
+   "bad": 1609,
+   "good": 770,
+   "very_bad": 93
+  }
+ },
+ "agreement_with_original": {
+  "name": {
+   "same_answer": 0.9808,
+   "score_rank_corr": 0.9511
+  },
+  "deep": {
+   "same_answer": 0.9743,
+   "score_rank_corr": 0.9311
+  }
+ },
+ "redraw_control": {
+  "events": 1000,
+  "same_answer_original_vs_redraw": 0.995,
+  "score_rank_corr_original_vs_redraw": 0.9822,
+  "same_answer_original_vs_name_on_these": 0.982,
+  "same_answer_original_vs_deep_on_these": 0.981,
+  "score_rank_corr_original_vs_name_on_these": 0.9506,
+  "score_rank_corr_original_vs_deep_on_these": 0.9345
+ },
+ "leak_check": {
+  "chance": 0.2,
+  "deep": {
+   "events": 1000,
+   "accuracy": 0.637,
+   "interval": [
+    0.604,
+    0.6693
+   ],
+   "mean_p_truth": 0.5393,
+   "hides_filer": false
+  },
+  "name": {
+   "events": 1000,
+   "accuracy": 0.721,
+   "interval": [
+    0.6898,
+    0.7511
+   ],
+   "mean_p_truth": 0.6177,
+   "hides_filer": false
+  },
+  "original": {
+   "events": 1000,
+   "accuracy": 1.0,
+   "interval": [
+    1.0,
+    1.0
+   ],
+   "mean_p_truth": 0.9986,
+   "hides_filer": false
+  }
+ },
+ "main_2day": {
+  "cells": 44,
+  "events": 26962,
+  "name_score": [
+   0.0254,
+   0.014,
+   0.0359
+  ],
+  "deep_score": [
+   0.024,
+   0.0135,
+   0.0342
+  ],
+  "rating_score": [
+   0.0247,
+   0.0148,
+   0.0341
+  ],
+  "base_good": [
+   -0.0154,
+   -0.0275,
+   -0.0041
+  ],
+  "name_score_minus_rating_score": [
+   0.0007,
+   -0.0032,
+   0.0049
+  ],
+  "deep_score_minus_rating_score": [
+   -0.0007,
+   -0.006,
+   0.0048
+  ],
+  "name_score_minus_base_good": [
+   0.0408,
+   0.0252,
+   0.0557
+  ],
+  "deep_score_minus_base_good": [
+   0.0394,
+   0.0239,
+   0.0551
+  ]
+ },
+ "windows": {
+  "d0": {
+   "cells": 44,
+   "events": 26962,
+   "name_score": [
+    0.036,
+    0.0242,
+    0.0471
+   ],
+   "deep_score": [
+    0.0356,
+    0.0236,
+    0.047
+   ],
+   "rating_score": [
+    0.0387,
+    0.0278,
+    0.049
+   ],
+   "base_good": [
+    -0.0123,
+    -0.0245,
+    -0.0011
+   ],
+   "name_score_minus_rating_score": [
+    -0.0027,
+    -0.0064,
+    0.0008
+   ],
+   "deep_score_minus_rating_score": [
+    -0.0031,
+    -0.0064,
+    0.0002
+   ]
+  },
+  "d0_1": {
+   "cells": 44,
+   "events": 26962,
+   "name_score": [
+    0.0254,
+    0.014,
+    0.0359
+   ],
+   "deep_score": [
+    0.024,
+    0.0135,
+    0.0342
+   ],
+   "rating_score": [
+    0.0247,
+    0.0148,
+    0.0341
+   ],
+   "base_good": [
+    -0.0154,
+    -0.0275,
+    -0.0041
+   ],
+   "name_score_minus_rating_score": [
+    0.0007,
+    -0.0032,
+    0.0049
+   ],
+   "deep_score_minus_rating_score": [
+    -0.0007,
+    -0.006,
+    0.0048
+   ]
+  },
+  "d0_4": {
+   "cells": 44,
+   "events": 26962,
+   "name_score": [
+    0.0228,
+    0.0092,
+    0.0356
+   ],
+   "deep_score": [
+    0.0218,
+    0.0079,
+    0.0346
+   ],
+   "rating_score": [
+    0.0219,
+    0.0089,
+    0.0341
+   ],
+   "base_good": [
+    -0.0098,
+    -0.0233,
+    0.0036
+   ],
+   "name_score_minus_rating_score": [
+    0.0009,
+    -0.0025,
+    0.0044
+   ],
+   "deep_score_minus_rating_score": [
+    -0.0001,
+    -0.005,
+    0.0054
+   ]
+  },
+  "d0_9": {
+   "cells": 44,
+   "events": 26962,
+   "name_score": [
+    0.0131,
+    0.002,
+    0.0237
+   ],
+   "deep_score": [
+    0.0109,
+    0.0002,
+    0.0211
+   ],
+   "rating_score": [
+    0.0103,
+    -0.0003,
+    0.0206
+   ],
+   "base_good": [
+    0.0014,
+    -0.0098,
+    0.0128
+   ],
+   "name_score_minus_rating_score": [
+    0.0028,
+    -0.0006,
+    0.006
+   ],
+   "deep_score_minus_rating_score": [
+    0.0005,
+    -0.0035,
+    0.0049
+   ]
+  },
+  "drift_5": {
+   "cells": 44,
+   "events": 26962,
+   "name_score": [
+    0.0002,
+    -0.0104,
+    0.0104
+   ],
+   "deep_score": [
+    -0.001,
+    -0.0125,
+    0.0101
+   ],
+   "rating_score": [
+    -0.0023,
+    -0.0138,
+    0.0088
+   ],
+   "base_good": [
+    -0.002,
+    -0.0144,
+    0.0108
+   ],
+   "name_score_minus_rating_score": [
+    0.0024,
+    -0.0017,
+    0.007
+   ],
+   "deep_score_minus_rating_score": [
+    0.0012,
+    -0.0046,
+    0.0073
+   ]
+  },
+  "drift_10": {
+   "cells": 44,
+   "events": 26958,
+   "name_score": [
+    -0.0031,
+    -0.0136,
+    0.0072
+   ],
+   "deep_score": [
+    -0.0053,
+    -0.0155,
+    0.0052
+   ],
+   "rating_score": [
+    -0.0065,
+    -0.0174,
+    0.0047
+   ],
+   "base_good": [
+    0.0039,
+    -0.0068,
+    0.0151
+   ],
+   "name_score_minus_rating_score": [
+    0.0034,
+    0.0003,
+    0.0065
+   ],
+   "deep_score_minus_rating_score": [
+    0.0012,
+    -0.0031,
+    0.0056
+   ]
+  }
+ },
+ "by_period": {
+  "2013-2017": {
+   "cells": 16,
+   "events": 10191,
+   "name_score": [
+    0.0341,
+    0.0276,
+    0.0406
+   ],
+   "deep_score": [
+    0.0284,
+    0.0244,
+    0.0322
+   ],
+   "rating_score": [
+    0.0351,
+    0.0273,
+    0.0434
+   ],
+   "name_score_minus_rating_score": [
+    -0.001,
+    -0.006,
+    0.0039
+   ],
+   "deep_score_minus_rating_score": [
+    -0.0067,
+    -0.0139,
+    -0.0001
+   ]
+  },
+  "2018-2021": {
+   "cells": 13,
+   "events": 8203,
+   "name_score": [
+    0.0332,
+    0.0152,
+    0.0531
+   ],
+   "deep_score": [
+    0.0325,
+    0.0143,
+    0.0522
+   ],
+   "rating_score": [
+    0.0281,
+    0.0113,
+    0.0468
+   ],
+   "name_score_minus_rating_score": [
+    0.0051,
+    -0.0028,
+    0.0129
+   ],
+   "deep_score_minus_rating_score": [
+    0.0044,
+    -0.0057,
+    0.0138
+   ]
+  },
+  "2022-2026": {
+   "cells": 16,
+   "events": 8568,
+   "name_score": [
+    0.0078,
+    -0.0141,
+    0.0286
+   ],
+   "deep_score": [
+    0.0106,
+    -0.011,
+    0.0315
+   ],
+   "rating_score": [
+    0.0094,
+    -0.0086,
+    0.026
+   ],
+   "name_score_minus_rating_score": [
+    -0.0016,
+    -0.0079,
+    0.0061
+   ],
+   "deep_score_minus_rating_score": [
+    0.0013,
+    -0.0062,
+    0.0098
+   ]
+  }
+ },
+ "by_size_third": {
+  "small": {
+   "cells": 44,
+   "events": 8491,
+   "name_score": [
+    0.0183,
+    -0.0056,
+    0.04
+   ],
+   "deep_score": [
+    0.016,
+    -0.0087,
+    0.0375
+   ],
+   "rating_score": [
+    0.0121,
+    -0.0124,
+    0.0348
+   ],
+   "name_score_minus_rating_score": [
+    0.0062,
+    0.0008,
+    0.0115
+   ],
+   "deep_score_minus_rating_score": [
+    0.0039,
+    -0.0022,
+    0.0101
+   ]
+  },
+  "middle": {
+   "cells": 44,
+   "events": 8491,
+   "name_score": [
+    0.0188,
+    0.0012,
+    0.0367
+   ],
+   "deep_score": [
+    0.0146,
+    -0.0049,
+    0.035
+   ],
+   "rating_score": [
+    0.0191,
+    0.0025,
+    0.0367
+   ],
+   "name_score_minus_rating_score": [
+    -0.0003,
+    -0.0063,
+    0.0056
+   ],
+   "deep_score_minus_rating_score": [
+    -0.0045,
+    -0.0141,
+    0.0057
+   ]
+  },
+  "large": {
+   "cells": 42,
+   "events": 8483,
+   "name_score": [
+    0.0375,
+    0.0159,
+    0.0595
+   ],
+   "deep_score": [
+    0.036,
+    0.0144,
+    0.0583
+   ],
+   "rating_score": [
+    0.0401,
+    0.0203,
+    0.0601
+   ],
+   "name_score_minus_rating_score": [
+    -0.0026,
+    -0.0098,
+    0.0048
+   ],
+   "deep_score_minus_rating_score": [
+    -0.0041,
+    -0.0132,
+    0.0049
+   ]
+  }
+ },
+ "officer_only": {
+  "cells": 14,
+  "events": 16263,
+  "name_score": [
+   0.0309,
+   0.0184,
+   0.0416
+  ],
+  "deep_score": [
+   0.0296,
+   0.018,
+   0.0402
+  ],
+  "rating_score": [
+   0.0318,
+   0.0209,
+   0.0426
+  ],
+  "base_good": [
+   -0.0266,
+   -0.0423,
+   -0.0146
+  ],
+  "name_score_minus_rating_score": [
+   -0.0009,
+   -0.0064,
+   0.0052
+  ],
+  "deep_score_minus_rating_score": [
+   -0.0022,
+   -0.0108,
+   0.0066
+  ],
+  "name_score_minus_base_good": [
+   0.0575,
+   0.0432,
+   0.0724
+  ],
+  "deep_score_minus_base_good": [
+   0.0562,
+   0.0401,
+   0.0738
+  ]
+ },
+ "after_2026_09_10": {
+  "events": 107,
+  "name_score": 0.0872,
+  "deep_score": 0.0785,
+  "rating_score": 0.0339
+ },
+ "mean_2d_pct_by_answer": {
+  "original": {
+   "bad": [
+    -0.339,
+    -0.562,
+    -0.136,
+    1456
+   ],
+   "good": [
+    0.164,
+    -0.054,
+    0.381,
+    823
+   ],
+   "neutral": [
+    -0.054,
+    -0.098,
+    -0.009,
+    22463
+   ],
+   "very_bad": [
+    -1.189,
+    -2.985,
+    0.521,
+    79
+   ],
+   "very_good": [
+    0.267,
+    0.065,
+    0.455,
+    2141
+   ]
+  },
+  "name": {
+   "bad": [
+    -0.313,
+    -0.499,
+    -0.139,
+    1566
+   ],
+   "good": [
+    0.228,
+    0.016,
+    0.436,
+    773
+   ],
+   "neutral": [
+    -0.055,
+    -0.103,
+    -0.008,
+    22337
+   ],
+   "very_bad": [
+    -0.816,
+    -2.324,
+    0.668,
+    97
+   ],
+   "very_good": [
+    0.247,
+    0.053,
+    0.435,
+    2189
+   ]
+  },
+  "deep": {
+   "bad": [
+    -0.193,
+    -0.367,
+    -0.019,
+    1609
+   ],
+   "good": [
+    0.266,
+    0.044,
+    0.483,
+    770
+   ],
+   "neutral": [
+    -0.063,
+    -0.11,
+    -0.014,
+    22305
+   ],
+   "very_bad": [
+    -1.173,
+    -2.63,
+    0.331,
+    93
+   ],
+   "very_good": [
+    0.239,
+    0.049,
+    0.425,
+    2185
+   ]
+  }
+ },
+ "officer_bad_2d_pct": {
+  "original": [
+   -0.684,
+   -1.007,
+   -0.389,
+   774
+  ],
+  "name": [
+   -0.525,
+   -0.799,
+   -0.267,
+   848
+  ],
+  "deep": [
+   -0.389,
+   -0.643,
+   -0.129,
+   887
+  ]
+ }
+}

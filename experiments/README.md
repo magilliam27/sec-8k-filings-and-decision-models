@@ -1,6 +1,6 @@
 # Experiments
 
-One folder per experiment, E1 to E12, plus the research ledger.
+One folder per experiment, E1 to E13, plus the research ledger.
 
 - `LEDGER.md`: one line per experiment with its verdict, the dataset versions,
   and every decision with its date and who made it.
@@ -8,13 +8,16 @@ One folder per experiment, E1 to E12, plus the research ledger.
   label, Jev answer or return existed; later additions are dated. The Result
   section was added at grading.
 - `<id>/grading/summary.json`: the graded numbers, where the experiment
-  produced one (E4 to E12; E1 to E3 have none here).
+  produced one (E4 to E13; E1 to E3 have none here).
 
-The cards were copied from the original research folder. Two kinds of edits
+The cards were copied from the original research folder. Three kinds of edits
 were made for publication, and nothing else changed:
 
 - the owner's first name is replaced by "the owner";
-- the ledger's links point to the card folders here.
+- the ledger's links point to the card folders here;
+- in the E12 and E13 cards, script paths point to this repository, files that
+  are not published are marked as such, and internal working references (a
+  work session, a budget note, a branch name) are reworded.
 
 Cards also name files that are not in this repository: blind sheets,
 `grading/design.csv`, per-item `graded_*.csv`, Jev's answer caches, and the
