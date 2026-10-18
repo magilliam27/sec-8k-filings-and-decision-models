@@ -1,0 +1,26 @@
+{
+  "experiment": "E10-8k-events",
+  "commit": {
+    "sha": "5b62432e4ee2ef5af2ee05e77a3c74d80c44f265",
+    "dirty": false
+  },
+  "events": 436,
+  "events_by_lean": {
+    "0": 419,
+    "2": 17
+  },
+  "lean": "2 if any of 1.02 1.03 2.05 2.06 3.01 4.02; 1 if 4.01; else 0",
+  "net_tone": "Loughran-McDonald (negative - positive) words / all words",
+  "baseline_badness": "lean + (1 + net_tone) / 3; higher is worse",
+  "lm_words": {
+    "negative": 2345,
+    "positive": 347
+  },
+  "estimated_input_tokens": 1475837,
+  "sha256": {
+    "events": "4ef2554312a784e38cc22a92f482bf56b3760eece31c9c2f59ccd0e1a1a0a581",
+    "lm_dictionary": "147cb24a1687ccde60363a0fa29c62be4097debcc698c01a83e51bb8a176dbb3",
+    "sample": "4660e48f9ce68d53446506c1344992121dd448b30bf8da7e92f20587625dda80",
+    "baselines.csv": "a122bf9b831cc215aeb7da45aa7126fc1e73e0ac1fc9181f081274b0b3f83fc0"
+  }
+}

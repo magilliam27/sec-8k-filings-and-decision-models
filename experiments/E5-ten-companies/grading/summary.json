@@ -1,0 +1,212 @@
+{
+ "risks": 300,
+ "key": {
+  "new": 85,
+  "changed": 180,
+  "new_unanimous": 294,
+  "changed_unanimous": 291,
+  "weighted_share_new": 0.026332094175960347,
+  "weighted_share_changed": 0.271408250207042
+ },
+ "by_stratum": {
+  "near_miss": {
+   "n": 144,
+   "new": 85,
+   "changed": 143
+  },
+  "carried": {
+   "n": 156,
+   "new": 0,
+   "changed": 37
+  }
+ },
+ "main_new": {
+  "auc_jev": 0.9868114330317919,
+  "auc_word": 0.9986636971046771,
+  "gap": {
+   "point": -0.011852264072885199,
+   "interval_95": [
+    -0.030133335371154153,
+    0.0008059158723144301
+   ],
+   "clear_of_zero": false
+  },
+  "jev_cut_0.5": {
+   "recall": 0.6352941176470588,
+   "precision": 1.0,
+   "flags": 54,
+   "hits": 54
+  },
+  "word_cut_0.25": {
+   "recall": 0.8235294117647058,
+   "precision": 0.9210526315789473,
+   "flags": 76,
+   "hits": 70
+  },
+  "jev_choice_new": {
+   "recall": 0.6941176470588235,
+   "precision": 1.0,
+   "flags": 59,
+   "hits": 59
+  }
+ },
+ "second_changed": {
+  "auc_jev": 0.9455501186226547,
+  "auc_word": 0.9619649170314514,
+  "gap": {
+   "point": -0.01641479840879667,
+   "interval_95": [
+    -0.051185205371355645,
+    0.015503821190847582
+   ],
+   "clear_of_zero": false
+  },
+  "jev_cut": {
+   "recall": 0.9460297464792427,
+   "precision": 0.6877280806107687,
+   "flags": 189,
+   "hits": 170
+  },
+  "word_cut": {
+   "recall": 1.0,
+   "precision": 0.5740722489223956,
+   "flags": 214,
+   "hits": 180
+  },
+  "balanced_jev": 0.8930075449911961,
+  "balanced_word": 0.8618095012742535
+ },
+ "third_combo": {
+  "auc_combo": 0.9744643425467634,
+  "gap_vs_word": {
+   "point": 0.012499425515312024,
+   "interval_95": [
+    -0.002814079428285701,
+    0.029759695319236248
+   ],
+   "clear_of_zero": false
+  },
+  "gap_vs_jev": {
+   "point": 0.028914223924108695,
+   "interval_95": [
+    0.009260190160138683,
+    0.051608925667375766
+   ],
+   "clear_of_zero": true
+  }
+ },
+ "per_company": {
+  "ba": {
+   "n": 21,
+   "new": 7,
+   "changed": 9,
+   "new_auc_jev": 0.9999999999999999,
+   "new_auc_word": 0.9999999999999999,
+   "chg_auc_jev": 0.9702054794520546,
+   "chg_auc_word": 0.9404109589041093,
+   "chg_auc_combo": 0.9999999999999998
+  },
+  "cat": {
+   "n": 18,
+   "new": 2,
+   "changed": 3,
+   "new_auc_jev": 1.0,
+   "new_auc_word": 1.0,
+   "chg_auc_jev": 0.515289648622982,
+   "chg_auc_word": 0.8788224121557455,
+   "chg_auc_combo": 0.8788224121557455
+  },
+  "dal": {
+   "n": 26,
+   "new": 7,
+   "changed": 14,
+   "new_auc_jev": 1.0000000000000002,
+   "new_auc_word": 1.0000000000000002,
+   "chg_auc_jev": 0.9826603420941787,
+   "chg_auc_word": 0.9961201668772742,
+   "chg_auc_combo": 0.9982389409939403
+  },
+  "jpm": {
+   "n": 68,
+   "new": 15,
+   "changed": 53,
+   "new_auc_jev": 1.0,
+   "new_auc_word": 0.9976608187134502,
+   "chg_auc_jev": 0.958272719672268,
+   "chg_auc_word": 0.9573614246300476,
+   "chg_auc_combo": 0.9697349719923083
+  },
+  "ko": {
+   "n": 41,
+   "new": 12,
+   "changed": 21,
+   "new_auc_jev": 0.9998353096179177,
+   "new_auc_word": 0.999176548089591,
+   "chg_auc_jev": 0.9123386150234739,
+   "chg_auc_word": 0.9926203051643191,
+   "chg_auc_combo": 0.9852406103286382
+  },
+  "msft": {
+   "n": 24,
+   "new": 9,
+   "changed": 11,
+   "new_auc_jev": 1.0000000000000002,
+   "new_auc_word": 1.0000000000000002,
+   "chg_auc_jev": 0.9974660633484166,
+   "chg_auc_word": 1.0000000000000004,
+   "chg_auc_combo": 1.0000000000000004
+  },
+  "pfe": {
+   "n": 45,
+   "new": 20,
+   "changed": 37,
+   "new_auc_jev": 0.9318965517241379,
+   "new_auc_word": 0.9955459770114943,
+   "chg_auc_jev": 0.9816706730769231,
+   "chg_auc_word": 0.9399038461538461,
+   "chg_auc_combo": 0.9639423076923077
+  },
+  "unh": {
+   "n": 16,
+   "new": 2,
+   "changed": 5,
+   "new_auc_jev": 1.0,
+   "new_auc_word": 1.0,
+   "chg_auc_jev": 1.0,
+   "chg_auc_word": 1.0,
+   "chg_auc_combo": 1.0
+  },
+  "wmt": {
+   "n": 21,
+   "new": 7,
+   "changed": 17,
+   "new_auc_jev": 0.9990560100692256,
+   "new_auc_word": 0.9999999999999997,
+   "chg_auc_jev": 0.9999999999999999,
+   "chg_auc_word": 0.8665077473182358,
+   "chg_auc_combo": 0.8998808104886769
+  },
+  "xom": {
+   "n": 20,
+   "new": 4,
+   "changed": 10,
+   "new_auc_jev": 0.9989878542510121,
+   "new_auc_word": 0.9959514170040485,
+   "chg_auc_jev": 0.9301546391752578,
+   "chg_auc_word": 1.0,
+   "chg_auc_combo": 1.0
+  }
+ },
+ "unweighted": {
+  "new_jev": 0.9827906976744186,
+  "new_word": 0.9804651162790697,
+  "chg_jev": 0.9627546296296297,
+  "chg_word": 0.9883101851851852,
+  "chg_combo": 0.9918518518518519
+ },
+ "bootstrap": {
+  "draws": 10000,
+  "seed": 300,
+  "resample": "within company x stratum"
+ }
+}

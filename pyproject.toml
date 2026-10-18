@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sec-8k-filings-and-decision-models"
+version = "0.1.0"
+description = "Rating SEC 8-K filings with a decision model (Jev, from TypeSafe) and testing the ratings against short-term stock returns."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Only the --score steps of the scoring scripts call Jev; everything else,
+# including the whole test suite, runs without the SDK or an API key.
+jev = ["typesafe-sdk"]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["sec8k*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint.isort]
+known-first-party = ["sec8k", "scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# The scripts are run as `python -m scripts.data.<name>` from the repository
+# root, and the tests import them the same way, so the root is on the path.
+pythonpath = [".", "src"]
+addopts = "-v --tb=short"

@@ -1,0 +1,224 @@
+{
+ "key_counts_all": {
+  "worse": 170,
+  "neutral": 113,
+  "better": 17
+ },
+ "key_counts_main": {
+  "worse": 61,
+  "neutral": 25,
+  "better": 9
+ },
+ "finer_counts_main": {
+  "new_exposure": 42,
+  "neutral": 25,
+  "materialized": 12,
+  "eased": 9,
+  "escalated": 7
+ },
+ "main_worse": {
+  "n": 95,
+  "positives": 61,
+  "auc_jev": 0.9790933628507182,
+  "auc_base": 0.1943077593801483,
+  "gap": 0.7847856034705699,
+  "interval_95": [
+   0.6486270039258611,
+   0.8852088203382065
+  ],
+  "clear_of_zero": true
+ },
+ "main_worse_vs_word_balance": {
+  "n": 95,
+  "positives": 61,
+  "auc_jev": 0.9790933628507182,
+  "auc_base": 0.9259580335189427,
+  "gap": 0.05313532933177556,
+  "interval_95": [
+   0.0026837437899352697,
+   0.131712103747679
+  ],
+  "clear_of_zero": true
+ },
+ "better": {
+  "skipped": "only 9 better in main set"
+ },
+ "better_all300": {
+  "n": 300,
+  "positives": 17,
+  "auc_jev": 0.9622402509062573,
+  "auc_base": 0.35690833121849647,
+  "gap": 0.6053319196877609,
+  "interval_95": [
+   0.3106307918820222,
+   0.8577644064463792
+  ],
+  "clear_of_zero": true
+ },
+ "worse_all300": {
+  "n": 300,
+  "positives": 170,
+  "auc_jev": 0.9744268908600814,
+  "auc_base": 0.4462012181108465,
+  "gap": 0.5282256727492349,
+  "interval_95": [
+   0.43642772909835875,
+   0.6206252515377891
+  ],
+  "clear_of_zero": true
+ },
+ "three_way_main": {
+  "jev_acc": 0.9317411175112671,
+  "jev_bal": 0.9533147685192298,
+  "base_sign_acc": 0.4176619890009361,
+  "base_sign_bal": 0.1824416216182386,
+  "majority_class": "worse",
+  "majority_acc": 0.7931062841116241,
+  "finer_jev_acc": 0.7846241197264384,
+  "finer_jev_bal": 0.7351258268291463,
+  "finer_majority": "new_exposure",
+  "finer_majority_acc": 0.532433868643418
+ },
+ "three_way_all300": {
+  "jev_acc": 0.8923765979992746,
+  "jev_bal": 0.839044228029805,
+  "base_sign_acc": 0.46352162784551265,
+  "base_sign_bal": 0.41806837815128217,
+  "majority_class": "neutral",
+  "majority_acc": 0.5464688657067839,
+  "finer_jev_acc": 0.8198240150493868,
+  "finer_jev_bal": 0.6522122385971763,
+  "finer_majority": "neutral",
+  "finer_majority_acc": 0.5464688657067839
+ },
+ "confusion_main": {
+  "better": {
+   "better": 8,
+   "neutral": 3,
+   "worse": 6
+  },
+  "neutral": {
+   "better": 0,
+   "neutral": 21,
+   "worse": 6
+  },
+  "worse": {
+   "better": 1,
+   "neutral": 1,
+   "worse": 49
+  }
+ },
+ "confusion_finer_all": {
+  "eased": {
+   "eased": 12,
+   "escalated": 2,
+   "materialized": 1,
+   "neutral": 20,
+   "new_exposure": 10
+  },
+  "escalated": {
+   "eased": 0,
+   "escalated": 7,
+   "materialized": 2,
+   "neutral": 1,
+   "new_exposure": 3
+  },
+  "materialized": {
+   "eased": 1,
+   "escalated": 0,
+   "materialized": 14,
+   "neutral": 1,
+   "new_exposure": 3
+  },
+  "neutral": {
+   "eased": 3,
+   "escalated": 4,
+   "materialized": 1,
+   "neutral": 87,
+   "new_exposure": 4
+  },
+  "new_exposure": {
+   "eased": 1,
+   "escalated": 3,
+   "materialized": 10,
+   "neutral": 4,
+   "new_exposure": 106
+  }
+ },
+ "jev_self_consistency": 253,
+ "new_risks": {
+  "n": 85,
+  "key_worse": 81,
+  "jev_worse": 66
+ },
+ "e5_unchanged": {
+  "n": 120,
+  "key": {
+   "neutral": 86,
+   "worse": 28,
+   "better": 6
+  },
+  "jev": {
+   "neutral": 84,
+   "worse": 31,
+   "better": 5
+  }
+ },
+ "per_company_main": {
+  "ba": {
+   "n": 2,
+   "worse": 2
+  },
+  "cat": {
+   "n": 1,
+   "worse": 1
+  },
+  "dal": {
+   "n": 7,
+   "worse": 7
+  },
+  "jpm": {
+   "n": 38,
+   "worse": 17,
+   "jev": 0.9942771350815317,
+   "base": 0.16324855112747305
+  },
+  "ko": {
+   "n": 9,
+   "worse": 6,
+   "jev": 1.0,
+   "base": 0.5391724427641252
+  },
+  "msft": {
+   "n": 2,
+   "worse": 2
+  },
+  "pfe": {
+   "n": 17,
+   "worse": 11,
+   "jev": 0.9258207070707071,
+   "base": 0.055082070707070704
+  },
+  "unh": {
+   "n": 3,
+   "worse": 1,
+   "jev": 0.5,
+   "base": 1.0
+  },
+  "wmt": {
+   "n": 10,
+   "worse": 10
+  },
+  "xom": {
+   "n": 6,
+   "worse": 4,
+   "jev": 0.9764705882352941,
+   "base": 0.2735294117647059
+  }
+ },
+ "bootstrap": {
+  "draws": 10000,
+  "seed": 308,
+  "resample": "within company x stratum"
+ }
+}

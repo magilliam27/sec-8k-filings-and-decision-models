@@ -1,0 +1,35 @@
+{
+  "experiment": "E11-8k-returns",
+  "commit": {
+    "sha": "631301f6677def6824d5d69cd814c120d654dd21",
+    "dirty": false
+  },
+  "model": "jev-1.13.0",
+  "question_file": "questions_v5.yaml",
+  "events": 26962,
+  "rating_score": "sum of p(option) x weight, very_bad -2 ... very_good +2",
+  "bad_score": "p_bad + p_very_bad",
+  "distinct_calls": {
+    "rating": 26962
+  },
+  "input_tokens_total": 55197138,
+  "models_answering": [
+    "jev-1.13.0"
+  ],
+  "choices": {
+    "rating": {
+      "neutral": 22463,
+      "very_good": 2141,
+      "bad": 1456,
+      "good": 823,
+      "very_bad": 79
+    }
+  },
+  "sha256": {
+    "events": "04172c9be6ea43e0f814eb56ccdbf2f2df95251ac45498c1c4603bd76c73931f",
+    "lm_dictionary": "147cb24a1687ccde60363a0fa29c62be4097debcc698c01a83e51bb8a176dbb3",
+    "sample": "f885c80626064c276435b72ae3430b5ab171ef3cd182decc762b966b77ca0b3b",
+    "answers/rating.jsonl": "8b3456b98c508de51c654dce3dc398cec8b16d8c832a577a77b103bcadd93bfc",
+    "scores.csv": "eb56f1c8ee554f9d46212caea2655aab8d05e7da07b71dfa8540a6d76ab3d05b"
+  }
+}
