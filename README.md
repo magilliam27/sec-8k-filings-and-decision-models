@@ -1,12 +1,12 @@
 <img alt="Decision-model ratings of 8-K filings and short-term stock returns. A five-point scale from very bad to very good." src="docs/figures/banner-dark.png" width="100%">
 
-![Code: MIT](https://img.shields.io/badge/code-MIT-1F6FEB) ![Docs, figures and results: CC BY 4.0](https://img.shields.io/badge/docs%20%26%20results-CC%20BY%204.0-1F6FEB) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-1F6FEB) &nbsp;26,962 filings rated for $2.32 of model time · 402 tests · October 2026 · [magilliam27](https://github.com/magilliam27)
+![Code: MIT](https://img.shields.io/badge/code-MIT-1F6FEB) ![Docs, figures and results: CC BY 4.0](https://img.shields.io/badge/docs%20%26%20results-CC%20BY%204.0-1F6FEB) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-1F6FEB) &nbsp;26,962 filings rated for $2.32 of model time · 417 tests · October 2026 · [magilliam27](https://github.com/magilliam27)
 
 Jev, a decision model from TypeSafe, rated 26,962 8-K filings by S&P 500 companies, filed from January 2013 to October 2026, on a five-point scale from very bad to very good for shareholders. A decision model returns a probability for each answer option and writes no text, so every rating can be ranked.
 
 Filings were compared only with others of the same item group and year. Within those groups, the rating's rank correlation with the next two days' market-adjusted return is +0.025 (95% interval +0.015 to +0.034). Zero would mean no relation, and the correlation is positive in 13 of 14 years. A market-adjusted return is the stock's return minus that of SPY, an S&P 500 index fund, over the same days.
 
-The effect is small and fast. Most 8-Ks (88%) arrive while the market is closed, and most of the move comes before the next morning's open. From that open onward, a follow-up test found nothing reliable left (E12). A faster entry might catch part of the move, such as after-hours or pre-market trading, or trading within minutes of a filing made during the session. Daily prices cannot test that. The main unresolved risk is that the model may have read later news about these events.
+The effect is small and fast. Most 8-Ks (88%) arrive while the market is closed, and most of the move comes before the next morning's open. From that open onward, a follow-up test found nothing reliable left (E12). A faster entry might catch part of the move, such as after-hours or pre-market trading, or trading within minutes of a filing made during the session. Daily prices cannot test that. The main unresolved risk is that the model may have read later news about these events. Re-rating every filing with the company's name hidden left the result unchanged (E13). That adds support to the finding, though it is not conclusive: the model could still recognise most companies from the rest of the text.
 
 **[Full report](docs/REPORT.md)** · [Method](docs/REPORT.md#2-method) · [Results](docs/REPORT.md#3-results) · [Limitations](docs/REPORT.md#4-limitations) · [Costs](docs/REPORT.md#5-costs) · [Reproduce](docs/REPORT.md#appendix-b-reproduction)
 
@@ -39,7 +39,7 @@ The separation is clearest for officer changes. Every item group and rating with
 
 | Limitation | In short |
 | --- | --- |
-| Model memory | The model may have been trained on later news about these events, and it sees the company name. TypeSafe publishes no training cut-off. The 107 filings after the model's release point the same way (+0.034), but are too few to settle it. |
+| Model memory | The model may have been trained on later news about these events, and it sees the company name. TypeSafe publishes no training cut-off. With the name hidden the correlation is unchanged (+0.025), which supports the model reading the event rather than the name. It is not conclusive, since the model still picks the right company out of five 72% of the time ([E13](experiments/E13-name-masking/CARD.md)). The 107 filings after the model's release point the same way (+0.034), but are too few to settle it. |
 | Speed of the move | For filings made while the market is closed, most of the move comes between the filing and the next open (rank correlation +0.054 for that stretch). From the next open it is +0.006 over 2 days and +0.008 over 5, indistinguishable from zero ([E12](experiments/E12-next-open/CARD.md)). Faster entries were not tested, since only daily prices were used: after-hours, pre-market, or intraday for the 12% of filings made during the session. |
 | Small | The rating explains well under 1% of the variation in 2-day returns. It is a tilt across many filings, not a forecast for one. |
 | Earlier announcements | Companies often announce the news before the 8-K, so part of the reaction can come before the measured window. |
@@ -66,7 +66,7 @@ Detail is in [section 6](docs/REPORT.md#6-controls-against-bias) and [section 7]
 git clone https://github.com/magilliam27/sec-8k-filings-and-decision-models
 cd sec-8k-filings-and-decision-models
 pip install -e ".[dev]"
-pytest                                   # 402 tests, no network or keys needed
+pytest                                   # 417 tests, no network or keys needed
 python grading/scripts/check_hashes.py   # checks the published result files against their hashes
 python docs/figures/src/make_figures.py  # rebuilds the charts from results/E11-8k-returns/summary.json
 ```
@@ -79,10 +79,10 @@ Rating new filings needs a TypeSafe API key (`pip install -e ".[jev]"`), and reb
 
 ```text
 docs/REPORT.md      the full report: method, results, limitations, costs, controls
-src/sec8k/          SEC download, 8-K parsing, question runner, baselines
+src/sec8k/          SEC download, 8-K parsing, name masking, question runner, baselines
 scripts/data/       member list, 8-K and price pulls, model scoring
 configs/filings/    frozen question files and AI reviewer instructions
-experiments/        one card per experiment, E1 to E12, and the ledger
+experiments/        one card per experiment, E1 to E13, and the ledger
 results/            E10 and E11 test sets, baselines, joins, summaries, per-group table
 grading/            grading scripts, hash check, verification guide, recheck
 recipes/            method write-ups

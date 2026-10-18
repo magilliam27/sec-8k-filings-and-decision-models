@@ -19,6 +19,8 @@ dependencies = [
 # Only the --score steps of the scoring scripts call Jev; everything else,
 # including the whole test suite, runs without the SDK or an API key.
 jev = ["typesafe-sdk"]
+# The E13 deep mask tags names with spaCy; also run: python -m spacy download en_core_web_sm
+mask = ["spacy>=3.8,<3.9"]
 dev = ["pytest>=7.4"]
 
 [tool.setuptools.packages.find]

@@ -1,8 +1,10 @@
 # 10-K research ledger
 
-Every experiment, its verdict and the decisions behind it, newest first. Kept by the grading role (the Lead). One line per experiment; the card holds the detail. Last updated 18 October 2026. "Words" and "word counts" below mean the free word baselines; for E11 and E12 that is the word-tone score, positive minus negative Loughran-McDonald words.
+Every experiment, its verdict and the decisions behind it, newest first. Kept by the grading role (the Lead). One line per experiment; the card holds the detail. Last updated 18 October 2026. "Words" and "word counts" below mean the free word baselines; for E11 to E13 that is the word-tone score, positive minus negative Loughran-McDonald words.
 
 ## Where things stand
+
+**Name masking (E13, 18 Oct): hiding the company changes 2% of Jev's 8-K answers and none of the returns link, but Jev can still recognise most filers from the masked text, so the memory caveat stands; the forward hold-out is the remaining clean test.** A reading added after the result: the signal did not fall in proportion to the filers Jev could no longer identify (28% under the name mask, 36% under the deep mask), which adds support to E11 without settling it.
 
 **Next open (E12, 17 Oct): nothing reliable is left from the next regular-session open.** On the 23,585 E11 filings accepted while the market was closed, the rating's correlation with the return from the next open is +0.006 (−0.005 to +0.017) over 2 sessions and +0.008 (−0.006 to +0.022) over 5. The move E11 measured happens mostly overnight, before the open. Faster entries (after-hours, pre-market, minutes after an intraday filing) were not tested.
 
@@ -16,6 +18,7 @@ Every experiment, its verdict and the decisions behind it, newest first. Kept by
 
 | Id | Question | Data | Answer key | Jev | Baseline | Verdict | Card |
 |---|---|---|---|---|---|---|---|
+| E13 | Does E11's 8-K rating survive when the filer's name is hidden (Glasserman and Lin's test)? | E11's 26,962 events, name-masked and deep-masked (people, organisations, places too) | stock returns, as E11; leak check: Jev picks the filer from 5 same-industry companies, 1,000 events | questions_v5 rating at both mask levels (108.7M tokens) plus leak check and redraw (7.8M); about $4.89 | E11's rating with the name; word tone | **Unclear** (18 Oct): masked 2-day corr +0.025 (+0.014 to +0.036), masked minus original +0.001 (−0.003 to +0.005); but Jev still names the filer 72% (name mask) and 64% (deep) of the time, chance 20%, so memory is not ruled out | [card](E13-name-masking/CARD.md) |
 | E12 | From the first open a trader can reach, does Jev's 8-K rating rank the next 2 and 5 sessions? | E11's 26,962 events; EODHD opens | stock returns, entry open to close of session +1 and +4 | E11's ratings, no new spend | word-tone score | **Fail** (17 Oct): 2 sessions +0.006 (−0.005 to +0.017), 5 sessions +0.008 (−0.006 to +0.022); most of E11's move is overnight, before the open | [card](E12-next-open/CARD.md) |
 | E11 | Does Jev's 8-K rating predict returns over 1 to 10 days, beyond the item code? | member_8k_events r1: 26,962 S&P 500 8-Ks, 2013–2026 | stock returns (EODHD), day −1 close to day +1 | questions_v5 rating on 26,962 events (55.2M tokens, $2.32) | item code, then dictionary net tone | **Pass** (17 Oct): 2-day corr +0.025 (+0.015 to +0.034); Jev minus words +0.040 (+0.026 to +0.055); gone by 10 days, no drift after day 0 | [card](E11-8k-returns/CARD.md) |
 | E10 | How good or bad is an 8-K event for shareholders? Five-way rating | e10_8k_events r1: all 436 8-Ks of E5's 10 companies, 2013–2025 | AI ×3 on all 436 | questions_v5 (1.71M tokens) | item code, then dictionary net tone | **Pass** (16 Oct): bad events 0.986 vs 0.759, +0.128 to +0.323; key and Jev share a rubric | [card](E10-8k-events/CARD.md) |
@@ -48,6 +51,7 @@ The Alphabet versions hold its 13 10-Ks, FY2013 to FY2025. The Data lane publish
 
 | Date | Decision | By |
 |---|---|---|
+| 18 Oct | E13 design frozen before any masked score: name and deep masks, leak check with a 50% 'hides the filer' bar, verdict needs a level that both hides and survives | Owner (asked); Lead |
 | 16 Oct | E11 design frozen before any member 8-K, Jev score or return: within item group and year, rank correlation of Jev's rating with the 2-day SPY-adjusted return; Jev against net tone; pass downgraded to unclear if it fails after Jev's training cut-off | Lead |
 | 17 Oct | E11: rate all 26,962 test events with Jev, about $2.40 instead of $1 | Owner |
 | 16 Oct | Test Jev's 8-K rating on returns in the days after filing (E11), about $1 of Jev | Owner |
