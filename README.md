@@ -95,3 +95,5 @@ Earlier work on 10-K risk factors, which found no return signal, is summarised i
 ## Citation and license
 
 Cite with [`CITATION.cff`](CITATION.cff) (GitHub's "Cite this repository" button). Code is under the [MIT license](LICENSE). Documentation, figures and the files in `results/` and `experiments/` are under [CC BY 4.0](LICENSE-docs.md).
+
+Not affiliated with or endorsed by TypeSafe.
