@@ -158,7 +158,7 @@ The original research folder held the bulk data (filings, prices) and the model'
 This repository publishes the code, the frozen questions, the experiment records and the summary results. Three checks need no key and no price data:
 
 - `python grading/scripts/check_hashes.py` matches the published result files against their recorded hashes.
-- [`results/E11-8k-returns/cells.csv`](../results/E11-8k-returns/cells.csv) lists, for each of the 44 item-group-and-year cells, the filings and the model's and the word-tone score's rank correlations at 2 and 10 days. The filing-weighted averages reproduce the headline (+0.025, −0.015; +0.010, +0.001).
+- [`results/E11-8k-returns/cells.csv`](../results/E11-8k-returns/cells.csv) lists, for each of the 44 item-group-and-year cells (auditor changes pooled into 2013–2017 and 2018–2026), the filings and the model's and the word-tone score's rank correlations at 2 and 10 days. The filing-weighted averages reproduce the headline (+0.025, −0.015; +0.010, +0.001).
 - `python docs/figures/src/make_figures.py` rebuilds every chart from `summary.json` (`node docs/figures/src/render.mjs` renders them to PNG).
 
 The repository does not include:

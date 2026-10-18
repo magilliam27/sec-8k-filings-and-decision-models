@@ -84,7 +84,7 @@ python grading/scripts/check_hashes.py   # checks the published result files aga
 python docs/figures/src/make_figures.py  # rebuilds the charts from results/E11-8k-returns/summary.json
 ```
 
-The per-group correlations behind the headline are in [`results/E11-8k-returns/cells.csv`](results/E11-8k-returns/cells.csv): 44 rows, one per item group and year. Their filing-weighted average gives +0.025 with no key or price data.
+The per-group correlations behind the headline are in [`results/E11-8k-returns/cells.csv`](results/E11-8k-returns/cells.csv): 44 rows, one per item group and year (auditor changes in two periods, 2013–2017 and 2018–2026). Their filing-weighted average gives +0.025 with no key or price data.
 
 Rating new filings needs a TypeSafe API key (`pip install -e ".[jev]"`), and rebuilding the prices needs an EODHD subscription. See [Appendix B](docs/REPORT.md#appendix-b-reproduction).
 
